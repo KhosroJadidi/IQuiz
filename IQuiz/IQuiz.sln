@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IQuiz", "IQuiz\IQuiz.csproj", "{0311B791-D6B2-4C77-9AAD-64616877F261}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IQuiz", "IQuiz\IQuiz.csproj", "{0311B791-D6B2-4C77-9AAD-64616877F261}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IQuiz.UnitTests", "IQuiz.UnitTests\IQuiz.UnitTests\IQuiz.UnitTests.csproj", "{B921E04B-7469-4003-BB97-582B3B905104}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0311B791-D6B2-4C77-9AAD-64616877F261}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0311B791-D6B2-4C77-9AAD-64616877F261}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0311B791-D6B2-4C77-9AAD-64616877F261}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B921E04B-7469-4003-BB97-582B3B905104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B921E04B-7469-4003-BB97-582B3B905104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B921E04B-7469-4003-BB97-582B3B905104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B921E04B-7469-4003-BB97-582B3B905104}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
