@@ -15,6 +15,6 @@ namespace IQuiz.Data.Context
             
         }
 
-        public DbSet<QuestionAndAnswer> QuestionAndAnswers { get; set; }
+        public DbSet<QuestionAndAnswer> QuestionsAndAnswers { get; set; }
     }
 }
