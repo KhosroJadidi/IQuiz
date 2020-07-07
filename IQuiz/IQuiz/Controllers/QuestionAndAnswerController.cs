@@ -1,12 +1,9 @@
-﻿using System;
+﻿using IQuiz.Data.Context;
+using IQuiz.Models;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Threading.Tasks;
-using IQuiz.Data.Context;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Internal;
 
 namespace IQuiz.Controllers
 {
@@ -14,67 +11,93 @@ namespace IQuiz.Controllers
     public class QuestionAndAnswerController : ControllerBase
     {
         private readonly ApplicationDbContext applicationDbContext;
+
         public QuestionAndAnswerController(ApplicationDbContext applicationDbContext)
         {
             this.applicationDbContext = applicationDbContext;
         }
 
         #region API Calls
-        
-        [Route("question")]
-        public IActionResult GetQuestionAndAnswer()
+
+        [Route("test")]
+        public IActionResult Test(int quantity = 1)
         {
-            if (applicationDbContext.QuestionsAndAnswers.Any())
-            {
-                var questionAndAnswer = applicationDbContext.QuestionsAndAnswers
-                    .Single(q => q.Id == GetRandomId());
-                return new JsonResult
-                    (
-                        new
-                        {
-                            ok = true,
-                            question = questionAndAnswer.Question,
-                            answer = questionAndAnswer.Answer,
-                            message = "Fetch OK"
-                        }
-                    );
-            }
-            return new JsonResult
-                (
-                    new 
-                    {
-                        ok = false,
-                        question = "No question found",
-                        answer = "No answer found",
-                        message = "Fetch OK"
-                    }
-                );
+            return new JsonResult(GetRandomQuestionsAndAnswers(quantity));
         }
-        #endregion
+
+        #endregion API Calls
 
         #region Helper Methods
-        private Dictionary<string, int> GetMinAndMaxValues()
+
+        private List<int> GetAllQuestionsAndAnswersIds()
         {
-            var min = applicationDbContext.QuestionsAndAnswers.Min(q => q.Id);
-            var max = applicationDbContext.QuestionsAndAnswers.Max(q => q.Id);
-            var bounderies = new Dictionary<string, int>
+            var listOfAllIds = new List<int>();
+            var allQA = applicationDbContext.QuestionsAndAnswers;
+            foreach (var item in allQA)
             {
-                { "min",min},
-                { "max",max}
-            };
-            
-            return bounderies;
+                listOfAllIds.Add(item.Id);
+            }
+            return listOfAllIds;
         }
 
-        private int GetRandomId()
+        private List<int> GetRandomIds(int quantity = 1)
         {
-            var bounderies =GetMinAndMaxValues();
-            int min, max;
-            bounderies.TryGetValue("min", out min);
-            bounderies.TryGetValue("max", out max);
-            var randomNumberInTHeRange = new Random().Next(min,max);
-            return randomNumberInTHeRange;
+            var AllIds = GetAllQuestionsAndAnswersIds();
+            int maxLimit = AllIds.Count();
+
+            int approvedQuantity = PositiveOrLessThanEqualMaxLimit(quantity, maxLimit);
+
+            var UniqueRandomNumbers = GetUniqueRandomNumbers(approvedQuantity, maxLimit);
+            var randomIds = new List<int>();
+
+            foreach (var item in UniqueRandomNumbers)
+            {
+                randomIds.Add(AllIds[item]);
+            }
+
+            return randomIds;
         }
-        #endregion 
+
+        private List<QuestionAndAnswer> GetRandomQuestionsAndAnswers(int quantity = 1)
+        {
+            var Ids = GetRandomIds(quantity);
+            var questionsAndAnswers = new List<QuestionAndAnswer>();
+
+            foreach (var id in Ids)
+            {
+                var questionAndAnswer = applicationDbContext.QuestionsAndAnswers
+                    .Single(q => q.Id == id);
+                questionsAndAnswers.Add(questionAndAnswer);
+            }
+
+            return questionsAndAnswers;
+        }
+
+        private int PositiveOrLessThanEqualMaxLimit(int numberToCheck, int maxLimit)
+        {
+            if (numberToCheck <= 0)
+                numberToCheck = 1;
+            else if (numberToCheck > maxLimit)
+                numberToCheck = maxLimit;
+
+            return numberToCheck;
+        }
+
+        private List<int> GetUniqueRandomNumbers(int quantity, int maxValue)
+        {
+            var numbers = new List<int>();
+            var rng = new Random();
+
+            while (numbers.Count() < quantity)
+            {
+                int num = rng.Next(0, maxValue);
+                if (!numbers.Contains(num))
+                    numbers.Add(num);
+            }
+
+            return numbers;
+        }
+
+        #endregion Helper Methods
     }
 }
