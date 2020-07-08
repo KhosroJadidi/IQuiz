@@ -21,7 +21,7 @@ namespace IQuiz.Controllers
 
         [Route("test")]
         public IActionResult Test(int quantity = 1)
-        {
+        {            
             return new JsonResult(GetRandomQuestionsAndAnswers(quantity));
         }
 
@@ -29,15 +29,19 @@ namespace IQuiz.Controllers
 
         #region Helper Methods
 
-        private List<int> GetAllQuestionsAndAnswersIds()
+        private List<QuestionAndAnswer> GetRandomQuestionsAndAnswers(int quantity = 1)
         {
-            var listOfAllIds = new List<int>();
-            var allQA = applicationDbContext.QuestionsAndAnswers;
-            foreach (var item in allQA)
+            var Ids = GetRandomIds(quantity);
+            var questionsAndAnswers = new List<QuestionAndAnswer>();
+
+            foreach (var id in Ids)
             {
-                listOfAllIds.Add(item.Id);
+                var questionAndAnswer = applicationDbContext.QuestionsAndAnswers
+                    .Single(q => q.Id == id);
+                questionsAndAnswers.Add(questionAndAnswer);
             }
-            return listOfAllIds;
+
+            return questionsAndAnswers;
         }
 
         private List<int> GetRandomIds(int quantity = 1)
@@ -58,19 +62,10 @@ namespace IQuiz.Controllers
             return randomIds;
         }
 
-        private List<QuestionAndAnswer> GetRandomQuestionsAndAnswers(int quantity = 1)
+        private List<int> GetAllQuestionsAndAnswersIds()
         {
-            var Ids = GetRandomIds(quantity);
-            var questionsAndAnswers = new List<QuestionAndAnswer>();
-
-            foreach (var id in Ids)
-            {
-                var questionAndAnswer = applicationDbContext.QuestionsAndAnswers
-                    .Single(q => q.Id == id);
-                questionsAndAnswers.Add(questionAndAnswer);
-            }
-
-            return questionsAndAnswers;
+            var listOfAllIds = applicationDbContext.QuestionsAndAnswers.Select(q => q.Id);
+            return listOfAllIds.ToList();
         }
 
         private int PositiveOrLessThanEqualMaxLimit(int numberToCheck, int maxLimit)
