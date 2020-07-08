@@ -1,6 +1,7 @@
 ﻿using IQuiz.Data.Context;
 using IQuiz.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +20,8 @@ namespace IQuiz.Controllers
 
         #region API Calls
 
-        [Route("test")]
-        public IActionResult Test(int quantity = 1)
+        [Route("questions")]
+        public IActionResult GetQuestions(int quantity = 1)
         {            
             return new JsonResult(GetRandomQuestionsAndAnswers(quantity));
         }
