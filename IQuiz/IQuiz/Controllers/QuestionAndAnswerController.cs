@@ -21,7 +21,7 @@ namespace IQuiz.Controllers
         #region API Calls
 
         [Route("questions")]
-        public IActionResult GetQuestions(int quantity = 1)
+        public IActionResult GetQuestionsAndAnswers(int quantity = 1)
         {            
             return new JsonResult(GetRandomQuestionsAndAnswers(quantity));
         }
