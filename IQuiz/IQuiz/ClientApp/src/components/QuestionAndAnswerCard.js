@@ -11,7 +11,7 @@ export class QuestionAndAnswerCard extends Component {
             className="img-thumbnail img-custome"
             alt=""></img>
         <h5 className="text-justify p-3">
-            Ipsum consequat dolore esse proident. Sit tempor veniam labore culpa ullamco dolor quis. Officia officia nulla non magna fugiat dolor aliquip velit veniam adipisicing ut fugiat sit qui.
+            {this.props.question}
         </h5>
         <input type="text"></input>
       </div>

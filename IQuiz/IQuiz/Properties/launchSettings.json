@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:53134",
-      "sslPort": 44391
+      "applicationUrl": "http://localhost:53134"
+      //"sslPort": 44391
     }
   },
   "profiles": {
@@ -17,7 +17,7 @@
     },
     "IQuiz": {
       "commandName": "Project",
-      "launchBrowser": false,
+      "launchBrowser": true,
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
