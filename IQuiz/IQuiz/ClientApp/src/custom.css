@@ -23,4 +23,11 @@ code {
 
 .card-custome{
   max-width: 350px;
+  min-width: 350px;
+  min-height: 660px;
+  max-height: 660px;
+}
+
+.btn-custom{
+  min-width: 250px;
 }
