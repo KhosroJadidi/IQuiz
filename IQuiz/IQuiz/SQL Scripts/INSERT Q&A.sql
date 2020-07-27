@@ -70,7 +70,7 @@ INSERT INTO [dbo].[QuestionsAndAnswers]
            ,'India'
            ,'Nepal'
            ,1
-           ,'https://lh3.googleusercontent.com/proxy/NOwYU7uxIN_a7ufARknMmw7eL_DihrI-To2RvO7IFbV_RFVreulgjBpkVOertzsE_d97xrc_uqD5fHWbuOght6K47nwozXKvGde7ThL5DyvvGyymfb7f7ljzs04IxpJL8-TGHvGDe-2LLtb61Lr-7JOaZSDxRofIwJZQPmsrrQH7')
+           ,'https://cdn.iconscout.com/icon/premium/png-256-thumb/nepal-40-286959.png')
 
 GO
 

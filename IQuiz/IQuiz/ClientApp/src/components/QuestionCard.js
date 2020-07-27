@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../custom.css";
+import { ready } from "jquery";
 
 export class QuestionCard extends Component {
     static displayName = QuestionCard.name;
@@ -10,7 +11,6 @@ export class QuestionCard extends Component {
             givenAnswerIsCorrect: false
         };
         this.OnClickHandler = this.OnClickHandler.bind(this);
-        this.GetCurrectAnswer = this.GetCurrectAnswer.bind(this);
     }
 
     async CheckAnswer(value) {
@@ -19,26 +19,28 @@ export class QuestionCard extends Component {
             await this.setState({ givenAnswerIsCorrect: true });
     }
 
-    GetCurrectAnswer() {
-        if (this.state.givenAnswerIsCorrect) {
-            return (
-                <h5 className="text-justify p-3" hidden={!this.state.isHidden}>
-                    {`Correct Answer! You gained ${this.props.points} point(s).`}
-                </h5>
-            )
-        }
-        return (
-            <h5 className="text-justify p-3" hidden={!this.state.isHidden}>
-                {`The currect answer is ${this.props.correctAnswer}`}
-            </h5>
-        )
-    }
-
-
-    OnClickHandler(event) {
+    async OnClickHandler(event) {
+        this.setState({givenAnswerIsCorrect:false});
+        await this.CheckAnswer(event.target.value);
         this.setState({ isHidden: true });
-        this.CheckAnswer(event.target.value);
+
+        if (this.state.givenAnswerIsCorrect) {
+            this.props.gainPoint(this.props.points);
+            this.setState({isHidden: true});
+        }
     }
+
+    UNSAFE_componentWillReceiveProps(nextProps){
+        console.log('componentWillReceiveProps was invoked.');
+        if(this.state.isHidden){
+            console.log('isHidden set to false');
+            this.setState({
+                isHidden:false         
+            });
+        }
+        console.log(nextProps);
+    }
+
     render() {
         return (
             <div
@@ -73,7 +75,15 @@ export class QuestionCard extends Component {
                         </button>
                     </li>
                 </ul>
-                {this.GetCurrectAnswer()}
+                {
+                (this.state.givenAnswerIsCorrect)
+                ?<h5 className="text-justify p-3" hidden={!this.state.isHidden}>
+                    {`Correct Answer! You gained ${this.props.points} point(s).`}
+                </h5>
+                :<h5 className="text-justify p-3" hidden={!this.state.isHidden}>
+                    {`The correct answer is ${this.props.correctAnswer}`}
+                </h5>
+                }
             </div>
         );
     }
