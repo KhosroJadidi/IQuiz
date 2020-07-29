@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { QuestionCard } from "./QuestionCard";
+import {FinalScore} from "./FinalScore";
 import "../custom.css";
 
 //Fetch settings
@@ -15,7 +16,8 @@ export class QuizSession extends Component {
         this.state = {
             fetchedData: [],
             currentQuestion: 0,
-            currentScore: 0
+            currentScore: 0,
+            quizIsDone:false
         };
         this.FetchQuestions = this.FetchQuestions.bind(this);
         this.GetQuestionCard = this.GetQuestionCard.bind(this);
@@ -59,8 +61,7 @@ export class QuizSession extends Component {
     }
 
     FinalScoreHandler() {
-        console.log('Remove this after redirect to score page has been implemented');
-
+        this.setState({quizIsDone:true});
     }
 
     async componentDidMount() {
@@ -87,20 +88,28 @@ export class QuizSession extends Component {
     }
 
     render() {
-        return (
-            <div align="center">
-                <h2>Current Score: {this.state.currentScore}</h2>
-                <div>
-                    {this.GetQuestionCard()}
+        if (!this.state.quizIsDone) {
+            return (
+                <div align="center">
+                    <h2>Current Score: {this.state.currentScore}</h2>
+                    <div>
+                        {this.GetQuestionCard()}
+                    </div>
+                    <button
+                        type="button"
+                        className="btn-alert-info m-1 p-2 btn-custom"
+                        onClick={this.onClickHandler}>
+                        {(this.state.currentQuestion < fetchQuantity - 1)
+                            ? 'Next Question'
+                            : 'Finish Quiz'}
+                    </button>
                 </div>
-                <button
-                    type="button"
-                    className="btn-alert-info m-1 p-2 btn-custom"
-                    onClick={this.onClickHandler}>
-                    {(this.state.currentQuestion < fetchQuantity - 1)
-                        ? 'Next Question'
-                        : 'Finish Quiz'}</button>
-            </div>
-        );
+            );
+        }
+        return(
+            <FinalScore
+                finalScore={this.state.currentScore}>                
+            </FinalScore>
+        )
     }
 }
