@@ -5,7 +5,7 @@ export class TopScores extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      TopTenPlayers: [],
+      TopTenPlayers: []
     };
   }
 
@@ -16,8 +16,8 @@ export class TopScores extends Component {
         { key: 2, playerName: "soli", score: 6 },
         { key: 3, playerName: "john", score: 7 },
         { key: 4, playerName: "dave", score: 4 },
-        { key: 5, playerName: "sarah", score: 10 },
-      ],
+        { key: 5, playerName: "sarah", score: 10 }
+      ]
     });
   }
 
