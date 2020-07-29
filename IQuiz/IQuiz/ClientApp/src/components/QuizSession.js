@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { QuestionCard } from "./QuestionCard";
 import "../custom.css";
-import { createUnionOrIntersectionTypeNode } from "typescript";
 
 //Fetch settings
 const applicationUrl = "http://localhost:53134";
 const route = "questions";
+//This variable determines the number of questions asked per session.
 const fetchQuantity = 5;
 
 export class QuizSession extends Component {
@@ -59,7 +59,7 @@ export class QuizSession extends Component {
     }
 
     FinalScoreHandler() {
-        console.log('FinalScoreHandler was clicked!');
+        console.log('Remove this after redirect to score page has been implemented');
 
     }
 

@@ -13,7 +13,7 @@ code {
   border-color: #1861ac;
 }
 
-.img-custome{
+.img-custom{
   display: block;
   min-width: 300px;
   min-height: 300px;
@@ -21,7 +21,7 @@ code {
   max-height: 300px;
 }
 
-.card-custome{
+.card-custom{
   max-width: 350px;
   min-width: 350px;
   min-height: 660px;

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../custom.css";
-import { ready } from "jquery";
 
 export class QuestionCard extends Component {
     static displayName = QuestionCard.name;
@@ -31,25 +30,22 @@ export class QuestionCard extends Component {
     }
 
     UNSAFE_componentWillReceiveProps(nextProps){
-        console.log('componentWillReceiveProps was invoked.');
         if(this.state.isHidden){
-            console.log('isHidden set to false');
             this.setState({
                 isHidden:false         
             });
         }
-        console.log(nextProps);
     }
 
     render() {
         return (
             <div
-                className="img-thumbnail img-fluid card-custome m-1 p-3 "
+                className="img-thumbnail img-fluid card-custom m-1 p-3 "
                 align="center"
             >
                 <img
                     src={this.props.imgUrl}
-                    className="img-thumbnail img-custome"
+                    className="img-thumbnail img-custom"
                     alt=""
                 ></img>
                 <h5 className="text-justify p-3">{this.props.question}</h5>
