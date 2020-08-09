@@ -3,7 +3,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
 
 export const Register = () => {
 return (
-<MDBContainer>
+<MDBContainer className="m-1 p-2">
   <MDBRow>
     <MDBCol md="6">
       <form>
