@@ -12,6 +12,7 @@ namespace IQuiz.Models
     {
         private int points;
 
+        [Key]
         [Required, JsonProperty("id")]
         public int Id { get; set; }
 

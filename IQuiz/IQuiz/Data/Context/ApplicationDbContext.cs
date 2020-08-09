@@ -16,5 +16,7 @@ namespace IQuiz.Data.Context
         }
 
         public DbSet<QuestionAndAnswer> QuestionsAndAnswers { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Score> Scores { get; set; }
     }
 }
