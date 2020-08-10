@@ -27,6 +27,7 @@ namespace IQuiz.Controllers
             this.options = options;
         }
 
+        #region API Calls
         [Route("get")]
         [HttpPost]
         public ActionResult GetToken([FromBody] User user)
@@ -42,7 +43,9 @@ namespace IQuiz.Controllers
             var userWithToken = GetUserWithToken(decryptedUser);
             return new JsonResult(userWithToken);
         }
+        #endregion
 
+        #region Helper Methods
         private UserWithToken GetUserWithToken(User decryptedUser)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -73,5 +76,6 @@ namespace IQuiz.Controllers
                 Token = tokenString
             };
         }
+        #endregion
     }
 }
