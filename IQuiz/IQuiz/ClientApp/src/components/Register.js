@@ -1,6 +1,7 @@
-//https://mdbootstrap.com/docs/react/forms/inputs/#docsTabsAPI
 import React from "react";
+//https://mdbootstrap.com/docs/react/forms/inputs/#docsTabsAPI
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
+import {Encryption} from '../Helper Classes/Encryption';
 
 export const Register = () => {
 
@@ -9,11 +10,11 @@ let password;
 
 
 function UpdateEmail(input){
-  email=input;
+  email= Encryption.EncryptToBase64(input);
 }
 
 function UpdatePassword(input){
-  password=input;
+  password=Encryption.EncryptToBase64(input);
 }
 
 function AttempAuthentication(){

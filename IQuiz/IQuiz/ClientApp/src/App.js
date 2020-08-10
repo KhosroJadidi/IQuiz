@@ -10,6 +10,12 @@ import { QuizSession } from './components/QuizSession';
 
 export default class App extends Component {
   static displayName = App.name;
+  constructor(props){
+    super(props)
+    this.state={
+      token:""
+    }
+  }
 
   render () {
     return (      

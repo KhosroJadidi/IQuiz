@@ -1,6 +1,8 @@
-//https://mdbootstrap.com/docs/react/forms/inputs/#docsTabsAPI
 import React from "react";
+//https://mdbootstrap.com/docs/react/forms/inputs/#docsTabsAPI
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
+import {Encryption} from '../Helper Classes/Encryption';
+import {App} from '../App';
 
 export const Login = () => {
 
@@ -9,25 +11,32 @@ let password;
 
 
 function UpdateEmail(input){
-  email=input;
+  email= Encryption.EncryptToBase64(input);
 }
 
 function UpdatePassword(input){
-  password=input;
+  password=Encryption.EncryptToBase64(input);
 }
 
 function AttempAuthentication(){
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  
+  var raw = JSON.stringify({"Email":email,"Password":password});
+  
   var requestOptions = {
-    method: 'GET',
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
     redirect: 'follow'
   };
   
   fetch("http://localhost:53134/token/get", requestOptions)
     .then(response => response.text())
-    .then(result => console.log(result))
+    .then(result =>console.log(result))    
     .catch(error => console.log('error', error));
 
-}
+};
 
 return (
 <MDBContainer className="m-1 p-2">
@@ -49,3 +58,4 @@ return (
 </MDBContainer>
 );
 };
+
