@@ -14,8 +14,8 @@ export class LoginRegister extends Component{
     render(){
         return(
             <div>
-                <Login></Login>
-                <Register></Register>
+                <Login props={this.props}></Login>
+                <Register props={this.props}></Register>
             </div>
         );
     }

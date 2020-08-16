@@ -5,6 +5,9 @@ using IQuiz.Models.Non_Database_Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.JSInterop;
+using Microsoft.JSInterop.Infrastructure;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -28,25 +31,37 @@ namespace IQuiz.Controllers
         }
 
         #region API Calls
+
         [Route("get")]
         [HttpPost]
-        public ActionResult GetToken([FromBody] User user)
+        public ActionResult<string> GetToken([FromBody] User user)
         {
             var decryptedUser = DecryptionMethods.DeccryptUserModel(user);
-
+            
             if (!dbContext.Users.Any(u => u.Email == decryptedUser.Email))
                 return new JsonResult(new NonExistingUser { Success = false, Message = "Wrong Username." });
 
             if (!dbContext.Users.Any(u => u.Email == decryptedUser.Email && u.Password == decryptedUser.Password))
                 return new JsonResult(new NonExistingUser { Success = false, Message = "Wrong Password" });
 
-            var userWithToken = GetUserWithToken(decryptedUser);
-            return new JsonResult(userWithToken);
+            var validUser = dbContext.Users.Single(u => u.Email == decryptedUser.Email && u.Password == decryptedUser.Password);
+            var userWithToken = GetUserWithToken(validUser);
+            var json= JsonConvert.SerializeObject(new 
+            { 
+               success=userWithToken.Success,
+               token=userWithToken.Token,
+               message=userWithToken.Message,
+               userinfo=userWithToken.Userinfo
+            },Formatting.Indented);
+
+            return json;
         }
-        #endregion
+
+        #endregion API Calls
 
         #region Helper Methods
-        private UserWithToken GetUserWithToken(User decryptedUser)
+
+        private UserWithToken GetUserWithToken(User validUser)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var secretKey = Encoding.ASCII.GetBytes(options.Value.SecretKey);
@@ -58,7 +73,7 @@ namespace IQuiz.Controllers
             {
                 Subject = new ClaimsIdentity(new List<Claim>
                 {
-                    new Claim(ClaimTypes.Email,decryptedUser.Email),
+                    new Claim(ClaimTypes.Email,validUser.Email),
                     new Claim(ClaimTypes.Role,ClaimRoles.User)
                 }),
                 Expires = DateTime.Now.AddHours(1),
@@ -68,14 +83,22 @@ namespace IQuiz.Controllers
             var securityToken = tokenHandler.CreateToken(tokenDescriptor);
             var tokenString = tokenHandler.WriteToken(securityToken);
 
-            return new UserWithToken
+            var userWithToken= new UserWithToken()
             {
-                Email = decryptedUser.Email,
                 Success = true,
                 Message = "Token was successfully generated.",
-                Token = tokenString
+                Token = tokenString,
+                Userinfo=new User 
+                { 
+                    Id=validUser.Id,
+                    Email=validUser.Email,
+                    Password=null
+                }
             };
+
+            return userWithToken;
         }
-        #endregion
+
+        #endregion Helper Methods
     }
 }
