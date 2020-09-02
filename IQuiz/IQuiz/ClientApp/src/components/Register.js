@@ -17,12 +17,12 @@ function UpdatePassword(input){
   password=Encryption.EncryptToBase64(input);
 }
 
-function AttempAuthentication(){
-  var requestOptions = {
+function AttemptAuthentication(){
+  let requestOptions = {
     method: 'GET',
     redirect: 'follow'
   };
-  
+
   fetch("http://localhost:53134/token/get", requestOptions)
     .then(response => response.text())
     .then(result => console.log(result))
@@ -42,7 +42,7 @@ return (
           <MDBInput label="Your password" icon="lock" group type="password" validate autoComplete="on" getValue={UpdatePassword}/>
         </div>
         <div className="text-center">
-          <MDBBtn color="primary" onClick={AttempAuthentication}>Register</MDBBtn>
+          <MDBBtn color="primary" onClick={AttemptAuthentication}>Register</MDBBtn>
         </div>
       </form>
     </MDBCol>

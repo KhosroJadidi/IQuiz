@@ -1,13 +1,11 @@
 ﻿using IQuiz.Data.Context;
 using IQuiz.Helper_Classes;
+using IQuiz.HelperClasses;
 using IQuiz.Models;
 using IQuiz.Models.Non_Database_Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.JSInterop;
-using Microsoft.JSInterop.Infrastructure;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -34,10 +32,10 @@ namespace IQuiz.Controllers
 
         [Route("get")]
         [HttpPost]
-        public ActionResult<string> GetToken([FromBody] User user)
+        public ActionResult GetToken([FromBody] User user)
         {
             var decryptedUser = DecryptionMethods.DeccryptUserModel(user);
-            
+
             if (!dbContext.Users.Any(u => u.Email == decryptedUser.Email))
                 return new JsonResult(new NonExistingUser { Success = false, Message = "Wrong Username." });
 
@@ -46,13 +44,11 @@ namespace IQuiz.Controllers
 
             var validUser = dbContext.Users.Single(u => u.Email == decryptedUser.Email && u.Password == decryptedUser.Password);
             var userWithToken = GetUserWithToken(validUser);
-            var json= JsonConvert.SerializeObject(new 
-            { 
-               success=userWithToken.Success,
-               token=userWithToken.Token,
-               message=userWithToken.Message,
-               userinfo=userWithToken.Userinfo
-            },Formatting.Indented);
+
+            var json = new JsonResult(userWithToken);
+
+            Response.Cookies.Append(CoockieNames.Email, userWithToken.Userinfo.Email);
+            Response.Cookies.Append(CoockieNames.Token, userWithToken.Token);
 
             return json;
         }
@@ -83,19 +79,19 @@ namespace IQuiz.Controllers
             var securityToken = tokenHandler.CreateToken(tokenDescriptor);
             var tokenString = tokenHandler.WriteToken(securityToken);
 
-            var userWithToken= new UserWithToken()
+            var userWithToken = new UserWithToken()
             {
                 Success = true,
                 Message = "Token was successfully generated.",
                 Token = tokenString,
-                Userinfo=new User 
-                { 
-                    Id=validUser.Id,
-                    Email=validUser.Email,
-                    Password=null
+                Userinfo = new User
+                {
+                    Id = validUser.Id,
+                    Email = validUser.Email,
+                    Password = null
                 }
             };
-
+            Console.WriteLine();
             return userWithToken;
         }
 

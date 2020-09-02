@@ -8,15 +8,32 @@ import {LoginRegister} from './components/LoginRegister'
 import './custom.css'
 import { QuizSession } from './components/QuizSession';
 
-export default class App extends Component {
+export class App extends Component {
   static displayName = App.name;
   constructor(props){
     super(props)
+    window.appFunctions=this;
     this.state={
-      token:""
+      token:"this is a token from thr app component.",
+      userIsLoggedIn:false
     }
+    this.updateLoggedInStatus=this.updateLoggedInStatus.bind(this);
+    this.updateToken=this.updateToken.bind(this);
+  } 
+
+  updateLoggedInStatus(booleanStatus){
+    this.setState({userIsLoggedIn:booleanStatus});
+    console.log(this.state.userIsLoggedIn);
   }
 
+  updateToken(token){
+    this.setState({
+      token:token
+    });
+  }
+
+
+  
   render () {
     return (      
       <Layout>
