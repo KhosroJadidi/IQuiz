@@ -19,15 +19,14 @@ export class App extends Component {
     }
     this.updateLoggedInStatus=this.updateLoggedInStatus.bind(this);
     this.updateToken=this.updateToken.bind(this);
-  } 
+  }
 
   updateLoggedInStatus(booleanStatus){
     this.setState({userIsLoggedIn:booleanStatus});
-    console.log(this.state.userIsLoggedIn);
   }
 
-  updateToken(token){
-    this.setState({
+  async updateToken(token){
+    await this.setState({
       token:token
     });
   }

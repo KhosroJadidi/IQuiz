@@ -45,7 +45,7 @@ export class NavMenu extends Component {
 
     handleLogout() {
         this.attemptLogOut();
-        //return <Redirect to={"/"}></Redirect>
+        window.appFunctions.updateToken("");
     }
 
 

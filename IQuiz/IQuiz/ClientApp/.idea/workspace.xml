@@ -31,6 +31,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="ts.external.directory.path" value="C:\Users\Khosro Jadidi\Dropbox\Webutveckling\IQuiz\IQuiz\IQuiz\ClientApp\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -42,7 +43,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1599038357126</updated>
-      <workItem from="1599038358171" duration="9268000" />
+      <workItem from="1599038358171" duration="10672000" />
     </task>
     <servers />
   </component>
@@ -58,6 +59,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="389" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1599038856102" />
+    <state x="1121" y="272" key="FileChooserDialogImpl" timestamp="1599054958789">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1121" y="272" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599054958789" />
+    <state x="303" y="233" width="998" height="708" key="SettingsEditor" timestamp="1599055105495">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="303" y="233" width="998" height="708" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1599055105495" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1599038825580">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -66,9 +75,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599051700207" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1599051693396">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1599055563314">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599051693396" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599055563314" />
   </component>
 </project>

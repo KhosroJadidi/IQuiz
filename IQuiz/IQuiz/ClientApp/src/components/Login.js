@@ -52,6 +52,7 @@ export class Login extends React.Component {
             window.navMenuFunctions.updateCurrentUser(jsonResult.userinfo.email);
             window.navMenuFunctions.updateUserIsLoggedInStatus(true);
             window.appFunctions.updateLoggedInStatus(true);
+            window.appFunctions.updateToken(jsonResult.token);
             this.props.props.history.push('/')
         } else if (!jsonResult.success) {
             this.setState({loginAttempt: jsonResult.message});
