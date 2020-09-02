@@ -3,6 +3,7 @@ import {Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLin
 import {Link} from 'react-router-dom';
 import './NavMenu.css';
 
+
 export class NavMenu extends Component {
     static displayName = NavMenu.name;
 
@@ -44,7 +45,9 @@ export class NavMenu extends Component {
 
     handleLogout() {
         this.attemptLogOut();
+        //return <Redirect to={"/"}></Redirect>
     }
+
 
     render() {
         return (
@@ -95,6 +98,4 @@ export class NavMenu extends Component {
             </header>
         );
     }
-
-
 }
