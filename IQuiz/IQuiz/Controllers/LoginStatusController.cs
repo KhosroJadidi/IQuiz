@@ -1,9 +1,5 @@
-﻿using IQuiz.HelperClasses;
-using IQuiz.Models.Non_Database_Models;
-using Microsoft.AspNetCore.Http;
+﻿using IQuiz.Helper_Classes;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using System.Text.Json.Serialization;
 
 namespace IQuiz.Controllers
 {

@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using IQuiz.Services;
 
 namespace IQuiz
 {
@@ -28,7 +29,7 @@ namespace IQuiz
         public void ConfigureServices(IServiceCollection services)
         {
             var jwtSection = Configuration.GetSection("JWTSettings");
-            var secretKey = jwtSection.Get<JWTSettings>().SecretKey;
+            var secretKey = jwtSection.Get<JwtSettings>().SecretKey;
             var key = Encoding.ASCII.GetBytes(secretKey);
 
             services.AddDbContext<ApplicationDbContext>
@@ -59,7 +60,7 @@ namespace IQuiz
                         ValidateAudience=false
                     };
                 });
-            services.Configure<JWTSettings>(jwtSection);
+            services.Configure<JwtSettings>(jwtSection);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,21 +1,20 @@
 ﻿using IQuiz.Data.Context;
-using IQuiz.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using IQuiz.Models.Database_Models;
 
 namespace IQuiz.Controllers
 {
     [ApiController]
     public class QuestionAndAnswerController : ControllerBase
     {
-        private readonly ApplicationDbContext applicationDbContext;
+        private readonly ApplicationDbContext _applicationDbContext;
 
         public QuestionAndAnswerController(ApplicationDbContext applicationDbContext)
         {
-            this.applicationDbContext = applicationDbContext;
+            this._applicationDbContext = applicationDbContext;
         }
 
         #region API Calls
@@ -32,12 +31,12 @@ namespace IQuiz.Controllers
 
         private List<QuestionAndAnswer> GetRandomQuestionsAndAnswers(int quantity = 1)
         {
-            var Ids = GetRandomIds(quantity);
+            var ids = GetRandomIds(quantity);
             var questionsAndAnswers = new List<QuestionAndAnswer>();
 
-            foreach (var id in Ids)
+            foreach (var id in ids)
             {
-                var questionAndAnswer = applicationDbContext.QuestionsAndAnswers
+                var questionAndAnswer = _applicationDbContext.QuestionsAndAnswers
                     .Single(q => q.Id == id);
                 questionsAndAnswers.Add(questionAndAnswer);
             }
@@ -47,17 +46,17 @@ namespace IQuiz.Controllers
 
         private List<int> GetRandomIds(int quantity = 1)
         {
-            var AllIds = GetAllQuestionsAndAnswersIds();
-            int maxLimit = AllIds.Count();
+            var allIds = GetAllQuestionsAndAnswersIds();
+            int maxLimit = allIds.Count;
 
             int approvedQuantity = PositiveOrLessThanEqualMaxLimit(quantity, maxLimit);
 
-            var UniqueRandomNumbers = GetUniqueRandomNumbers(approvedQuantity, maxLimit);
+            var uniqueRandomNumbers = GetUniqueRandomNumbers(approvedQuantity, maxLimit);
             var randomIds = new List<int>();
 
-            foreach (var item in UniqueRandomNumbers)
+            foreach (var item in uniqueRandomNumbers)
             {
-                randomIds.Add(AllIds[item]);
+                randomIds.Add(allIds[item]);
             }
 
             return randomIds;
@@ -65,7 +64,7 @@ namespace IQuiz.Controllers
 
         private List<int> GetAllQuestionsAndAnswersIds()
         {
-            var listOfAllIds = applicationDbContext.QuestionsAndAnswers.Select(q => q.Id);
+            var listOfAllIds = _applicationDbContext.QuestionsAndAnswers.Select(q => q.Id);
             return listOfAllIds.ToList();
         }
 
@@ -84,7 +83,7 @@ namespace IQuiz.Controllers
             var numbers = new List<int>();
             var rng = new Random();
 
-            while (numbers.Count() < quantity)
+            while (numbers.Count < quantity)
             {
                 int num = rng.Next(0, maxValue);
                 if (!numbers.Contains(num))

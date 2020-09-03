@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Security.Policy;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace IQuiz.Models
+namespace IQuiz.Models.Database_Models
 {
     public class QuestionAndAnswer
     {
-        private int points;
+        private int _points;
 
         [Key]
         [Required, JsonProperty("id")]
@@ -37,8 +32,8 @@ namespace IQuiz.Models
         [Required, JsonProperty("points")]
         public int Points 
         { 
-            get => points;
-            set { if (value < 1) points = 1; }            
+            get => _points;
+            set { if (value < 1) _points = 1; }            
         }
 
         [Required, JsonProperty("image")]

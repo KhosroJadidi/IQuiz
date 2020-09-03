@@ -1,9 +1,9 @@
 ﻿using IQuiz.Data.Context;
-using IQuiz.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using IQuiz.Models.Database_Models;
 
 namespace IQuiz.Controllers
 {
@@ -11,11 +11,11 @@ namespace IQuiz.Controllers
     [ApiController]
     public class ResetController : ControllerBase
     {
-        private readonly ApplicationDbContext dbContext;
+        private readonly ApplicationDbContext _dbContext;
 
         public ResetController(ApplicationDbContext dbContext)
         {
-            this.dbContext = dbContext;
+            this._dbContext = dbContext;
         }
 
         #region API Calls
@@ -27,7 +27,7 @@ namespace IQuiz.Controllers
 
             Seed();
 
-            dbContext.SaveChanges();
+            _dbContext.SaveChanges();
 
             return Ok("Db has been reset and seeded. If the database contains no questions, run the corresponding SQL script in order to seed them as well.");
         }
@@ -45,29 +45,24 @@ namespace IQuiz.Controllers
             //uncomment this method to reset the questions as well.
             //ResetQuestions();
 
-            dbContext.SaveChanges();
-        }
-
-        private void ResetQuestions()
-        {
-            dbContext.QuestionsAndAnswers.RemoveRange();
+            _dbContext.SaveChanges();
         }
 
         private void ResetScores()
         {
-            if (dbContext.Scores.Any())
+            if (_dbContext.Scores.Any())
             {
-                var scores = dbContext.Scores.ToList();
-                dbContext.Scores.RemoveRange(scores);
+                var scores = _dbContext.Scores.ToList();
+                _dbContext.Scores.RemoveRange(scores);
             }
         }
 
         private void ResetUsers()
         {
-            if (dbContext.Users.Any())
+            if (_dbContext.Users.Any())
             {
-                var users = dbContext.Users.ToList();
-                dbContext.Users.RemoveRange(users);
+                var users = _dbContext.Users.ToList();
+                _dbContext.Users.RemoveRange(users);
             }
         }
 
@@ -77,15 +72,15 @@ namespace IQuiz.Controllers
 
             SeedScores();
 
-            dbContext.SaveChanges();
+            _dbContext.SaveChanges();
         }
 
         private void SeedScores()
         {
-            var users = dbContext.Users;
+            var users = _dbContext.Users;
             foreach (User user in users)
             {
-                dbContext.Scores.Add(new Score
+                _dbContext.Scores.Add(new Score
                 {
                     User = user,
                     GainedPoints = 5,
@@ -96,14 +91,14 @@ namespace IQuiz.Controllers
 
         private void SeedUsers()
         {
-            dbContext.Users.AddRange(new List<User>
+            _dbContext.Users.AddRange(new List<User>
             {
                 new User{Email="Admin@Mail.com",Password="1234" },
 
                 new User{Email="Khosro@Mail.com",Password="1234" }
             });
 
-            dbContext.SaveChanges();
+            _dbContext.SaveChanges();
         }
 
         #endregion Helper Methods

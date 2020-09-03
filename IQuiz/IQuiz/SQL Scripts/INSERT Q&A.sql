@@ -189,6 +189,7 @@ INSERT INTO [dbo].[QuestionsAndAnswers]
 
 GO
 
+SET IDENTITY_INSERT [dbo].[QuestionsAndAnswers] ON
 INSERT INTO [dbo].[QuestionsAndAnswers]
            ([Id]
 		   ,[Question]
@@ -199,7 +200,7 @@ INSERT INTO [dbo].[QuestionsAndAnswers]
            ,[CorrectAnswer]
            ,[Points]
            ,[ImageUrl])
-     VALUES
+VALUES
            (9
 		   ,'What is the only country that borders the United Kingdom?'
            ,'Ireland'
@@ -209,9 +210,11 @@ INSERT INTO [dbo].[QuestionsAndAnswers]
            ,'Ireland'
            ,1
            ,'https://www.le-vpn.com/wp-content/uploads/2017/08/Ireland.png')
+SET IDENTITY_INSERT [dbo].[QuestionsAndAnswers] OFF
 
 GO
 
+SET IDENTITY_INSERT [dbo].[QuestionsAndAnswers] ON
 INSERT INTO [dbo].[QuestionsAndAnswers]
            ([Id]
 		   ,[Question]
@@ -222,7 +225,7 @@ INSERT INTO [dbo].[QuestionsAndAnswers]
            ,[CorrectAnswer]
            ,[Points]
            ,[ImageUrl])
-     VALUES
+VALUES
            (10
 		   ,'In which country would you find the city of Dresden?'
            ,'Austria'
@@ -232,5 +235,6 @@ INSERT INTO [dbo].[QuestionsAndAnswers]
            ,'Germany'
            ,1
            ,'https://www.katthult.se/wp-content/uploads/2015/05/Germany.png')
+SET IDENTITY_INSERT [dbo].[QuestionsAndAnswers] OFF
 
 GO

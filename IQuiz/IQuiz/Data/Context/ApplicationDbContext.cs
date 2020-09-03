@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using IQuiz.Models;
+﻿using IQuiz.Models.Database_Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace IQuiz.Data.Context

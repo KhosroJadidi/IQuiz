@@ -1,7 +1,5 @@
 ﻿using IQuiz.Data.Context;
 using IQuiz.Helper_Classes;
-using IQuiz.HelperClasses;
-using IQuiz.Models;
 using IQuiz.Models.Non_Database_Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -12,6 +10,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using IQuiz.Models.Database_Models;
+using IQuiz.Services;
 
 namespace IQuiz.Controllers
 {
@@ -19,13 +19,13 @@ namespace IQuiz.Controllers
     [ApiController]
     public class TokenController : ControllerBase
     {
-        private readonly ApplicationDbContext dbContext;
-        private readonly IOptions<JWTSettings> options;
+        private readonly ApplicationDbContext _dbContext;
+        private readonly IOptions<JwtSettings> _options;
 
-        public TokenController(ApplicationDbContext dbContext, IOptions<JWTSettings> options)
+        public TokenController(ApplicationDbContext dbContext, IOptions<JwtSettings> options)
         {
-            this.dbContext = dbContext;
-            this.options = options;
+            this._dbContext = dbContext;
+            this._options = options;
         }
 
         #region API Calls
@@ -36,13 +36,13 @@ namespace IQuiz.Controllers
         {
             var decryptedUser = DecryptionMethods.DeccryptUserModel(user);
 
-            if (!dbContext.Users.Any(u => u.Email == decryptedUser.Email))
+            if (!_dbContext.Users.Any(u => u.Email == decryptedUser.Email))
                 return new JsonResult(new NonExistingUser { Success = false, Message = "Wrong Username." });
 
-            if (!dbContext.Users.Any(u => u.Email == decryptedUser.Email && u.Password == decryptedUser.Password))
+            if (!_dbContext.Users.Any(u => u.Email == decryptedUser.Email && u.Password == decryptedUser.Password))
                 return new JsonResult(new NonExistingUser { Success = false, Message = "Wrong Password" });
 
-            var validUser = dbContext.Users.Single(u => u.Email == decryptedUser.Email && u.Password == decryptedUser.Password);
+            var validUser = _dbContext.Users.Single(u => u.Email == decryptedUser.Email && u.Password == decryptedUser.Password);
             var userWithToken = GetUserWithToken(validUser);
 
             var json = new JsonResult(userWithToken);
@@ -60,7 +60,7 @@ namespace IQuiz.Controllers
         private UserWithToken GetUserWithToken(User validUser)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var secretKey = Encoding.ASCII.GetBytes(options.Value.SecretKey);
+            var secretKey = Encoding.ASCII.GetBytes(_options.Value.SecretKey);
             var symmetricSecurityKey = new SymmetricSecurityKey(secretKey);
             var signinCreditentials = new SigningCredentials(symmetricSecurityKey,
                 SecurityAlgorithms.HmacSha256Signature);

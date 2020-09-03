@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace IQuiz.Helper_Classes
+﻿namespace IQuiz.Helper_Classes
 {
     public static class ClaimRoles
     {

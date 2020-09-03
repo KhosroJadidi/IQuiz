@@ -1,13 +1,12 @@
-﻿using Microsoft.VisualBasic;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
-namespace IQuiz.Models
+namespace IQuiz.Models.Database_Models
 {
     public class Score
     {
-        private int gainedPoints;
+        private int _gainedPoints;
         public Score()
         {
             Date = DateTime.Now;
@@ -26,8 +25,8 @@ namespace IQuiz.Models
         [Required, JsonProperty("score")]
         public int GainedPoints
         {
-            get => gainedPoints;
-            set { if (value < 0) gainedPoints = 0; }
+            get => _gainedPoints;
+            set { if (value < 0) _gainedPoints = 0; }
         }
     }
 }

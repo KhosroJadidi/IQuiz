@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IQuiz.Models.Database_Models;
 
 namespace IQuiz.Models.Non_Database_Models
 {
