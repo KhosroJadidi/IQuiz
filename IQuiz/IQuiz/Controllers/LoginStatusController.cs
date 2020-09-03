@@ -14,16 +14,14 @@ namespace IQuiz.Controllers
             string? authCookie= HttpContext.Request.Cookies[CoockieNames.Token];
 #nullable disable
 
-            if (authCookie != null)
+            if (authCookie == null) 
+                return Unauthorized();
+            string userEmail = HttpContext.Request.Cookies[CoockieNames.Email];
+            return Ok(new JsonResult(new 
             {
-                string userEmail = HttpContext.Request.Cookies[CoockieNames.Email];
-                return Ok(new JsonResult(new 
-                {
-                    user=userEmail,
-                    token=authCookie
-                }));
-            }
-            return Unauthorized();
+                user=userEmail,
+                token=authCookie
+            }));
         }
     }
 }

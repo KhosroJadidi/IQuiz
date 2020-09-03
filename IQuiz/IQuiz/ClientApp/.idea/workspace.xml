@@ -3,6 +3,9 @@
   <component name="AnalysisUIOptions">
     <option name="SCOPE_TYPE" value="3" />
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="151ec9f0-2357-437d-9f5f-abd137aaa081" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599038357126</updated>
       <workItem from="1599038358171" duration="11187000" />
-      <workItem from="1599110377974" duration="2658000" />
+      <workItem from="1599110377974" duration="12018000" />
     </task>
     <servers />
   </component>
@@ -72,13 +75,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1599038825580" />
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1599051700207">
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1599143748973">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599051700207" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1599055563314">
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599143748973" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1599144638059">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599055563314" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599144638059" />
   </component>
 </project>
