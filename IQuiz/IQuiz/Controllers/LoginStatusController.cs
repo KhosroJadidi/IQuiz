@@ -1,6 +1,4 @@
-﻿using System.Linq;
-using System.Net;
-using IQuiz.Helper_Classes;
+﻿using IQuiz.Helper_Classes;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IQuiz.Controllers

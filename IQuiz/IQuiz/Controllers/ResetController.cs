@@ -50,20 +50,18 @@ namespace IQuiz.Controllers
 
         private void ResetScores()
         {
-            if (_dbContext.Scores.Any())
-            {
-                var scores = _dbContext.Scores.ToList();
-                _dbContext.Scores.RemoveRange(scores);
-            }
+            if (!_dbContext.Scores.Any()) return;
+            var scores = _dbContext.Scores.ToList();
+            _dbContext.Scores.RemoveRange(scores);
         }
 
         private void ResetUsers()
         {
-            if (_dbContext.Users.Any())
-            {
+            if(!_dbContext.Users.Any()) return;
+            
                 var users = _dbContext.Users.ToList();
                 _dbContext.Users.RemoveRange(users);
-            }
+            
         }
 
         private void Seed()

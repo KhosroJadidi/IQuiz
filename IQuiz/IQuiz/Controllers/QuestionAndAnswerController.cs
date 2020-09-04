@@ -32,34 +32,21 @@ namespace IQuiz.Controllers
         private List<QuestionAndAnswer> GetRandomQuestionsAndAnswers(int quantity = 1)
         {
             var ids = GetRandomIds(quantity);
-            var questionsAndAnswers = new List<QuestionAndAnswer>();
 
-            foreach (var id in ids)
-            {
-                var questionAndAnswer = _applicationDbContext.QuestionsAndAnswers
-                    .Single(q => q.Id == id);
-                questionsAndAnswers.Add(questionAndAnswer);
-            }
-
-            return questionsAndAnswers;
+            return ids.Select(id => _applicationDbContext.QuestionsAndAnswers.Single(q => q.Id == id)).ToList();
         }
 
-        private List<int> GetRandomIds(int quantity = 1)
+        private IEnumerable<int> GetRandomIds(int quantity = 1)
         {
             var allIds = GetAllQuestionsAndAnswersIds();
-            int maxLimit = allIds.Count;
+            var maxLimit = allIds.Count;
 
-            int approvedQuantity = PositiveOrLessThanEqualMaxLimit(quantity, maxLimit);
+            var approvedQuantity = PositiveOrLessThanEqualMaxLimit(quantity, maxLimit);
 
             var uniqueRandomNumbers = GetUniqueRandomNumbers(approvedQuantity, maxLimit);
-            var randomIds = new List<int>();
 
-            foreach (var item in uniqueRandomNumbers)
-            {
-                randomIds.Add(allIds[item]);
-            }
-
-            return randomIds;
+            return uniqueRandomNumbers.Select(item => allIds[item]).ToList();
+            
         }
 
         private List<int> GetAllQuestionsAndAnswersIds()
@@ -68,7 +55,7 @@ namespace IQuiz.Controllers
             return listOfAllIds.ToList();
         }
 
-        private int PositiveOrLessThanEqualMaxLimit(int numberToCheck, int maxLimit)
+        private static int PositiveOrLessThanEqualMaxLimit(int numberToCheck, int maxLimit)
         {
             if (numberToCheck <= 0)
                 numberToCheck = 1;
@@ -78,7 +65,7 @@ namespace IQuiz.Controllers
             return numberToCheck;
         }
 
-        private List<int> GetUniqueRandomNumbers(int quantity, int maxValue)
+        private static IEnumerable<int> GetUniqueRandomNumbers(int quantity, int maxValue)
         {
             var numbers = new List<int>();
             var rng = new Random();

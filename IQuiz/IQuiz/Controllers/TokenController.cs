@@ -1,6 +1,5 @@
 ﻿using IQuiz.Data.Context;
 using IQuiz.Helper_Classes;
-using IQuiz.Models.Non_Database_Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -10,6 +9,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using IQuiz.Models;
 using IQuiz.Models.Database_Models;
 using IQuiz.Services;
 
@@ -24,8 +24,8 @@ namespace IQuiz.Controllers
 
         public TokenController(ApplicationDbContext dbContext, IOptions<JwtSettings> options)
         {
-            this._dbContext = dbContext;
-            this._options = options;
+            _dbContext = dbContext;
+            _options = options;
         }
 
         #region API Calls
@@ -62,7 +62,7 @@ namespace IQuiz.Controllers
             var tokenHandler = new JwtSecurityTokenHandler();
             var secretKey = Encoding.ASCII.GetBytes(_options.Value.SecretKey);
             var symmetricSecurityKey = new SymmetricSecurityKey(secretKey);
-            var signinCreditentials = new SigningCredentials(symmetricSecurityKey,
+            var signinCredentials = new SigningCredentials(symmetricSecurityKey,
                 SecurityAlgorithms.HmacSha256Signature);
 
             var tokenDescriptor = new SecurityTokenDescriptor
@@ -73,7 +73,7 @@ namespace IQuiz.Controllers
                     new Claim(ClaimTypes.Role,ClaimRoles.User)
                 }),
                 Expires = DateTime.Now.AddHours(1),
-                SigningCredentials = signinCreditentials
+                SigningCredentials = signinCredentials
             };
 
             var securityToken = tokenHandler.CreateToken(tokenDescriptor);
