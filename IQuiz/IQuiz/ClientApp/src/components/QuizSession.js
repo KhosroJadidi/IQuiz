@@ -26,12 +26,29 @@ export class QuizSession extends Component {
         this.onClickHandler=this.onClickHandler.bind(this);
     };
 
+    // async FetchQuestions() {
+    //     let fetchURI = `${applicationUrl}/${route}?quantity=${fetchQuantity}`;
+    //     let fetchedQA = await fetch(fetchURI)
+    //         .then((response) => response.json());
+    //     return fetchedQA;
+    // }
+
     async FetchQuestions() {
-        let fetchURI = `${applicationUrl}/${route}?quantity=${fetchQuantity}`;
-        let fetchedQA = await fetch(fetchURI)
-            .then((response) => response.json());
+        let myHeaders = new Headers();
+        let token= await window.appFunctions.getToken();
+        console.log(token);
+        await myHeaders.append("Authorization", `Bearer ${token}`);
+
+        let requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+        let fetchedQA = await fetch("http://localhost:53134/questions?quantity=5", requestOptions)
+                .then(response => response.json())
+                .catch(error => console.log('error', error));
         return fetchedQA;
-    }
+        }
 
     GetQuestionCard() {
         if (this.state.fetchedData.length !== 0) {

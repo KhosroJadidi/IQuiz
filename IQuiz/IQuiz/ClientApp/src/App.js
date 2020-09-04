@@ -21,6 +21,7 @@ export class App extends Component {
         }
         this.updateLoggedInStatus = this.updateLoggedInStatus.bind(this);
         this.updateToken = this.updateToken.bind(this);
+        this.getToken=this.getToken.bind(this);
     }
 
     async componentDidMount() {
@@ -70,6 +71,10 @@ export class App extends Component {
             return this.state
         }
         return this.state.userIsLoggedIn;
+    }
+
+    getToken(){
+        return this.state.token;
     }
 
 

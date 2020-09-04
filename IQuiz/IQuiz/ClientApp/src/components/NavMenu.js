@@ -82,6 +82,8 @@ export class NavMenu extends Component {
     }
 
 
+
+
     render() {
         return (
             <header>
@@ -96,7 +98,7 @@ export class NavMenu extends Component {
                                     <NavLink
                                         tag={Link}
                                         className="text-dark"
-                                        to="/quiz">Quiz!</NavLink>
+                                        to={(this.state.userIsLoggedIn)?'/quiz':'/login'}>Quiz!</NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink
@@ -131,4 +133,6 @@ export class NavMenu extends Component {
             </header>
         );
     }
+
+
 }

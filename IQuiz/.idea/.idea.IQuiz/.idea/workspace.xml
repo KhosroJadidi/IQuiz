@@ -59,15 +59,15 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/0cdccad5-bbc4-460c-96be-635b45d2b5a6/console.sql" />
         <option value="$PROJECT_DIR$/IQuiz/SQL Scripts/INSERT Q&amp;A.sql" />
         <option value="$PROJECT_DIR$/IQuiz/Controllers/CookiesController.cs" />
-        <option value="$PROJECT_DIR$/IQuiz/Startup.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Controllers/LoginStatusController.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Controllers/TokenController.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Program.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Pages/Error.cshtml.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Controllers/ResetController.cs" />
-        <option value="$PROJECT_DIR$/IQuiz/Controllers/QuestionAndAnswerController.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Models/Non-Database Models/UserWithToken.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Models/Non-Database Models/NonExistingUser.cs" />
+        <option value="$PROJECT_DIR$/IQuiz/Controllers/QuestionAndAnswerController.cs" />
+        <option value="$PROJECT_DIR$/IQuiz/Startup.cs" />
       </list>
     </option>
   </component>
@@ -90,7 +90,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.T4" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.IQuiz: IIS Express">
     <configuration name="IQuiz" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -135,7 +135,7 @@
       <workItem from="1599120002590" duration="4552000" />
       <workItem from="1599127866145" duration="6783000" />
       <workItem from="1599204278958" duration="1193000" />
-      <workItem from="1599206618593" duration="9133000" />
+      <workItem from="1599206618593" duration="16771000" />
     </task>
     <servers />
   </component>
@@ -192,22 +192,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="449" height="464" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1599134871598" />
-    <state width="1877" height="291" key="GridCell.Tab.0.bottom" timestamp="1599217266214">
+    <state width="1877" height="291" key="GridCell.Tab.0.bottom" timestamp="1599240288500">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599217266214" />
-    <state width="1877" height="291" key="GridCell.Tab.0.center" timestamp="1599217266214">
+    <state width="1877" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599240288500" />
+    <state width="1877" height="291" key="GridCell.Tab.0.center" timestamp="1599240288500">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="291" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599217266214" />
-    <state width="1877" height="291" key="GridCell.Tab.0.left" timestamp="1599217266214">
+    <state width="1877" height="291" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599240288500" />
+    <state width="1877" height="291" key="GridCell.Tab.0.left" timestamp="1599240288500">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="291" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599217266214" />
-    <state width="1877" height="291" key="GridCell.Tab.0.right" timestamp="1599217266214">
+    <state width="1877" height="291" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599240288500" />
+    <state width="1877" height="291" key="GridCell.Tab.0.right" timestamp="1599240288500">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="291" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599217266214" />
+    <state width="1877" height="291" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599240288500" />
     <state width="1877" height="375" key="GridCell.Tab.1.bottom" timestamp="1599146623233">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -276,10 +276,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="196" height="455" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1599125755731" />
-    <state x="827" y="145" key="SettingsEditor" timestamp="1599223025245">
+    <state x="620" y="177" key="SettingsEditor" timestamp="1599226629094">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="827" y="145" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1599223025245" />
+    <state x="620" y="177" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1599226629094" />
     <state x="592" y="192" width="255" height="371" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1599126831856">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

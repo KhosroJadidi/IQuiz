@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using IQuiz.Models.Database_Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IQuiz.Controllers
 {
@@ -20,6 +21,7 @@ namespace IQuiz.Controllers
         #region API Calls
 
         [Route("questions")]
+        [Authorize]
         public IActionResult GetQuestionsAndAnswers(int quantity = 1)
         {            
             return new JsonResult(GetRandomQuestionsAndAnswers(quantity));
