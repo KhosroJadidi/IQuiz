@@ -21,6 +21,26 @@ export class NavMenu extends Component {
         this.handleLogout=this.handleLogout.bind(this);
     }
 
+    componentDidMount() {
+        setTimeout(()=>{
+            let isLoggedIn=window.appFunctions.userIsLoggedIn();
+            console.log(isLoggedIn);
+            (isLoggedIn.user)
+                ?this.setState({
+                    userIsLoggedIn: true,
+                    currentUserName: isLoggedIn.user
+                })
+                :this.setState({
+                    userIsLoggedIn: false,
+                    currentUserName: 'Login/Register'
+                })
+        },150)
+
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+    }
+
     toggleNavbar() {
         this.setState({
             collapsed: !this.state.collapsed
@@ -40,12 +60,25 @@ export class NavMenu extends Component {
             userIsLoggedIn: false,
             currentUserName: 'Login/Register'
         });
-        window.appFunctions.updateToken("");
+        window.appFunctions.updateToken("")
+            .catch(error=>console.log(error));
+    }
+
+    attemptCookieRemoval(){
+        let requestOptions = {
+            method: 'POST',
+            redirect: 'follow'
+        };
+
+        fetch("http://localhost:53134/LoginStatus/remove", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
     }
 
     handleLogout() {
         this.attemptLogOut();
-        window.appFunctions.updateToken("");
+        this.attemptCookieRemoval();
     }
 
 

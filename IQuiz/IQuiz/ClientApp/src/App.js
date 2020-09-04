@@ -23,6 +23,11 @@ export class App extends Component {
         this.updateToken = this.updateToken.bind(this);
     }
 
+    async componentDidMount() {
+        await this.checkAuthCookie();
+        setTimeout(()=>console.log(this.state),150)
+    }
+
     updateLoggedInStatus(booleanStatus) {
         this.setState({userIsLoggedIn: booleanStatus});
     }
@@ -31,11 +36,6 @@ export class App extends Component {
         await this.setState({
             token: token
         });
-    }
-
-    async componentDidMount() {
-        await this.checkAuthCookie();
-        setTimeout(()=>console.log(this.state),150)
     }
 
     checkAuthCookie() {
@@ -48,7 +48,7 @@ export class App extends Component {
             .then(response => response.text())
             .then(result => JSON.parse(result))
             .then((json) => {
-                if (json.value.token !== "" && json.value.user !== "") {
+                if (json.value.token && json.value.user) {
                     this.setState({
                         token: json.value.token,
                         user: json.value.user,
@@ -61,10 +61,17 @@ export class App extends Component {
                         userIsLoggedIn:false
                     })
                 }
-
             })
             .catch(error => console.log('error', error));
     }
+
+    userIsLoggedIn(){
+        if(this.state.userIsLoggedIn){
+            return this.state
+        }
+        return this.state.userIsLoggedIn;
+    }
+
 
     render() {
         return (

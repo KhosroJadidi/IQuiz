@@ -1,4 +1,6 @@
-﻿using IQuiz.Helper_Classes;
+﻿using System.Linq;
+using System.Net;
+using IQuiz.Helper_Classes;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IQuiz.Controllers
@@ -15,13 +17,28 @@ namespace IQuiz.Controllers
 #nullable disable
 
             if (authCookie == null) 
-                return Unauthorized();
+                return Unauthorized("No Authentication Cookies Were Found.");
             string userEmail = HttpContext.Request.Cookies[CoockieNames.Email];
             return Ok(new JsonResult(new 
             {
                 user=userEmail,
                 token=authCookie
             }));
+        }
+
+        [HttpPost]
+        [Route("remove")]
+        public ActionResult RemoveCoockies()
+        {
+            #nullable enable
+            string? authCookie = HttpContext.Request.Cookies[CoockieNames.Token];
+            #nullable disable
+
+            if (authCookie == null)
+                return Unauthorized("No Authentication Cookies Were Found.");
+            HttpContext.Response.Cookies.Delete(CoockieNames.Email);
+            HttpContext.Response.Cookies.Delete(CoockieNames.Token);
+            return Ok("Cookies were deleted.");
         }
     }
 }
