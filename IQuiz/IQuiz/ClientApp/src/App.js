@@ -4,9 +4,13 @@ import {Layout} from './components/Layout';
 import {Home} from './components/Home';
 import {TopScores} from './components/TopScores';
 import {LoginRegister} from './components/LoginRegister'
-
 import './custom.css'
 import {QuizSession} from './components/QuizSession';
+
+
+//Fetch settings
+const applicationUrl = "http://localhost:53134";
+const route = "LoginStatus/checkLogin";
 
 export class App extends Component {
     static displayName = App.name;
@@ -29,23 +33,13 @@ export class App extends Component {
         setTimeout(()=>console.log(this.state),150)
     }
 
-    updateLoggedInStatus(booleanStatus) {
-        this.setState({userIsLoggedIn: booleanStatus});
-    }
-
-    async updateToken(token) {
-        await this.setState({
-            token: token
-        });
-    }
-
     checkAuthCookie() {
         let requestOptions = {
             method: 'GET',
             redirect: 'follow'
         };
 
-        fetch("http://localhost:53134/LoginStatus/checkLogin", requestOptions)
+        fetch(`${applicationUrl}/${route}`, requestOptions)
             .then(response => response.text())
             .then(result => JSON.parse(result))
             .then((json) => {
@@ -64,6 +58,16 @@ export class App extends Component {
                 }
             })
             .catch(error => console.log('error', error));
+    }
+
+    updateLoggedInStatus(booleanStatus) {
+        this.setState({userIsLoggedIn: booleanStatus});
+    }
+
+    async updateToken(token) {
+        await this.setState({
+            token: token
+        });
     }
 
     userIsLoggedIn(){

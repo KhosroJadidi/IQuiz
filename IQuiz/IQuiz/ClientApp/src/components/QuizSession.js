@@ -1,54 +1,57 @@
-import React, { Component } from "react";
-import { QuestionCard } from "./QuestionCard";
+import React, {Component} from "react";
+import {QuestionCard} from "./QuestionCard";
 import {FinalScore} from "./FinalScore";
 import "../custom.css";
 
 //Fetch settings
 const applicationUrl = "http://localhost:53134";
-const route = "questions";
+const fetchQuestionRoute = "questions";
+const checkLoginRoute = "LoginStatus/checkLogin";
 //This variable determines the number of questions asked per session.
 const fetchQuantity = 5;
 
 export class QuizSession extends Component {
     static displayName = QuizSession.name;
+
     constructor(props) {
         super(props);
         this.state = {
             fetchedData: [],
             currentQuestion: 0,
             currentScore: 0,
-            quizIsDone:false
+            quizIsDone: false,
+            token: ''
         };
         this.FetchQuestions = this.FetchQuestions.bind(this);
         this.GetQuestionCard = this.GetQuestionCard.bind(this);
         this.LoadNextQuestionHandler = this.LoadNextQuestionHandler.bind(this);
         this.FinalScoreHandler = this.FinalScoreHandler.bind(this);
-        this.onClickHandler=this.onClickHandler.bind(this);
+        this.onClickHandler = this.onClickHandler.bind(this);
+        this.checkAuthCookie = this.checkAuthCookie.bind(this);
     };
 
-    // async FetchQuestions() {
-    //     let fetchURI = `${applicationUrl}/${route}?quantity=${fetchQuantity}`;
-    //     let fetchedQA = await fetch(fetchURI)
-    //         .then((response) => response.json());
-    //     return fetchedQA;
-    // }
+    async componentDidMount() {
+        let token = await this.checkAuthCookie();
+        if (token)
+            this.setState({token: token});
+        let questions = await this.FetchQuestions();
+        this.setState({fetchedData: questions});
+    }
 
     async FetchQuestions() {
         let myHeaders = new Headers();
-        let token= await window.appFunctions.getToken();
-        console.log(token);
-        await myHeaders.append("Authorization", `Bearer ${token}`);
+        await myHeaders.append("Authorization", `Bearer ${this.state.token}`);
 
         let requestOptions = {
             method: 'GET',
             headers: myHeaders,
             redirect: 'follow'
         };
-        let fetchedQA = await fetch("http://localhost:53134/questions?quantity=5", requestOptions)
-                .then(response => response.json())
-                .catch(error => console.log('error', error));
+        let fetchedQA = await fetch(`${applicationUrl}/${fetchQuestionRoute}?quantity=5`, requestOptions)
+            .then(response => response.json())
+            .catch(error => console.log('error', error));
         return fetchedQA;
-        }
+    }
 
     GetQuestionCard() {
         if (this.state.fetchedData.length !== 0) {
@@ -78,12 +81,7 @@ export class QuizSession extends Component {
     }
 
     FinalScoreHandler() {
-        this.setState({quizIsDone:true});
-    }
-
-    async componentDidMount() {
-        let questions = await this.FetchQuestions();
-        this.setState({ fetchedData: questions });
+        this.setState({quizIsDone: true});
     }
 
     UpdateScore(points = 1) {
@@ -96,12 +94,30 @@ export class QuizSession extends Component {
 
     }
 
-    onClickHandler(){
-        if (this.state.currentQuestion < fetchQuantity - 1){
+    onClickHandler() {
+        if (this.state.currentQuestion < fetchQuantity - 1) {
             this.LoadNextQuestionHandler();
-        }else{
+        } else {
             this.FinalScoreHandler();
         }
+    }
+
+    checkAuthCookie() {
+        let requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+        };
+
+        let token = fetch(`${applicationUrl}/${checkLoginRoute}`, requestOptions)
+            .then(response => response.text())
+            .then(result => JSON.parse(result))
+            .then((json) => {
+                if (json.value.token && json.value.user)
+                    return json.value.token
+                return;
+            })
+            .catch(error => console.log('error', error));
+        return token;
     }
 
     render() {
@@ -123,9 +139,9 @@ export class QuizSession extends Component {
                 </div>
             );
         }
-        return(
+        return (
             <FinalScore
-                finalScore={this.state.currentScore}>                
+                finalScore={this.state.currentScore}>
             </FinalScore>
         )
     }

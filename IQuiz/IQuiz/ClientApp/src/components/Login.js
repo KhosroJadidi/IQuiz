@@ -2,6 +2,10 @@ import React from "react";
 import {MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn} from 'mdbreact';
 import {Encryption} from '../Helper Classes/Encryption';
 
+//Fetch settings
+const applicationUrl = "http://localhost:53134";
+const route = "token/get";
+
 export class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -39,7 +43,7 @@ export class Login extends React.Component {
             redirect: 'follow'
         };
 
-        fetch("http://localhost:53134/token/get", requestOptions)
+        fetch(`${applicationUrl}/${route}`, requestOptions)
             .then(response => response.text())
             .then(result => this.HandleLoginResponse(result))
             .catch(error => console.log('error', error));
