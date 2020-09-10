@@ -34,7 +34,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.User-Defined File Types" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="C:\Users\Khosro Jadidi\Dropbox\Webutveckling\IQuiz\IQuiz\IQuiz\ClientApp\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -50,7 +50,9 @@
       <workItem from="1599110377974" duration="12713000" />
       <workItem from="1599204256275" duration="19205000" />
       <workItem from="1599400110792" duration="2282000" />
-      <workItem from="1599410868059" duration="3829000" />
+      <workItem from="1599410868059" duration="4158000" />
+      <workItem from="1599673276662" duration="1198000" />
+      <workItem from="1599752678284" duration="3520000" />
     </task>
     <servers />
   </component>
@@ -70,10 +72,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1121" y="272" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599054958789" />
-    <state x="303" y="233" width="998" height="708" key="SettingsEditor" timestamp="1599412548582">
+    <state x="416" y="174" width="998" height="708" key="SettingsEditor" timestamp="1599761510671">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="303" y="233" width="998" height="708" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1599412548582" />
+    <state x="416" y="174" width="998" height="708" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1599761510671" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1599038825580">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -82,9 +84,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599410710287" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1599414693390">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1599762378639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599414693390" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599762378639" />
   </component>
 </project>

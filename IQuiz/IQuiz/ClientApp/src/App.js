@@ -17,7 +17,6 @@ export class App extends Component {
 
     constructor(props) {
         super(props)
-        window.appFunctions = this;
         this.state = {
             token: "",
             userIsLoggedIn: false,
@@ -30,7 +29,6 @@ export class App extends Component {
 
     async componentDidMount() {
         await this.checkAuthCookie();
-        setTimeout(()=>console.log(this.state),150)
     }
 
     checkAuthCookie() {

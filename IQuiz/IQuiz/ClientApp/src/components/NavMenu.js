@@ -3,6 +3,9 @@ import {Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLin
 import {Link} from 'react-router-dom';
 import './NavMenu.css';
 
+//Fetch settings
+const applicationUrl = "http://localhost:53134";
+const route = "LoginStatus/checkLogin";
 
 export class NavMenu extends Component {
     static displayName = NavMenu.name;
@@ -11,6 +14,8 @@ export class NavMenu extends Component {
         super(props);
         window.navMenuFunctions = this;
         this.state = {
+            token:'',
+            user:'',
             collapsed: true,
             userIsLoggedIn: false,
             currentUserName: 'Login/Register'
@@ -21,25 +26,38 @@ export class NavMenu extends Component {
         this.handleLogout=this.handleLogout.bind(this);
     }
 
-    componentDidMount() {
-        setTimeout(()=>{
-            let isLoggedIn=window.appFunctions.userIsLoggedIn();
-            console.log(isLoggedIn);
-            (isLoggedIn.user)
-                ?this.setState({
-                    userIsLoggedIn: true,
-                    currentUserName: isLoggedIn.user
-                })
-                :this.setState({
-                    userIsLoggedIn: false,
-                    currentUserName: 'Login/Register'
-                })
-        },150)
-
+    async componentDidMount() {
+        await this.checkAuthCookie();
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
+    checkAuthCookie() {
+        let requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+        };
+
+        fetch(`${applicationUrl}/${route}`, requestOptions)
+            .then(response => response.text())
+            .then(result => JSON.parse(result))
+            .then((json) => {
+                if (json.value.token && json.value.user) {
+                    this.setState({
+                        token: json.value.token,
+                        user: json.value.user,
+                        userIsLoggedIn:true,
+                        currentUserName:json.value.user
+                    })
+                }else{
+                    this.setState({
+                        token: "",
+                        user: "",
+                        userIsLoggedIn:false
+                    })
+                }
+            })
+            .catch(error => console.log('error', error));
     }
+
 
     toggleNavbar() {
         this.setState({
@@ -60,8 +78,6 @@ export class NavMenu extends Component {
             userIsLoggedIn: false,
             currentUserName: 'Login/Register'
         });
-        window.appFunctions.updateToken("")
-            .catch(error=>console.log(error));
     }
 
     attemptCookieRemoval(){
@@ -96,18 +112,6 @@ export class NavMenu extends Component {
                             <ul className="navbar-nav flex-grow">
                                 <NavItem>
                                     <NavLink
-                                        tag={Link}
-                                        className="text-dark"
-                                        to={(this.state.userIsLoggedIn)?'/quiz':'/login'}>Quiz!</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink
-                                        tag={Link}
-                                        className="text-dark"
-                                        to="/top">Top Scores</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink
                                         hidden={this.state.userIsLoggedIn}
                                         tag={Link}
                                         className="text-dark"
@@ -117,6 +121,18 @@ export class NavMenu extends Component {
                                         tag={Link}
                                         className="text-dark"
                                         to="/">{`Welcome ${this.state.currentUserName}`}</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink
+                                        tag={Link}
+                                        className="text-dark"
+                                        to={(this.state.userIsLoggedIn)?'/quiz':'/login'}>Quiz!</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink
+                                        tag={Link}
+                                        className="text-dark"
+                                        to="/top">Top Scores</NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink
