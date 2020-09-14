@@ -22,10 +22,10 @@ export class QuizSession extends Component {
             quizIsDone: false,
             token: ''
         };
-        this.FetchQuestions = this.FetchQuestions.bind(this);
-        this.GetQuestionCard = this.GetQuestionCard.bind(this);
-        this.LoadNextQuestionHandler = this.LoadNextQuestionHandler.bind(this);
-        this.FinalScoreHandler = this.FinalScoreHandler.bind(this);
+        this.fetchQuestions = this.fetchQuestions.bind(this);
+        this.getQuestionCard = this.getQuestionCard.bind(this);
+        this.loadNextQuestionHandler = this.loadNextQuestionHandler.bind(this);
+        this.finalScoreHandler = this.finalScoreHandler.bind(this);
         this.onClickHandler = this.onClickHandler.bind(this);
         this.checkAuthCookie = this.checkAuthCookie.bind(this);
     };
@@ -34,11 +34,11 @@ export class QuizSession extends Component {
         let token = await this.checkAuthCookie();
         if (token)
             this.setState({token: token});
-        let questions = await this.FetchQuestions();
+        let questions = await this.fetchQuestions();
         this.setState({fetchedData: questions});
     }
 
-    async FetchQuestions() {
+    async fetchQuestions() {
         let myHeaders = new Headers();
         await myHeaders.append("Authorization", `Bearer ${this.state.token}`);
 
@@ -53,7 +53,7 @@ export class QuizSession extends Component {
         return fetchedQA;
     }
 
-    GetQuestionCard() {
+    getQuestionCard() {
         if (this.state.fetchedData.length !== 0) {
             return (
                 <QuestionCard
@@ -72,7 +72,7 @@ export class QuizSession extends Component {
         }
     }
 
-    async LoadNextQuestionHandler() {
+    async loadNextQuestionHandler() {
         await this.setState(
             (prevState) => ({
                 currentQuestion: prevState.currentQuestion + 1
@@ -80,7 +80,7 @@ export class QuizSession extends Component {
         );
     }
 
-    FinalScoreHandler() {
+    finalScoreHandler() {
         this.setState({quizIsDone: true});
     }
 
@@ -96,9 +96,9 @@ export class QuizSession extends Component {
 
     onClickHandler() {
         if (this.state.currentQuestion < fetchQuantity - 1) {
-            this.LoadNextQuestionHandler();
+            this.loadNextQuestionHandler();
         } else {
-            this.FinalScoreHandler();
+            this.finalScoreHandler();
         }
     }
 
@@ -126,7 +126,7 @@ export class QuizSession extends Component {
                 <div align="center">
                     <h2>Current Score: {this.state.currentScore}</h2>
                     <div>
-                        {this.GetQuestionCard()}
+                        {this.getQuestionCard()}
                     </div>
                     <button
                         type="button"

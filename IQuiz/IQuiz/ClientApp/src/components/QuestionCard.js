@@ -9,7 +9,7 @@ export class QuestionCard extends Component {
             isHidden: false,
             givenAnswerIsCorrect: false
         };
-        this.OnClickHandler = this.OnClickHandler.bind(this);
+        this.onClickHandler = this.onClickHandler.bind(this);
     }
 
     async CheckAnswer(value) {
@@ -18,7 +18,7 @@ export class QuestionCard extends Component {
             await this.setState({ givenAnswerIsCorrect: true });
     }
 
-    async OnClickHandler(event) {
+    async onClickHandler(event) {
         this.setState({givenAnswerIsCorrect:false});
         await this.CheckAnswer(event.target.value);
         this.setState({ isHidden: true });
@@ -51,22 +51,22 @@ export class QuestionCard extends Component {
                 <h5 className="text-justify p-3">{this.props.question}</h5>
                 <ul className="list-unstyled" hidden={this.state.isHidden}>
                     <li className="m-1 p-2">
-                        <button className="btn-info btn-custom" value={this.props.answer_1} onClick={this.OnClickHandler}>
+                        <button className="btn-info btn-custom" value={this.props.answer_1} onClick={this.onClickHandler}>
                             {this.props.answer_1}
                         </button>
                     </li>
                     <li className="m-1 p-2">
-                        <button className="btn-info btn-custom" value={this.props.answer_2} onClick={this.OnClickHandler}>
+                        <button className="btn-info btn-custom" value={this.props.answer_2} onClick={this.onClickHandler}>
                             {this.props.answer_2}
                         </button>
                     </li>
                     <li className="m-1 p-2">
-                        <button className="btn-info btn-custom" value={this.props.answer_3} onClick={this.OnClickHandler}>
+                        <button className="btn-info btn-custom" value={this.props.answer_3} onClick={this.onClickHandler}>
                             {this.props.answer_3}
                         </button>
                     </li>
                     <li className="m-1 p-2">
-                        <button className="btn-info btn-custom" value={this.props.answer_4} onClick={this.OnClickHandler}>
+                        <button className="btn-info btn-custom" value={this.props.answer_4} onClick={this.onClickHandler}>
                             {this.props.answer_4}
                         </button>
                     </li>

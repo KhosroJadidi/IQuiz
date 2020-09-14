@@ -15,7 +15,7 @@ namespace IQuiz.Controllers
 
         public QuestionAndAnswerController(ApplicationDbContext applicationDbContext)
         {
-            this._applicationDbContext = applicationDbContext;
+            _applicationDbContext = applicationDbContext;
         }
 
         #region API Calls

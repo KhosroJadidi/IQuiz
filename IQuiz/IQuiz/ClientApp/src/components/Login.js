@@ -14,20 +14,20 @@ export class Login extends React.Component {
             password: "",
             loginAttempt: ""
         }
-        this.UpdateEmail = this.UpdateEmail.bind(this);
-        this.UpdatePassword = this.UpdatePassword.bind(this);
-        this.HandleLoginResponse = this.HandleLoginResponse.bind(this);
+        this.updateEmail = this.updateEmail.bind(this);
+        this.updatePassword = this.updatePassword.bind(this);
+        this.handleLoginResponse = this.handleLoginResponse.bind(this);
         this.attemptLogIn = this.attemptLogIn.bind(this);
     }
 
-    UpdateEmail = (input) => {
-        let EncryptedEmail = Encryption.EncryptToBase64(input);
-        this.setState({email: EncryptedEmail});
+    updateEmail = (input) => {
+        let encryptedEmail = Encryption.encryptToBase64(input);
+        this.setState({email: encryptedEmail});
     }
 
-    UpdatePassword(input) {
-        let EncryptedPassword = Encryption.EncryptToBase64(input);
-        this.setState({password: EncryptedPassword});
+    updatePassword(input) {
+        let encryptedPassword = Encryption.encryptToBase64(input);
+        this.setState({password: encryptedPassword});
     }
 
     attemptLogIn() {
@@ -45,11 +45,11 @@ export class Login extends React.Component {
 
         fetch(`${applicationUrl}/${route}`, requestOptions)
             .then(response => response.text())
-            .then(result => this.HandleLoginResponse(result))
+            .then(result => this.handleLoginResponse(result))
             .catch(error => console.log('error', error));
     };
 
-    HandleLoginResponse(result) {
+    handleLoginResponse(result) {
         let jsonResult = JSON.parse(result);
         if (jsonResult.success) {
             this.setState({loginAttempt: "Successfully logged in"});
@@ -74,9 +74,9 @@ export class Login extends React.Component {
                             <div className="grey-text">
                                 <MDBInput label="Type your email" icon="envelope" group type="email" validate
                                           error="wrong"
-                                          success="right" autoComplete="on" getValue={this.UpdateEmail}/>
+                                          success="right" autoComplete="on" getValue={this.updateEmail}/>
                                 <MDBInput label="Type your password" icon="lock" group type="password" validate
-                                          autoComplete="on" getValue={this.UpdatePassword}/>
+                                          autoComplete="on" getValue={this.updatePassword}/>
                             </div>
                             <h6 className="text-center m-4 p-1">{this.state.loginAttempt}</h6>
                             <div className="text-center">

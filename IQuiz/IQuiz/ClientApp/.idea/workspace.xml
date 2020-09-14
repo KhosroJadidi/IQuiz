@@ -13,6 +13,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
@@ -52,7 +59,9 @@
       <workItem from="1599400110792" duration="2282000" />
       <workItem from="1599410868059" duration="4158000" />
       <workItem from="1599673276662" duration="1198000" />
-      <workItem from="1599752678284" duration="3520000" />
+      <workItem from="1599752678284" duration="3987000" />
+      <workItem from="1600014250092" duration="3760000" />
+      <workItem from="1600058992833" duration="18130000" />
     </task>
     <servers />
   </component>
@@ -84,9 +93,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599410710287" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1599762378639">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600070533908">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599762378639" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600070533908" />
   </component>
 </project>

@@ -31,32 +31,30 @@ export class App extends Component {
         await this.checkAuthCookie();
     }
 
-    checkAuthCookie() {
+    async checkAuthCookie() {
         let requestOptions = {
             method: 'GET',
             redirect: 'follow'
         };
 
-        fetch(`${applicationUrl}/${route}`, requestOptions)
-            .then(response => response.text())
-            .then(result => JSON.parse(result))
-            .then((json) => {
-                if (json.value.token && json.value.user) {
-                    this.setState({
-                        token: json.value.token,
-                        user: json.value.user,
-                        userIsLoggedIn:true
-                    })
-                }else{
-                    this.setState({
-                        token: "",
-                        user: "",
-                        userIsLoggedIn:false
-                    })
-                }
+        let response= await fetch(`${applicationUrl}/${route}`, requestOptions);
+        if(response.status===200) {
+            let text= await response.text();
+            let json= await JSON.parse(text);
+            this.setState({
+                token: json.value.token,
+                user: json.value.user,
+                userIsLoggedIn:true
+            });
+        }else{
+            this.setState({
+                token: "",
+                user: "",
+                userIsLoggedIn:false
             })
-            .catch(error => console.log('error', error));
+        }
     }
+
 
     updateLoggedInStatus(booleanStatus) {
         this.setState({userIsLoggedIn: booleanStatus});
