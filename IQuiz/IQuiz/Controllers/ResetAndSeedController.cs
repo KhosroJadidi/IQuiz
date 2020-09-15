@@ -9,18 +9,18 @@ namespace IQuiz.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class ResetController : ControllerBase
+    public class ResetAndSeedController : ControllerBase
     {
         private readonly ApplicationDbContext _dbContext;
-
-        public ResetController(ApplicationDbContext dbContext)
+ 
+        public ResetAndSeedController(ApplicationDbContext dbContext)
         {
             this._dbContext = dbContext;
         }
 
         #region API Calls
 
-        [Route("reset")]
+        [Route("resetAndSeed")]
         public ActionResult ResetAnsSeed()
         {
             Reset();
@@ -41,10 +41,7 @@ namespace IQuiz.Controllers
             ResetScores();
 
             ResetUsers();
-
-            //uncomment this method to reset the questions as well.
-            //ResetQuestions();
-
+            
             _dbContext.SaveChanges();
         }
 

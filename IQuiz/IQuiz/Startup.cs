@@ -8,8 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using IQuiz.Services;
+using IQuiz.Extensions;
 
 namespace IQuiz
 {
@@ -25,9 +24,9 @@ namespace IQuiz
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var jwtSection = Configuration.GetSection("JWTSettings");
-            var secretKey = jwtSection.Get<JwtSettings>().SecretKey;
-            var key = Encoding.ASCII.GetBytes(secretKey);
+            // var jwtSection = Configuration.GetSection("JWTSettings");
+            // var secretKey = jwtSection.Get<JwtSettings>().SecretKey;
+            // var key = Encoding.ASCII.GetBytes(secretKey);
 
             services.AddDbContext<ApplicationDbContext>
             (options =>
@@ -47,17 +46,19 @@ namespace IQuiz
             })
                 .AddJwtBearer(options=>
                 {
+                    var symmetricSecurityKey = SymmetricSecurityKeyMethods.GetSymmetricSecurityKey(Configuration);
+
                     options.RequireHttpsMetadata = true;
                     options.SaveToken = true;
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuerSigningKey=true,
-                        IssuerSigningKey= new SymmetricSecurityKey(key),
+                        IssuerSigningKey= symmetricSecurityKey,
                         ValidateIssuer=false,
                         ValidateAudience=false
                     };
                 });
-            services.Configure<JwtSettings>(jwtSection);
+            //services.Configure<JwtSettings>(jwtSection);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

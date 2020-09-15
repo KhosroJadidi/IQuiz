@@ -2,11 +2,11 @@
 using System.Text;
 using IQuiz.Models.Database_Models;
 
-namespace IQuiz.Helper_Classes
+namespace IQuiz.Extensions
 {
     public static class DecryptionMethods
     {
-        public static User DecrypteUser(User user)
+        public static User DecryptFromBase64(this User user)
         {
             var emailInBytes = Convert.FromBase64String(user.Email);
             var passwordInBytes = Convert.FromBase64String(user.Password);

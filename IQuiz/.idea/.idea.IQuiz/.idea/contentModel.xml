@@ -143,20 +143,34 @@
           </e>
         </e>
         <e p="Controllers" t="Include">
+          <e p="CoockiesController" t="Include">
+            <e p="Cookies.cs" t="Include" />
+          </e>
           <e p="LoginStatusController.cs" t="Include" />
           <e p="QuestionAndAnswerController.cs" t="Include" />
+          <e p="QuestionsAndAnswersControllers" t="Include" />
           <e p="RegistrationController.cs" t="Include" />
-          <e p="ResetController.cs" t="Include" />
+          <e p="ResetAndSeedController.cs" t="Include" />
+          <e p="Scores Controllers" t="Include" />
           <e p="TokenController.cs" t="Include" />
+          <e p="TokenControllers" t="Include">
+            <e p="TokenController.cs" t="Include" />
+          </e>
+          <e p="Users Controllers" t="Include" />
         </e>
         <e p="Data" t="Include">
           <e p="Context" t="Include">
             <e p="ApplicationDbContext.cs" t="Include" />
           </e>
         </e>
+        <e p="extensions" t="Include">
+          <e p="DecryptionMethods.cs" t="Include" />
+          <e p="SymmetricSecurityKeyMethods.cs" t="Include" />
+          <e p="TokenCreationMethods.cs" t="Include" />
+        </e>
         <e p="Helper Classes" t="Include">
           <e p="ClaimRoles.cs" t="Include" />
-          <e p="CoockieNames.cs" t="Include" />
+          <e p="CoockiesNames.cs" t="Include" />
           <e p="DecryptionMethods.cs" t="Include" />
         </e>
         <e p="IQuiz.csproj" t="IncludeRecursive" />
@@ -196,9 +210,6 @@
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
-        </e>
-        <e p="Services" t="Include">
-          <e p="JWTSettings.cs" t="Include" />
         </e>
         <e p="SQL Scripts" t="Include">
           <e p="INSERT Q&amp;A.sql" t="Include" />

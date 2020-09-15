@@ -19,9 +19,10 @@ namespace IQuiz.Controllers
         }
         
         [HttpPost]
+        [Route("register")]
         public IActionResult Register([FromBody] User user)
         {
-            var decryptedUser = DecryptionMethods.DeccryptUserModel(user);
+            var decryptedUser = DecryptionMethods.DecrypteUser(user);
             
             if(_applicationDbContext.Users.Any(u=>u.Email==decryptedUser.Email))
                 return new JsonResult(new DuplicateUser{Success = false,Message = "This username is already taken."});

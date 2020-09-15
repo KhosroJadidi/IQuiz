@@ -4,7 +4,7 @@ import {Encryption} from '../Helper Classes/Encryption';
 
 //Fetch settings
 const applicationUrl = "http://localhost:53134";
-const route = "token/get";
+const route = "token/getToken";
 
 export class Login extends React.Component {
     constructor(props) {
@@ -44,7 +44,7 @@ export class Login extends React.Component {
         };
 
         fetch(`${applicationUrl}/${route}`, requestOptions)
-            .then(response => response.text())
+            .then(response => console.log(response.ok))
             .then(result => this.handleLoginResponse(result))
             .catch(error => console.log('error', error));
     };

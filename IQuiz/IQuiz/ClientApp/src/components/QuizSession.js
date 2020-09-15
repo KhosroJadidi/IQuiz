@@ -5,7 +5,7 @@ import "../custom.css";
 
 //Fetch settings
 const applicationUrl = "http://localhost:53134";
-const fetchQuestionRoute = "questions";
+const fetchQuestionRoute = "getQuestions";
 const checkLoginRoute = "LoginStatus/checkLogin";
 //This variable determines the number of questions asked per session.
 const fetchQuantity = 5;

@@ -41,10 +41,22 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A9C8217C-B733-4D02-8D35-584ABCC8BFDB/FE/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A9C8217C-B733-4D02-8D35-584ABCC8BFDB/F3/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/38AF6BBD-BB3E-48C2-8183-038C443C93F8/18/IOptionsFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C9E6E53C-ADD7-44C9-933A-2A6F9CF4D782/6/IISMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/89745EAC-2165-4F52-8F08-17B5DF9A22FF/24/IRequestCookieCollection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9B744E2F-1963-4E94-901F-FE3B41ABEC09/4/DeveloperExceptionPageMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/38AF6BBD-BB3E-48C2-8183-038C443C93F8/8/OptionsManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4065B38D-0F9F-44D9-8F53-F4C9102AF396/69/Convert.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4065B38D-0F9F-44D9-8F53-F4C9102AF396/25F/AsyncMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/51ABE7C2-8FCC-4A22-9DAE-818A4A74B4FB/6/AuthenticationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A9C8217C-B733-4D02-8D35-584ABCC8BFDB/53/ProducesResponseTypeAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E5B2E90E-67F8-4947-8651-FB9C38B1F0CF/3/AuthorizationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A9C8217C-B733-4D02-8D35-584ABCC8BFDB/FE/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4D29D767-FEFA-4FFB-A306-5990CE23BA05/5A/HttpProtocol.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A9C8217C-B733-4D02-8D35-584ABCC8BFDB/F3/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A9C8217C-B733-4D02-8D35-584ABCC8BFDB/10/ActionResult.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/38AF6BBD-BB3E-48C2-8183-038C443C93F8/6d/a46bb453/0200001Cpdb.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/38AF6BBD-BB3E-48C2-8183-038C443C93F8/C/OptionsWrapper.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -54,26 +66,34 @@
         <option value="$PROJECT_DIR$/IQuiz/Models/Database Models/QuestionAndAnswer.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Models/Database Models/Score.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Models/Database Models/User.cs" />
-        <option value="$PROJECT_DIR$/IQuiz/Helper Classes/DecryptionMethods.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Data/Context/ApplicationDbContext.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Services/JWTSettings.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/0cdccad5-bbc4-460c-96be-635b45d2b5a6/console_1.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/0cdccad5-bbc4-460c-96be-635b45d2b5a6/console.sql" />
         <option value="$PROJECT_DIR$/IQuiz/SQL Scripts/INSERT Q&amp;A.sql" />
         <option value="$PROJECT_DIR$/IQuiz/Controllers/CookiesController.cs" />
-        <option value="$PROJECT_DIR$/IQuiz/Controllers/LoginStatusController.cs" />
-        <option value="$PROJECT_DIR$/IQuiz/Controllers/TokenController.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Program.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Pages/Error.cshtml.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Controllers/ResetController.cs" />
-        <option value="$PROJECT_DIR$/IQuiz/Models/Non-Database Models/UserWithToken.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Models/Non-Database Models/NonExistingUser.cs" />
-        <option value="$PROJECT_DIR$/IQuiz/Startup.cs" />
-        <option value="$PROJECT_DIR$/IQuiz/Controllers/QuestionAndAnswerController.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Controllers/RegisterationController.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Models/Non-Database Models/DuplicateUser.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Models/Non-Database Models/NewUser.cs" />
+        <option value="$PROJECT_DIR$/IQuiz/Controllers/LoginStatusController.cs" />
+        <option value="$PROJECT_DIR$/IQuiz/Controllers/QuestionAndAnswerController.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Controllers/RegistrationController.cs" />
+        <option value="$PROJECT_DIR$/IQuiz/Controllers/ResetAndSeedController.cs" />
+        <option value="$PROJECT_DIR$/IQuiz/Helper Classes/CoockiesNames.cs" />
+        <option value="$PROJECT_DIR$/IQuiz/Helper Classes/DecryptionMethods.cs" />
+        <option value="$PROJECT_DIR$/IQuiz/Extensions/DecryptionMethods.cs" />
+        <option value="$PROJECT_DIR$/IQuiz/Controllers/CoockiesController/Cookies.cs" />
+        <option value="$PROJECT_DIR$/IQuiz/Models/Non-Database Models/UserWithToken.cs" />
+        <option value="$PROJECT_DIR$/IQuiz/Controllers/TokenController.cs" />
+        <option value="$PROJECT_DIR$/IQuiz/Controllers/TokenControllers/TokenController.cs" />
+        <option value="$PROJECT_DIR$/IQuiz/Extensions/SymmetricSecurityKeyMethods,cs.cs" />
+        <option value="$PROJECT_DIR$/IQuiz/Extensions/SymmetricSecurityKeyMethods.cs" />
+        <option value="$PROJECT_DIR$/IQuiz/Extensions/TokenCreationMethods.cs" />
+        <option value="$PROJECT_DIR$/IQuiz/Startup.cs" />
       </list>
     </option>
   </component>
@@ -97,7 +117,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.T4" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.IQuiz: IIS Express">
@@ -149,7 +169,9 @@
       <workItem from="1599752695733" duration="2816000" />
       <workItem from="1600014225872" duration="2524000" />
       <workItem from="1600022662100" duration="1759000" />
-      <workItem from="1600059006154" duration="11195000" />
+      <workItem from="1600059006154" duration="11877000" />
+      <workItem from="1600140052678" duration="1200000" />
+      <workItem from="1600157055682" duration="16828000" />
     </task>
     <servers />
   </component>
@@ -206,90 +228,90 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="379" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1920.1040@0.0.1920.1040" timestamp="1599125304669" />
-    <state width="449" height="464" key="DebuggerActiveHint" timestamp="1600061247984">
+    <state width="470" height="464" key="DebuggerActiveHint" timestamp="1600186875803">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="449" height="464" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1600061247984" />
-    <state width="1877" height="291" key="GridCell.Tab.0.bottom" timestamp="1600073830359">
+    <state width="470" height="464" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1600186875803" />
+    <state width="1877" height="291" key="GridCell.Tab.0.bottom" timestamp="1600188162198">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600073830359" />
-    <state width="1877" height="291" key="GridCell.Tab.0.center" timestamp="1600073830359">
+    <state width="1877" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600188162198" />
+    <state width="1877" height="291" key="GridCell.Tab.0.center" timestamp="1600188162198">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="291" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600073830359" />
-    <state width="1877" height="291" key="GridCell.Tab.0.left" timestamp="1600073830359">
+    <state width="1877" height="291" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600188162198" />
+    <state width="1877" height="291" key="GridCell.Tab.0.left" timestamp="1600188162198">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="291" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600073830359" />
-    <state width="1877" height="291" key="GridCell.Tab.0.right" timestamp="1600073830359">
+    <state width="1877" height="291" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600188162198" />
+    <state width="1877" height="291" key="GridCell.Tab.0.right" timestamp="1600188162198">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="291" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600073830359" />
-    <state width="1877" height="375" key="GridCell.Tab.1.bottom" timestamp="1600061295079">
+    <state width="1877" height="291" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600188162198" />
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom" timestamp="1600186923332">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600061295079" />
-    <state width="1877" height="375" key="GridCell.Tab.1.center" timestamp="1600061295079">
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600186923332" />
+    <state width="1877" height="375" key="GridCell.Tab.1.center" timestamp="1600186923332">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600061295079" />
-    <state width="1877" height="375" key="GridCell.Tab.1.left" timestamp="1600061295079">
+    <state width="1877" height="375" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600186923332" />
+    <state width="1877" height="375" key="GridCell.Tab.1.left" timestamp="1600186923332">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600061295079" />
-    <state width="1877" height="375" key="GridCell.Tab.1.right" timestamp="1600061295079">
+    <state width="1877" height="375" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600186923332" />
+    <state width="1877" height="375" key="GridCell.Tab.1.right" timestamp="1600186923332">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600061295079" />
-    <state width="1877" height="375" key="GridCell.Tab.2.bottom" timestamp="1600061295079">
+    <state width="1877" height="375" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600186923332" />
+    <state width="1877" height="375" key="GridCell.Tab.2.bottom" timestamp="1600186923332">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600061295079" />
-    <state width="1877" height="375" key="GridCell.Tab.2.center" timestamp="1600061295079">
+    <state width="1877" height="375" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600186923332" />
+    <state width="1877" height="375" key="GridCell.Tab.2.center" timestamp="1600186923332">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600061295079" />
-    <state width="1877" height="375" key="GridCell.Tab.2.left" timestamp="1600061295079">
+    <state width="1877" height="375" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600186923332" />
+    <state width="1877" height="375" key="GridCell.Tab.2.left" timestamp="1600186923332">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600061295079" />
-    <state width="1877" height="375" key="GridCell.Tab.2.right" timestamp="1600061295079">
+    <state width="1877" height="375" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600186923332" />
+    <state width="1877" height="375" key="GridCell.Tab.2.right" timestamp="1600186923332">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600061295079" />
-    <state width="1877" height="375" key="GridCell.Tab.3.bottom" timestamp="1600061295080">
+    <state width="1877" height="375" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600186923332" />
+    <state width="1877" height="375" key="GridCell.Tab.3.bottom" timestamp="1600186923333">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600061295080" />
-    <state width="1877" height="375" key="GridCell.Tab.3.center" timestamp="1600061295079">
+    <state width="1877" height="375" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600186923333" />
+    <state width="1877" height="375" key="GridCell.Tab.3.center" timestamp="1600186923333">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600061295079" />
-    <state width="1877" height="375" key="GridCell.Tab.3.left" timestamp="1600061295079">
+    <state width="1877" height="375" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600186923333" />
+    <state width="1877" height="375" key="GridCell.Tab.3.left" timestamp="1600186923333">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600061295079" />
-    <state width="1877" height="375" key="GridCell.Tab.3.right" timestamp="1600061295080">
+    <state width="1877" height="375" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600186923333" />
+    <state width="1877" height="375" key="GridCell.Tab.3.right" timestamp="1600186923333">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600061295080" />
-    <state width="1877" height="375" key="GridCell.Tab.4.bottom" timestamp="1600061295080">
+    <state width="1877" height="375" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600186923333" />
+    <state width="1877" height="375" key="GridCell.Tab.4.bottom" timestamp="1600186923333">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.4.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600061295080" />
-    <state width="1877" height="375" key="GridCell.Tab.4.center" timestamp="1600061295080">
+    <state width="1877" height="375" key="GridCell.Tab.4.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600186923333" />
+    <state width="1877" height="375" key="GridCell.Tab.4.center" timestamp="1600186923333">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.4.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600061295080" />
-    <state width="1877" height="375" key="GridCell.Tab.4.left" timestamp="1600061295080">
+    <state width="1877" height="375" key="GridCell.Tab.4.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600186923333" />
+    <state width="1877" height="375" key="GridCell.Tab.4.left" timestamp="1600186923333">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.4.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600061295080" />
-    <state width="1877" height="375" key="GridCell.Tab.4.right" timestamp="1600061295080">
+    <state width="1877" height="375" key="GridCell.Tab.4.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600186923333" />
+    <state width="1877" height="375" key="GridCell.Tab.4.right" timestamp="1600186923333">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.4.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600061295080" />
+    <state width="1877" height="375" key="GridCell.Tab.4.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600186923333" />
     <state width="196" height="455" key="HiddenNamespacesPopup" timestamp="1599125755731">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -298,10 +320,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="531" y="364" key="Rider.ProjectTemplateDialog.Size/0.0.1920.1040@0.0.1920.1040" timestamp="1599415328958" />
-    <state x="620" y="177" key="SettingsEditor" timestamp="1599226629094">
+    <state x="620" y="177" key="SettingsEditor" timestamp="1600179689981">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="620" y="177" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1599226629094" />
+    <state x="620" y="177" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1600179689981" />
+    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1600186875792">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1600186875792" />
     <state x="592" y="192" width="255" height="371" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1599126831856">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -314,9 +340,33 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599222777229" />
-    <state x="616" y="173" width="672" height="678" key="search.everywhere.popup" timestamp="1600059494178">
+    <state x="616" y="173" width="672" height="678" key="search.everywhere.popup" timestamp="1600186455296">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="173" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600059494178" />
+    <state x="616" y="173" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600186455296" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/IQuiz/Extensions/TokenCreationMethods.cs</url>
+          <line>18</line>
+          <properties documentPath="C:\Users\Khosro Jadidi\Dropbox\Webutveckling\IQuiz\IQuiz\IQuiz\Extensions\TokenCreationMethods.cs" initialLine="19">
+            <startOffsets>
+              <option value="657" />
+            </startOffsets>
+            <endOffsets>
+              <option value="718" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Frame#IQuiz.Controllers.TokenControllers.TokenController.GetToken" memberName="userWithToken" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

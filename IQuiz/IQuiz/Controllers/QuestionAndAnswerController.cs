@@ -20,7 +20,7 @@ namespace IQuiz.Controllers
 
         #region API Calls
 
-        [Route("questions")]
+        [Route("getQuestions")]
         [Authorize]
         public IActionResult GetQuestionsAndAnswers(int quantity = 1)
         {            

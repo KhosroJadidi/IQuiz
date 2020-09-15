@@ -8,15 +8,14 @@ namespace IQuiz.Controllers
     public class LoginStatusController : ControllerBase
     {
         [HttpGet, Route("checkLogin")]
-        public ActionResult UserIsLoggedIn()
+        public ActionResult GetAuthTokenIfAvailable()
         {
 #nullable enable
-            string? authCookie= HttpContext.Request.Cookies[CoockieNames.Token];
+            string? authCookie= HttpContext.Request.Cookies[CoockiesNames.Token];
 #nullable disable
-
             if (authCookie == null) 
                 return Unauthorized("No Authentication Cookies Were Found.");
-            string userEmail = HttpContext.Request.Cookies[CoockieNames.Email];
+            string userEmail = HttpContext.Request.Cookies[CoockiesNames.Email];
             return Ok(new JsonResult(new 
             {
                 user=userEmail,
@@ -29,13 +28,13 @@ namespace IQuiz.Controllers
         public ActionResult RemoveCoockies()
         {
             #nullable enable
-            string? authCookie = HttpContext.Request.Cookies[CoockieNames.Token];
+            string? authCookie = HttpContext.Request.Cookies[CoockiesNames.Token];
             #nullable disable
 
             if (authCookie == null)
                 return Unauthorized("No Authentication Cookies Were Found.");
-            HttpContext.Response.Cookies.Delete(CoockieNames.Email);
-            HttpContext.Response.Cookies.Delete(CoockieNames.Token);
+            HttpContext.Response.Cookies.Delete(CoockiesNames.Email);
+            HttpContext.Response.Cookies.Delete(CoockiesNames.Token);
             return Ok("Cookies were deleted.");
         }
     }

@@ -4,8 +4,8 @@ import {Encryption} from '../Helper Classes/Encryption';
 //https://mdbootstrap.com/docs/react/forms/inputs/#docsTabsAPI
 
 const applicationUrl = "http://localhost:53134";
-const registrationRoute = "registration";
-let loginRoute="token/get";
+const registrationRoute = "registration/register";
+const loginRoute="token/getToken";
 
 export class Register extends React.Component {
   constructor(props) {
