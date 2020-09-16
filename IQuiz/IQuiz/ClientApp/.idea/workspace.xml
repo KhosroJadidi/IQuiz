@@ -64,7 +64,8 @@
       <workItem from="1600058992833" duration="19495000" />
       <workItem from="1600140014722" duration="797000" />
       <workItem from="1600157027752" duration="5714000" />
-      <workItem from="1600188321944" duration="626000" />
+      <workItem from="1600188321944" duration="870000" />
+      <workItem from="1600239604198" duration="15312000" />
     </task>
     <servers />
   </component>
@@ -72,6 +73,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="670" y="154" key="#Plugins" timestamp="1600246457128">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="670" y="154" key="#Plugins/0.0.1920.1040@0.0.1920.1040" timestamp="1600246457128" />
     <state x="429" y="119" width="1092" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599243118638">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -92,6 +97,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1599038825580" />
+    <state x="992" y="252" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1600258390865">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="992" y="252" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1600258390865" />
     <state x="916" y="100" width="585" height="801" key="find.popup" timestamp="1600158523495">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -100,9 +109,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599410710287" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600070533908">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600258384193">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600070533908" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600258384193" />
   </component>
 </project>

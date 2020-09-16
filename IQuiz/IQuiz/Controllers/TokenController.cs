@@ -48,8 +48,8 @@
 //
 //             var json = new JsonResult(userWithToken);
 //
-//             Response.Cookies.Append(CoockiesNames.Email, userWithToken.User.Email);
-//             Response.Cookies.Append(CoockiesNames.Token, userWithToken.Token);
+//             Response.Cookies.Append(CoockieNames.Email, userWithToken.User.Email);
+//             Response.Cookies.Append(CoockieNames.Token, userWithToken.Token);
 //
 //             return json;
 //         }

@@ -43,7 +43,10 @@ namespace IQuiz.Controllers.TokenControllers
                 u.Email == decryptedUser.Email && u.Password == decryptedUser.Password);
 
             var userWithToken = validUser.GetUserWithToken(_configuration);
-            return Ok(new JsonResult(userWithToken));
+            var uri = _configuration.GetSection("iisSettings")["applicationUrl"]+
+                _configuration.GetSection("iisSettings")["getTokenRoute"];
+            var json= new JsonResult(userWithToken);
+            return Created(uri, json);
 
         }
         #endregion

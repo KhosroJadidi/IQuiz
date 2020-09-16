@@ -1,10 +1,7 @@
 import React from "react";
 import {MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn} from 'mdbreact';
 import {Encryption} from '../Helper Classes/Encryption';
-
-//Fetch settings
-const applicationUrl = "http://localhost:53134";
-const route = "token/getToken";
+import {LoginMethods} from '../Helper Classes/LoginMethods';
 
 export class Login extends React.Component {
     constructor(props) {
@@ -16,8 +13,8 @@ export class Login extends React.Component {
         }
         this.updateEmail = this.updateEmail.bind(this);
         this.updatePassword = this.updatePassword.bind(this);
-        this.handleLoginResponse = this.handleLoginResponse.bind(this);
         this.attemptLogIn = this.attemptLogIn.bind(this);
+
     }
 
     updateEmail = (input) => {
@@ -30,36 +27,10 @@ export class Login extends React.Component {
         this.setState({password: encryptedPassword});
     }
 
-    attemptLogIn() {
-        let myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-
-        let raw = JSON.stringify({"Email": this.state.email, "Password": this.state.password});
-
-        let requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow'
-        };
-
-        fetch(`${applicationUrl}/${route}`, requestOptions)
-            .then(response => console.log(response.ok))
-            .then(result => this.handleLoginResponse(result))
-            .catch(error => console.log('error', error));
-    };
-
-    handleLoginResponse(result) {
-        let jsonResult = JSON.parse(result);
-        if (jsonResult.success) {
-            this.setState({loginAttempt: "Successfully logged in"});
-            window.navMenuFunctions.updateCurrentUser(jsonResult.userinfo.email);
-            window.navMenuFunctions.updateUserIsLoggedInStatus(true);
-            this.props.props.history.push('/')
-        } else if (!jsonResult.success) {
-            this.setState({loginAttempt: jsonResult.message});
-            window.navMenuFunctions.updateUserIsLoggedInStatus(false);
-        }
+    async attemptLogIn(){
+        let email= this.state.email;
+        let password = this.state.password;
+        await LoginMethods.attemptLogIn(email,password,this);
     }
 
     //For a list of available event, see:

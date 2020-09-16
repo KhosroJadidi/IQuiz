@@ -137,6 +137,8 @@
             <e p="custom.css" t="Include" />
             <e p="Helper Classes" t="Include">
               <e p="Encryption.js" t="Include" />
+              <e p="LoginMethods.js" t="Include" />
+              <e p="ResponseHandlerMethods.js" t="Include" />
             </e>
             <e p="index.js" t="Include" />
             <e p="registerServiceWorker.js" t="Include" />
@@ -170,7 +172,7 @@
         </e>
         <e p="Helper Classes" t="Include">
           <e p="ClaimRoles.cs" t="Include" />
-          <e p="CoockiesNames.cs" t="Include" />
+          <e p="CoockieNames.cs" t="Include" />
           <e p="DecryptionMethods.cs" t="Include" />
         </e>
         <e p="IQuiz.csproj" t="IncludeRecursive" />

@@ -11,11 +11,11 @@ namespace IQuiz.Controllers
         public ActionResult GetAuthTokenIfAvailable()
         {
 #nullable enable
-            string? authCookie= HttpContext.Request.Cookies[CoockiesNames.Token];
+            string? authCookie= HttpContext.Request.Cookies[CoockieNames.Token];
 #nullable disable
             if (authCookie == null) 
                 return Unauthorized("No Authentication Cookies Were Found.");
-            string userEmail = HttpContext.Request.Cookies[CoockiesNames.Email];
+            string userEmail = HttpContext.Request.Cookies[CoockieNames.Email];
             return Ok(new JsonResult(new 
             {
                 user=userEmail,
@@ -28,13 +28,13 @@ namespace IQuiz.Controllers
         public ActionResult RemoveCoockies()
         {
             #nullable enable
-            string? authCookie = HttpContext.Request.Cookies[CoockiesNames.Token];
+            string? authCookie = HttpContext.Request.Cookies[CoockieNames.Token];
             #nullable disable
 
             if (authCookie == null)
                 return Unauthorized("No Authentication Cookies Were Found.");
-            HttpContext.Response.Cookies.Delete(CoockiesNames.Email);
-            HttpContext.Response.Cookies.Delete(CoockiesNames.Token);
+            HttpContext.Response.Cookies.Delete(CoockieNames.Email);
+            HttpContext.Response.Cookies.Delete(CoockieNames.Token);
             return Ok("Cookies were deleted.");
         }
     }
