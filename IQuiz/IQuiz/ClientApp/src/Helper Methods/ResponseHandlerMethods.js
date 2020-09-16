@@ -1,3 +1,4 @@
+import {CookieHandlerMethods} from './CookieHandlerMethods';
 
 export class ResponseHandlerMethods{
     static async  handleLoginResponse(response,component) {
@@ -11,10 +12,12 @@ export class ResponseHandlerMethods{
 
         async function handle201Response(response){
             let text= await response.text();
-            let json= JSON.parse(text);
+            let json= await JSON.parse(text);
             component.setState({loginAttempt: "Successfully logged in"});
                 window.navMenuFunctions.updateCurrentUser(json.value.user.email);
                 window.navMenuFunctions.updateUserIsLoggedInStatus(true);
+                CookieHandlerMethods.deleteAuthCookies();
+                CookieHandlerMethods.saveAuthCookies(json.value);
             component.props.props.history.push('/');
         }
 

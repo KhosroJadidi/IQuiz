@@ -29,6 +29,7 @@ namespace IQuiz.Controllers.TokenControllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public ActionResult GetToken([FromBody] User user)
         {
+
             var decryptedUser = user.DecryptFromBase64();
 
             if (!_applicationDbContext.Users.Any(u =>
@@ -43,9 +44,10 @@ namespace IQuiz.Controllers.TokenControllers
                 u.Email == decryptedUser.Email && u.Password == decryptedUser.Password);
 
             var userWithToken = validUser.GetUserWithToken(_configuration);
-            var uri = _configuration.GetSection("iisSettings")["applicationUrl"]+
-                _configuration.GetSection("iisSettings")["getTokenRoute"];
+            
+            var uri = _configuration.RetrieveGetTokenUrl();
             var json= new JsonResult(userWithToken);
+            
             return Created(uri, json);
 
         }

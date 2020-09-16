@@ -14,7 +14,7 @@ namespace IQuiz.Controllers
             string? authCookie= HttpContext.Request.Cookies[CoockieNames.Token];
 #nullable disable
             if (authCookie == null) 
-                return Unauthorized("No Authentication Cookies Were Found.");
+                return Unauthorized("No Authentication CookiesController Were Found.");
             string userEmail = HttpContext.Request.Cookies[CoockieNames.Email];
             return Ok(new JsonResult(new 
             {
@@ -32,10 +32,10 @@ namespace IQuiz.Controllers
             #nullable disable
 
             if (authCookie == null)
-                return Unauthorized("No Authentication Cookies Were Found.");
+                return Unauthorized("No Authentication CookiesController Were Found.");
             HttpContext.Response.Cookies.Delete(CoockieNames.Email);
             HttpContext.Response.Cookies.Delete(CoockieNames.Token);
-            return Ok("Cookies were deleted.");
+            return Ok("CookiesController were deleted.");
         }
     }
 }

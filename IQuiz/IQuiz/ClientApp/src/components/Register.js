@@ -1,6 +1,6 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
-import {Encryption} from '../Helper Classes/Encryption';
+import {EncryptionMethods} from '../Helper Methods/EncryptionMethods';
 //https://mdbootstrap.com/docs/react/forms/inputs/#docsTabsAPI
 
 const applicationUrl = "http://localhost:53134";
@@ -24,12 +24,12 @@ export class Register extends React.Component {
   }
 
   updateEmail(input){
-    let encryptedEmail= Encryption.encryptToBase64(input);
+    let encryptedEmail= EncryptionMethods.encryptToBase64(input);
     this.setState({email:encryptedEmail})
   }
 
   updatePassword(input){
-    let encryptedPassword=Encryption.encryptToBase64(input);
+    let encryptedPassword=EncryptionMethods.encryptToBase64(input);
     this.setState({password:encryptedPassword})
   }
 
