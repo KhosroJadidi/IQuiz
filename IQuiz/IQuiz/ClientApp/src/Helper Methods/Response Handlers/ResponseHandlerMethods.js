@@ -35,7 +35,8 @@ export class ResponseHandlerMethods{
         }else if (response.status===204){
             await handle204RegistrationResponse(response);
         }else{
-            console.log("Unhandled response from the server.")
+            console.log("Unhandled response from the server.");
+            console.log(response);
         }
 
         async function handle201RegistrationResponse(response){
@@ -43,15 +44,13 @@ export class ResponseHandlerMethods{
             let text= await response.text();
             let json= await JSON.parse(text);
 
-            console.log(json.value);
             await LoginMethods.attemptLogIn(component);
             window.navMenuFunctions.updateCurrentUser(json.value.email);
             window.navMenuFunctions.updateUserIsLoggedInStatus(true);
         }
 
         async function handle204RegistrationResponse(){
-            console.log("handle204RegistrationResponse was invoked");
-            console.log(response);
+            component.setState({loginAttempt:"This Email Is Already Registered!"});
         }
     }
 
