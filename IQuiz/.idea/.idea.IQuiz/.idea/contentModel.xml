@@ -136,10 +136,19 @@
             </e>
             <e p="custom.css" t="Include" />
             <e p="Helper Methods" t="Include">
-              <e p="CookieHandlerMethods.js" t="Include" />
-              <e p="EncryptionMethods.js" t="Include" />
-              <e p="LoginMethods.js" t="Include" />
-              <e p="ResponseHandlerMethods.js" t="Include" />
+              <e p="Cookie" t="Include">
+                <e p="CookieHandlerMethods.js" t="Include" />
+              </e>
+              <e p="Encryption" t="Include">
+                <e p="EncryptionMethods.js" t="Include" />
+              </e>
+              <e p="Response Handlers" t="Include">
+                <e p="ResponseHandlerMethods.js" t="Include" />
+              </e>
+              <e p="User" t="Include">
+                <e p="LoginMethods.js" t="Include" />
+                <e p="RegistrationMethods.js" t="Include" />
+              </e>
             </e>
             <e p="index.js" t="Include" />
             <e p="registerServiceWorker.js" t="Include" />
@@ -158,7 +167,9 @@
           <e p="TokenControllers" t="Include">
             <e p="TokenController.cs" t="Include" />
           </e>
-          <e p="Users Controllers" t="Include" />
+          <e p="Users Controllers" t="Include">
+            <e p="UserController.cs" t="Include" />
+          </e>
         </e>
         <e p="Data" t="Include">
           <e p="Context" t="Include">
@@ -167,6 +178,7 @@
         </e>
         <e p="extensions" t="Include">
           <e p="DecryptionMethods.cs" t="Include" />
+          <e p="RegistrationMethods.cs" t="Include" />
           <e p="SymmetricSecurityKeyMethods.cs" t="Include" />
           <e p="TokenCreationMethods.cs" t="Include" />
           <e p="UriMethods.cs" t="Include" />

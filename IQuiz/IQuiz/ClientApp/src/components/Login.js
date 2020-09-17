@@ -1,7 +1,7 @@
 import React from "react";
 import {MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn} from 'mdbreact';
-import {EncryptionMethods} from '../Helper Methods/EncryptionMethods';
-import {LoginMethods} from '../Helper Methods/LoginMethods';
+import {EncryptionMethods} from '../Helper Methods/Encryption/EncryptionMethods';
+import {LoginMethods} from '../Helper Methods/User/LoginMethods';
 
 export class Login extends React.Component {
     constructor(props) {
@@ -27,12 +27,10 @@ export class Login extends React.Component {
     }
 
     async attemptLogIn(){
-        let email= this.state.email;
-        let password = this.state.password;
-        await LoginMethods.attemptLogIn(email,password,this);
+        await LoginMethods.attemptLogIn(this);
     }
 
-    //For a list of available event, see:
+    //For a list of available events, see:
     //https://mdbootstrap.com/docs/react/forms/inputs/#docsTabsAPI
     render() {
         return (

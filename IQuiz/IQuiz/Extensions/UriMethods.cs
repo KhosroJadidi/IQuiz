@@ -8,7 +8,14 @@ namespace IQuiz.Extensions
         {
             var applicationUrl = configuration.GetSection("iisSettings")["applicationUrl"];
             var getTokenRoute=configuration.GetSection("iisSettings")["getTokenRoute"];
-            return  applicationUrl + getTokenRoute;
+            return  $"{applicationUrl}/{getTokenRoute}";
+        }
+        
+        public static string RetrieveRegisterUserUrl(this IConfiguration configuration)
+        {
+            var applicationUrl = configuration.GetSection("iisSettings")["applicationUrl"];
+            var registerUserRouteRoute=configuration.GetSection("iisSettings")["registerUserRoute"];
+            return  $"{applicationUrl}/{registerUserRouteRoute}";
         }
     }
 }

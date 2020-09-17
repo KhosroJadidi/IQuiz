@@ -1,11 +1,8 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
-import {EncryptionMethods} from '../Helper Methods/EncryptionMethods';
+import {EncryptionMethods} from '../Helper Methods/Encryption/EncryptionMethods';
+import {RegistrationMethods} from "../Helper Methods/User/RegistrationMethods";
 //https://mdbootstrap.com/docs/react/forms/inputs/#docsTabsAPI
-
-const applicationUrl = "http://localhost:53134";
-const registrationRoute = "registration/register";
-const loginRoute="token/getToken";
 
 export class Register extends React.Component {
   constructor(props) {
@@ -18,9 +15,6 @@ export class Register extends React.Component {
     this.updateEmail=this.updateEmail.bind(this);
     this.updatePassword=this.updatePassword.bind(this);
     this.attemptRegistration=this.attemptRegistration.bind(this);
-    this.handleRegistrationResponse=this.handleRegistrationResponse.bind(this);
-    this.handleLoginResponse=this.handleLoginResponse.bind(this);
-    this.attemptLogIn=this.attemptLogIn.bind(this);
   }
 
   updateEmail(input){
@@ -33,67 +27,8 @@ export class Register extends React.Component {
     this.setState({password:encryptedPassword})
   }
 
-  attemptRegistration(){
-    let myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    let raw = JSON.stringify({"email":this.state.email,"password":this.state.password});
-
-    let requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow'
-    };
-
-    fetch(`${applicationUrl}/${registrationRoute}`, requestOptions)
-        .then(response => response.text())
-        .then(result => this.handleRegistrationResponse(result))
-        .catch(error => console.log('error', error));
-  }
-
-  handleRegistrationResponse(result){
-    let jsonResult = JSON.parse(result);
-    if (jsonResult.success) {
-      this.attemptLogIn();
-      window.navMenuFunctions.updateCurrentUser(jsonResult.email);
-      window.navMenuFunctions.updateUserIsLoggedInStatus(true);
-    } else if (!jsonResult.success) {
-      this.setState({loginAttempt: jsonResult.message});
-      window.navMenuFunctions.updateUserIsLoggedInStatus(false);
-    }
-  }
-
-  attemptLogIn() {
-    let myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    let raw = JSON.stringify({"Email": this.state.email, "Password": this.state.password});
-
-    let requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow'
-    };
-
-    fetch(`${applicationUrl}/${loginRoute}`, requestOptions)
-        .then(response => response.text())
-        .then(result => this.handleLoginResponse(result))
-        .catch(error => console.log('error', error));
-  };
-
-  handleLoginResponse(result) {
-    let jsonResult = JSON.parse(result);
-    if (jsonResult.success) {
-      this.setState({loginAttempt: "Successfully logged in"});
-      window.navMenuFunctions.updateCurrentUser(jsonResult.userinfo.email);
-      window.navMenuFunctions.updateUserIsLoggedInStatus(true);
-      this.props.props.history.push('/')
-    } else if (!jsonResult.success) {
-      this.setState({loginAttempt: jsonResult.message});
-      window.navMenuFunctions.updateUserIsLoggedInStatus(false);
-    }
+  async attemptRegistration(){
+    await RegistrationMethods.attemptRegistration(this);
   }
 
   render() {
