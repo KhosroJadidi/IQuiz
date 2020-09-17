@@ -30,7 +30,7 @@ export class  LoginMethods{
 
     static async checkLoggedInStatus(component){
         let requestOptions = {
-            method: 'POST',
+            method: 'GET',
             redirect: 'follow'
         };
 

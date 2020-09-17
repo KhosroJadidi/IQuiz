@@ -2,7 +2,7 @@ import {CookieHandlerMethods} from '../Cookie/CookieHandlerMethods';
 import {LoginMethods} from "../User/LoginMethods";
 
 export class ResponseHandlerMethods{
-    static async  handleLoginResponse(response,component) {
+    static async handleLoginResponse(response,component) {
         if (response.status===201){
             await handle201LoginResponse(response);
         }else if (response.status===204){
@@ -55,12 +55,13 @@ export class ResponseHandlerMethods{
     }
 
     static async handleAuthCookiesCheckResponse(response,component){
-        if (response.status===200){
+        if (response.status===204){
             await handle200AuthCookiesCheckResponse(response);
         }else if (response.status===404){
             await handle204AuthCookiesCheckResponse(response);
         }else{
-            console.log("Unhandled response from the server.")
+            console.log("Unhandled response from the server.");
+            console.log(response);
         }
 
         async function handle200AuthCookiesCheckResponse(response) {
@@ -74,13 +75,39 @@ export class ResponseHandlerMethods{
             });
         }
 
-        async function handle204AuthCookiesCheckResponse(response) {
+        async function handle204AuthCookiesCheckResponse() {
             component.setState({
                 token: "",
                 user: "",
-                userIsLoggedIn:true
+                userIsLoggedIn:false,
+                currentUserName:'Login/Register'
+            });
+        }
+    }
+
+    static async handleLogOutResponse(response,component){
+
+        if (response.status===204){
+            await handle204LogOutResponse(response);
+        }else if (response.status===404){
+            await handle404LogOutResponse(response);
+        }else{
+            console.log("Unhandled response from the server.");
+            console.log(response);
+        }
+
+        async function handle204LogOutResponse(response) {
+            component.setState({
+                token:'',
+                user:'',
+                userIsLoggedIn: false,
+                currentUserName: 'Login/Register'
             });
         }
 
+        async function handle404LogOutResponse(response) {
+            console.log("The following authentication cookies were not found or deleted:");
+            console.log(response);
+        }
     }
 }

@@ -3,6 +3,7 @@ import {Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLin
 import {Link} from 'react-router-dom';
 import './NavMenu.css';
 import {LoginMethods} from "../Helper Methods/User/LoginMethods";
+import {LogoutMethods} from "../Helper Methods/User/LogoutMethods";
 
 export class NavMenu extends Component {
     static displayName = NavMenu.name;
@@ -20,7 +21,7 @@ export class NavMenu extends Component {
         this.updateCurrentUser = this.updateCurrentUser.bind(this);
         this.updateUserIsLoggedInStatus = this.updateUserIsLoggedInStatus.bind(this);
         this.attemptLogOut = this.attemptLogOut.bind(this);
-        this.handleLogout=this.handleLogout.bind(this);
+        //this.handleLogout=this.handleLogout.bind(this);
     }
 
     async componentDidMount() {
@@ -41,28 +42,25 @@ export class NavMenu extends Component {
         this.setState({userIsLoggedIn: booleanStatus});
     }
 
-    attemptLogOut() {
-        this.setState({
-            userIsLoggedIn: false,
-            currentUserName: 'Login/Register'
-        });
+    async attemptLogOut() {
+        await LogoutMethods.attemptLogOut(this);
     }
 
-    attemptCookieRemoval(){
-        let requestOptions = {
-            method: 'POST',
-            redirect: 'follow'
-        };
+    // attemptCookieRemoval(){
+    //     let requestOptions = {
+    //         method: 'POST',
+    //         redirect: 'follow'
+    //     };
+    //
+    //     fetch("http://localhost:53134/LoginStatus/remove", requestOptions)
+    //         .then(response => response.text())
+    //         .catch(error => console.log('error', error));
+    // }
 
-        fetch("http://localhost:53134/LoginStatus/remove", requestOptions)
-            .then(response => response.text())
-            .catch(error => console.log('error', error));
-    }
-
-    handleLogout() {
-        this.attemptLogOut();
-        this.attemptCookieRemoval();
-    }
+    // async handleLogout() {
+    //     await this.attemptLogOut();
+    //     //this.attemptCookieRemoval();
+    // }
 
 
 
@@ -106,7 +104,7 @@ export class NavMenu extends Component {
                                         hidden={!this.state.userIsLoggedIn}
                                         tag={Link}
                                         className="text-dark"
-                                        onClick={this.handleLogout}
+                                        onClick={this.attemptLogOut}
                                         to="/">Log Out</NavLink>
                                 </NavItem>
                             </ul>

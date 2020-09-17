@@ -147,6 +147,7 @@
               </e>
               <e p="User" t="Include">
                 <e p="LoginMethods.js" t="Include" />
+                <e p="LogoutMethods.js" t="Include" />
                 <e p="RegistrationMethods.js" t="Include" />
               </e>
             </e>
