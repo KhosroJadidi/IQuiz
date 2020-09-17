@@ -21,7 +21,6 @@ export class CookieHandlerMethods{
 
         fetch(`${applicationUrl}/${saveAuthCookieRoute}`, requestOptions)
             .then(response => response.text())
-            .then(result => console.log(result))
             .catch(error => console.log('error', error));
     }
 
@@ -35,7 +34,6 @@ export class CookieHandlerMethods{
 
         fetch(`${applicationUrl}/${deleteAuthCookieRoute}`, requestOptions)
             .then(response => response.text())
-            .then(result => console.log(result))
             .catch(error => console.log('error', error));
     }
 }

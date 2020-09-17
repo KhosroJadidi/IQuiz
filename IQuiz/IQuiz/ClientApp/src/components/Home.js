@@ -10,7 +10,7 @@ export class Home extends Component {
         <h3>Take a Quiz and see how many correct answers can you get?</h3>
         <h4>More functionalities are under development, such as:</h4>
         <ol>
-          <li>Login and authentication.</li>
+          <li>Login and authentication.(DONE!)</li>
           <li>Top Scores</li>
           <li>Admin level controls</li>
           <li>And perhaps even more...</li>

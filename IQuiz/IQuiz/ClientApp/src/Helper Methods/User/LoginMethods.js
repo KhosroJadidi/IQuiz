@@ -3,6 +3,7 @@ import {ResponseHandlerMethods} from '../Response Handlers/ResponseHandlerMethod
 //Fetch settings
 const applicationUrl = "http://localhost:53134";
 const loginRoute = "token/getToken";
+const checkAuthCookiesRoute="Cookies/checkForAuthCookies";
 
 export class  LoginMethods{
     static async attemptLogIn(component) {
@@ -26,4 +27,16 @@ export class  LoginMethods{
             .catch(error => console.log('error', error));
         await ResponseHandlerMethods.handleLoginResponse(response,component);
     };
+
+    static async checkLoggedInStatus(component){
+        let requestOptions = {
+            method: 'POST',
+            redirect: 'follow'
+        };
+
+        let response= await fetch(`${applicationUrl}/${checkAuthCookiesRoute}`, requestOptions)
+            .catch(error => console.log('error', error));
+
+        await ResponseHandlerMethods.handleAuthCookiesCheckResponse(response,component);
+    }
 }

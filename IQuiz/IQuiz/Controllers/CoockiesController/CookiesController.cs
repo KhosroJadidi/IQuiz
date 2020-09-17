@@ -25,7 +25,7 @@ namespace IQuiz.Controllers.CoockiesController
         [Route("deleteAuthCookies")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult RemoveAuthenticationCookies()
+        public ActionResult DeleteAuthenticationCookies()
         {
 #nullable enable
             var tokenCookie = HttpContext.Request.Cookies[CoockieNames.Token];
@@ -56,6 +56,27 @@ namespace IQuiz.Controllers.CoockiesController
             });
             return NotFound(error.Value);
         }
+
+        [HttpPost]
+        [Route("checkForAuthCookies")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult CheckForAuthCookies()
+        {
+#nullable enable
+            var authToken= HttpContext.Request.Cookies[CoockieNames.Token];
+#nullable disable
+            if (authToken == null) 
+                return Unauthorized("No Authentication Cookies Were Found.");
+            
+            var userEmail = HttpContext.Request.Cookies[CoockieNames.Email];
+            return Ok(new JsonResult(new 
+            {
+                email=userEmail,
+                token = authToken
+            }));
+        }
+        
         #endregion
     }
 }

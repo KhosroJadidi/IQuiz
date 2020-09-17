@@ -54,4 +54,34 @@ export class ResponseHandlerMethods{
             console.log(response);
         }
     }
+
+    static async handleAuthCookiesCheckResponse(response,component){
+        if (response.status===200){
+            await handle200AuthCookiesCheckResponse(response);
+        }else if (response.status===404){
+            await handle204AuthCookiesCheckResponse(response);
+        }else{
+            console.log("Unhandled response from the server.")
+        }
+
+        async function handle200AuthCookiesCheckResponse(response) {
+            let text= await response.text();
+            let json= await JSON.parse(text);
+            component.setState({
+                token: json.value.token,
+                user: json.value.email,
+                userIsLoggedIn:true,
+                currentUserName:json.value.email
+            });
+        }
+
+        async function handle204AuthCookiesCheckResponse(response) {
+            component.setState({
+                token: "",
+                user: "",
+                userIsLoggedIn:true
+            });
+        }
+
+    }
 }

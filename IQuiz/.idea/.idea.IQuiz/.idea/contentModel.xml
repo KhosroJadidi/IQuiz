@@ -158,10 +158,8 @@
           <e p="CoockiesController" t="Include">
             <e p="CookiesController.cs" t="Include" />
           </e>
-          <e p="LoginStatusController.cs" t="Include" />
           <e p="QuestionAndAnswerController.cs" t="Include" />
           <e p="QuestionsAndAnswersControllers" t="Include" />
-          <e p="RegistrationController.cs" t="Include" />
           <e p="ResetAndSeedController.cs" t="Include" />
           <e p="Scores Controllers" t="Include" />
           <e p="TokenControllers" t="Include">

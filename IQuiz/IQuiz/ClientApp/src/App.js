@@ -10,7 +10,7 @@ import {QuizSession} from './components/QuizSession';
 
 //Fetch settings
 const applicationUrl = "http://localhost:53134";
-const route = "LoginStatus/checkLogin";
+const route = "Cookies/checkForAuthCookies";
 
 export class App extends Component {
     static displayName = App.name;

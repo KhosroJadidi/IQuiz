@@ -2,10 +2,7 @@ import React, {Component} from 'react';
 import {Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import './NavMenu.css';
-
-//Fetch settings
-const applicationUrl = "http://localhost:53134";
-const route = "LoginStatus/checkLogin";
+import {LoginMethods} from "../Helper Methods/User/LoginMethods";
 
 export class NavMenu extends Component {
     static displayName = NavMenu.name;
@@ -27,32 +24,7 @@ export class NavMenu extends Component {
     }
 
     async componentDidMount() {
-        await this.checkAuthCookie();
-    }
-
-    async checkAuthCookie() {
-        let requestOptions = {
-            method: 'GET',
-            redirect: 'follow'
-        };
-
-    let response= await fetch(`${applicationUrl}/${route}`, requestOptions);
-        if(response.status===200) {
-            let text= await response.text();
-            let json= await JSON.parse(text);
-            this.setState({
-                token: json.value.token,
-                user: json.value.user,
-                userIsLoggedIn:true,
-                currentUserName:json.value.user
-            });
-        }else{
-            this.setState({
-                token: "",
-                user: "",
-                userIsLoggedIn:false
-            })
-        }
+        await LoginMethods.checkLoggedInStatus(this);
     }
 
     toggleNavbar() {
