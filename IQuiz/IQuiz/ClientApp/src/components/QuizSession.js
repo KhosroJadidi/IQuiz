@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import {QuestionCard} from "./QuestionCard";
 import {FinalScore} from "./FinalScore";
 import "../custom.css";
+import {LoginMethods} from "../Helper Methods/User/LoginMethods";
+import {QuestionAndAnswerMethods} from "../Helper Methods/QuestionsAndAnswers/QuestionAndAnswerMethods";
 
 //Fetch settings
 const applicationUrl = "http://localhost:53134";
@@ -20,20 +22,22 @@ export class QuizSession extends Component {
             currentQuestion: 0,
             currentScore: 0,
             quizIsDone: false,
-            token: ''
+            token:'',
+            user: '',
+            userIsLoggedIn:false,
+            currentUserName:''
         };
         this.fetchQuestions = this.fetchQuestions.bind(this);
         this.getQuestionCard = this.getQuestionCard.bind(this);
         this.loadNextQuestionHandler = this.loadNextQuestionHandler.bind(this);
         this.finalScoreHandler = this.finalScoreHandler.bind(this);
         this.onClickHandler = this.onClickHandler.bind(this);
-        this.checkAuthCookie = this.checkAuthCookie.bind(this);
     };
 
     async componentDidMount() {
-        let token = await this.checkAuthCookie();
-        if (token)
-            this.setState({token: token});
+        await LoginMethods.checkLoggedInStatus(this);
+        //await QuestionAndAnswerMethods.fetchQuestions(this);
+        //await QuestionAndAnswerMethods.getQuestionCard(this);
         let questions = await this.fetchQuestions();
         this.setState({fetchedData: questions});
     }
@@ -100,24 +104,6 @@ export class QuizSession extends Component {
         } else {
             this.finalScoreHandler();
         }
-    }
-
-    checkAuthCookie() {
-        let requestOptions = {
-            method: 'GET',
-            redirect: 'follow'
-        };
-
-        let token = fetch(`${applicationUrl}/${checkLoginRoute}`, requestOptions)
-            .then(response => response.text())
-            .then(result => JSON.parse(result))
-            .then((json) => {
-                if (json.value.token && json.value.user)
-                    return json.value.token
-                return;
-            })
-            .catch(error => console.log('error', error));
-        return token;
     }
 
     render() {

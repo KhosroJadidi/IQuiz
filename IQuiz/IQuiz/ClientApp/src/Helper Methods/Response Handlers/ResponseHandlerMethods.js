@@ -1,4 +1,4 @@
-import {CookieHandlerMethods} from '../Cookie/CookieHandlerMethods';
+import {CookieHandlerMethods} from '../Cookie Handlers/CookieHandlerMethods';
 import {LoginMethods} from "../User/LoginMethods";
 
 export class ResponseHandlerMethods{
@@ -55,7 +55,7 @@ export class ResponseHandlerMethods{
     }
 
     static async handleAuthCookiesCheckResponse(response,component){
-        if (response.status===204){
+        if (response.status===200){
             await handle200AuthCookiesCheckResponse(response);
         }else if (response.status===404){
             await handle204AuthCookiesCheckResponse(response);
@@ -109,5 +109,9 @@ export class ResponseHandlerMethods{
             console.log("The following authentication cookies were not found or deleted:");
             console.log(response);
         }
+    }
+
+    static async fetchQuestionsResponseHandler(response,component){
+
     }
 }

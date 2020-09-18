@@ -46,14 +46,15 @@ namespace IQuiz
             })
                 .AddJwtBearer(options=>
                 {
-                    var symmetricSecurityKey = SymmetricSecurityKeyMethods.GetSymmetricSecurityKey(Configuration);
+                    //var symmetricSecurityKey = SymmetricSecurityKeyMethods.GetSymmetricSecurityKey(Configuration);
 
                     options.RequireHttpsMetadata = true;
                     options.SaveToken = true;
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuerSigningKey=true,
-                        IssuerSigningKey= symmetricSecurityKey,
+                        IssuerSigningKey = Configuration.GetSymmetricSecurityKey(),
+                        //IssuerSigningKey= symmetricSecurityKey,
                         ValidateIssuer=false,
                         ValidateAudience=false
                     };

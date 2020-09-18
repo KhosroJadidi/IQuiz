@@ -136,11 +136,14 @@
             </e>
             <e p="custom.css" t="Include" />
             <e p="Helper Methods" t="Include">
-              <e p="Cookie" t="Include">
+              <e p="Cookie Handlers" t="Include">
                 <e p="CookieHandlerMethods.js" t="Include" />
               </e>
               <e p="Encryption" t="Include">
                 <e p="EncryptionMethods.js" t="Include" />
+              </e>
+              <e p="QuestionsAndAnswers" t="Include">
+                <e p="QuestionAndAnswerMethods.js" t="Include" />
               </e>
               <e p="Response Handlers" t="Include">
                 <e p="ResponseHandlerMethods.js" t="Include" />
@@ -159,8 +162,9 @@
           <e p="CoockiesController" t="Include">
             <e p="CookiesController.cs" t="Include" />
           </e>
-          <e p="QuestionAndAnswerController.cs" t="Include" />
-          <e p="QuestionsAndAnswersControllers" t="Include" />
+          <e p="QuestionsAndAnswersControllers" t="Include">
+            <e p="QuestionAndAnswersController.cs" t="Include" />
+          </e>
           <e p="ResetAndSeedController.cs" t="Include" />
           <e p="Scores Controllers" t="Include" />
           <e p="TokenControllers" t="Include">
@@ -177,6 +181,7 @@
         </e>
         <e p="extensions" t="Include">
           <e p="DecryptionMethods.cs" t="Include" />
+          <e p="QuestionsAndAnswersMethods.cs" t="Include" />
           <e p="RegistrationMethods.cs" t="Include" />
           <e p="SymmetricSecurityKeyMethods.cs" t="Include" />
           <e p="TokenCreationMethods.cs" t="Include" />
