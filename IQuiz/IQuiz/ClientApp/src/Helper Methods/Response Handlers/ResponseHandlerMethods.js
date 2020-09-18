@@ -113,5 +113,24 @@ export class ResponseHandlerMethods{
 
     static async fetchQuestionsResponseHandler(response,component){
 
+        if (response.status===200){
+            await handle200fetchQuestionsResponse(response);
+        }else if (response.status===404){
+            await handle404fetchQuestionsResponse(response);
+        }else{
+            console.log("Unhandled response from the server.");
+            console.log(response);
+        }
+
+        async function handle200fetchQuestionsResponse(response) {
+            let json = await response.text()
+                .then(text => JSON.parse(text));
+            component.setState({fetchedData: json.value});
+        }
+
+        async function handle404fetchQuestionsResponse(response) {
+            console.log("No questions were returned from the database.");
+            console.log(response);
+        }
     }
 }

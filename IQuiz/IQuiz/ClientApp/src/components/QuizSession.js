@@ -5,10 +5,6 @@ import "../custom.css";
 import {LoginMethods} from "../Helper Methods/User/LoginMethods";
 import {QuestionAndAnswerMethods} from "../Helper Methods/QuestionsAndAnswers/QuestionAndAnswerMethods";
 
-//Fetch settings
-const applicationUrl = "http://localhost:53134";
-const fetchQuestionRoute = "getQuestions";
-const checkLoginRoute = "LoginStatus/checkLogin";
 //This variable determines the number of questions asked per session.
 const fetchQuantity = 5;
 
@@ -27,7 +23,6 @@ export class QuizSession extends Component {
             userIsLoggedIn:false,
             currentUserName:''
         };
-        this.fetchQuestions = this.fetchQuestions.bind(this);
         this.getQuestionCard = this.getQuestionCard.bind(this);
         this.loadNextQuestionHandler = this.loadNextQuestionHandler.bind(this);
         this.finalScoreHandler = this.finalScoreHandler.bind(this);
@@ -36,44 +31,7 @@ export class QuizSession extends Component {
 
     async componentDidMount() {
         await LoginMethods.checkLoggedInStatus(this);
-        //await QuestionAndAnswerMethods.fetchQuestions(this);
-        //await QuestionAndAnswerMethods.getQuestionCard(this);
-        let questions = await this.fetchQuestions();
-        this.setState({fetchedData: questions});
-    }
-
-    async fetchQuestions() {
-        let myHeaders = new Headers();
-        await myHeaders.append("Authorization", `Bearer ${this.state.token}`);
-
-        let requestOptions = {
-            method: 'GET',
-            headers: myHeaders,
-            redirect: 'follow'
-        };
-        let fetchedQA = await fetch(`${applicationUrl}/${fetchQuestionRoute}?quantity=5`, requestOptions)
-            .then(response => response.json())
-            .catch(error => console.log('error', error));
-        return fetchedQA;
-    }
-
-    getQuestionCard() {
-        if (this.state.fetchedData.length !== 0) {
-            return (
-                <QuestionCard
-                    id={this.state.fetchedData[this.state.currentQuestion].id}
-                    imgUrl={this.state.fetchedData[this.state.currentQuestion].imageUrl}
-                    question={this.state.fetchedData[this.state.currentQuestion].question}
-                    answer_1={this.state.fetchedData[this.state.currentQuestion].answer_1}
-                    answer_2={this.state.fetchedData[this.state.currentQuestion].answer_2}
-                    answer_3={this.state.fetchedData[this.state.currentQuestion].answer_3}
-                    answer_4={this.state.fetchedData[this.state.currentQuestion].answer_4}
-                    correctAnswer={this.state.fetchedData[this.state.currentQuestion].correctAnswer}
-                    points={this.state.fetchedData[this.state.currentQuestion].points}
-                    gainPoint={this.UpdateScore.bind(this)}>
-                </QuestionCard>
-            );
-        }
+        await QuestionAndAnswerMethods.fetchQuestions(this,fetchQuantity);
     }
 
     async loadNextQuestionHandler() {
@@ -130,5 +88,24 @@ export class QuizSession extends Component {
                 finalScore={this.state.currentScore}>
             </FinalScore>
         )
+    }
+
+    getQuestionCard() {
+        if (this.state.fetchedData.length !== 0) {
+            return (
+                <QuestionCard
+                    id={this.state.fetchedData[this.state.currentQuestion].id}
+                    imgUrl={this.state.fetchedData[this.state.currentQuestion].imageUrl}
+                    question={this.state.fetchedData[this.state.currentQuestion].question}
+                    answer_1={this.state.fetchedData[this.state.currentQuestion].answer_1}
+                    answer_2={this.state.fetchedData[this.state.currentQuestion].answer_2}
+                    answer_3={this.state.fetchedData[this.state.currentQuestion].answer_3}
+                    answer_4={this.state.fetchedData[this.state.currentQuestion].answer_4}
+                    correctAnswer={this.state.fetchedData[this.state.currentQuestion].correctAnswer}
+                    points={this.state.fetchedData[this.state.currentQuestion].points}
+                    gainPoint={this.UpdateScore.bind(this)}>
+                </QuestionCard>
+            );
+        }
     }
 }
