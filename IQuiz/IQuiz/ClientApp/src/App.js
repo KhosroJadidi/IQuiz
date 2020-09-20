@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import {Route} from 'react-router';
 import {Layout} from './components/Layout';
 import {Home} from './components/Home';
-import {TopScores} from './components/TopScores';
-import {LoginRegister} from './components/LoginRegister'
+import {TopScores} from './components/ScoreComponents/TopScores';
+import {LoginRegister} from './components/LoginRegistrationComponents/LoginRegister'
 import './custom.css'
-import {QuizSession} from './components/QuizSession';
+import {QuizSession} from './components/QuestionAnswerComponents/QuizSession';
 
 
 //Fetch settings

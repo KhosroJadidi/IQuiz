@@ -1,4 +1,4 @@
-import {ResponseHandlerMethods} from '../Response Handlers/ResponseHandlerMethods';
+import {ResponseHandlerMethods} from '../../Response Handlers/ResponseHandlerMethods';
 
 //Fetch settings
 const applicationUrl = "http://localhost:53134";

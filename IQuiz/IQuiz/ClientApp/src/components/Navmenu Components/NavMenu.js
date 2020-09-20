@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import './NavMenu.css';
-import {LoginMethods} from "../Helper Methods/User/LoginMethods";
-import {LogoutMethods} from "../Helper Methods/User/LogoutMethods";
+import {LoginMethods} from "../../Helper Methods/User/LoginMethods";
+import {LogoutMethods} from "../../Helper Methods/User/LogoutMethods";
 
 export class NavMenu extends Component {
     static displayName = NavMenu.name;

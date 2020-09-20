@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../custom.css";
+import "../../custom.css";
 
 export class QuestionCard extends Component {
     static displayName = QuestionCard.name;

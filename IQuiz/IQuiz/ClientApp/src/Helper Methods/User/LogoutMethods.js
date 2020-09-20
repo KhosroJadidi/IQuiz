@@ -1,5 +1,5 @@
 //Fetch settings
-import {ResponseHandlerMethods} from "../Response Handlers/ResponseHandlerMethods";
+import {ResponseHandlerMethods} from "../../Response Handlers/ResponseHandlerMethods";
 
 const applicationUrl = "http://localhost:53134";
 const loginRoute = "Cookies/deleteAuthCookies";

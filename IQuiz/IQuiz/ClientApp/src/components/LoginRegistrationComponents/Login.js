@@ -1,7 +1,7 @@
 import React from "react";
 import {MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn} from 'mdbreact';
-import {EncryptionMethods} from '../Helper Methods/Encryption/EncryptionMethods';
-import {LoginMethods} from '../Helper Methods/User/LoginMethods';
+import {EncryptionMethods} from '../../Helper Methods/Encryption/EncryptionMethods';
+import {LoginMethods} from '../../Helper Methods/User/LoginMethods';
 
 export class Login extends React.Component {
     constructor(props) {

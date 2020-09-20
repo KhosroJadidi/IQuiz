@@ -1,5 +1,5 @@
-import {CookieHandlerMethods} from '../Cookie Handlers/CookieHandlerMethods';
-import {LoginMethods} from "../User/LoginMethods";
+import {CookieHandlerMethods} from '../Helper Methods/Cookie Handlers/CookieHandlerMethods';
+import {LoginMethods} from "../Helper Methods/User/LoginMethods";
 
 export class ResponseHandlerMethods{
     static async handleLoginResponse(response,component) {

@@ -1,4 +1,4 @@
-import {ResponseHandlerMethods} from "../Response Handlers/ResponseHandlerMethods";
+import {ResponseHandlerMethods} from "../../Response Handlers/ResponseHandlerMethods";
 //Fetch Settings
 const applicationUrl="http://localhost:53134";
 const registerRoute="User/register";

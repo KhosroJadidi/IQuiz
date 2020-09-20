@@ -1,6 +1,6 @@
-import {QuestionCard} from "../../components/QuestionCard";
+import {QuestionCard} from "../../components/QuestionAnswerComponents/QuestionCard";
 import React from "react";
-import {ResponseHandlerMethods} from "../Response Handlers/ResponseHandlerMethods";
+import {ResponseHandlerMethods} from "../../Response Handlers/ResponseHandlerMethods";
 
 
 //Fetch settings

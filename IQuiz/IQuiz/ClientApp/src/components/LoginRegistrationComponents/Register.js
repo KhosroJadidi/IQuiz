@@ -1,7 +1,7 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
-import {EncryptionMethods} from '../Helper Methods/Encryption/EncryptionMethods';
-import {RegistrationMethods} from "../Helper Methods/User/RegistrationMethods";
+import {EncryptionMethods} from '../../Helper Methods/Encryption/EncryptionMethods';
+import {RegistrationMethods} from "../../Helper Methods/User/RegistrationMethods";
 //https://mdbootstrap.com/docs/react/forms/inputs/#docsTabsAPI
 
 export class Register extends React.Component {

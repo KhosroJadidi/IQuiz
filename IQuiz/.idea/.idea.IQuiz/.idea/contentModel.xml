@@ -122,17 +122,25 @@
             <e p="App.js" t="Include" />
             <e p="App.test.js" t="Include" />
             <e p="components" t="Include">
-              <e p="FinalScore.js" t="Include" />
               <e p="Home.js" t="Include" />
               <e p="Layout.js" t="Include" />
-              <e p="Login.js" t="Include" />
-              <e p="LoginRegister.js" t="Include" />
-              <e p="NavMenu.css" t="Include" />
-              <e p="NavMenu.js" t="Include" />
-              <e p="QuestionCard.js" t="Include" />
-              <e p="QuizSession.js" t="Include" />
-              <e p="Register.js" t="Include" />
-              <e p="TopScores.js" t="Include" />
+              <e p="LoginRegistrationComponents" t="Include">
+                <e p="Login.js" t="Include" />
+                <e p="LoginRegister.js" t="Include" />
+                <e p="Register.js" t="Include" />
+              </e>
+              <e p="Navmenu Components" t="Include">
+                <e p="NavMenu.css" t="Include" />
+                <e p="NavMenu.js" t="Include" />
+              </e>
+              <e p="QuestionAnswerComponents" t="Include">
+                <e p="QuestionCard.js" t="Include" />
+                <e p="QuizSession.js" t="Include" />
+              </e>
+              <e p="ScoreComponents" t="Include">
+                <e p="FinalScore.js" t="Include" />
+                <e p="TopScores.js" t="Include" />
+              </e>
             </e>
             <e p="custom.css" t="Include" />
             <e p="Helper Methods" t="Include">
@@ -145,9 +153,6 @@
               <e p="QuestionsAndAnswers" t="Include">
                 <e p="QuestionAndAnswerMethods.js" t="Include" />
               </e>
-              <e p="Response Handlers" t="Include">
-                <e p="ResponseHandlerMethods.js" t="Include" />
-              </e>
               <e p="User" t="Include">
                 <e p="LoginMethods.js" t="Include" />
                 <e p="LogoutMethods.js" t="Include" />
@@ -156,6 +161,9 @@
             </e>
             <e p="index.js" t="Include" />
             <e p="registerServiceWorker.js" t="Include" />
+            <e p="Response Handlers" t="Include">
+              <e p="ResponseHandlerMethods.js" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Controllers" t="Include">

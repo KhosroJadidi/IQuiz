@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import {QuestionCard} from "./QuestionCard";
-import {FinalScore} from "./FinalScore";
-import "../custom.css";
-import {LoginMethods} from "../Helper Methods/User/LoginMethods";
-import {QuestionAndAnswerMethods} from "../Helper Methods/QuestionsAndAnswers/QuestionAndAnswerMethods";
+import {FinalScore} from "../ScoreComponents/FinalScore";
+import "../../custom.css";
+import {LoginMethods} from "../../Helper Methods/User/LoginMethods";
+import {QuestionAndAnswerMethods} from "../../Helper Methods/QuestionsAndAnswers/QuestionAndAnswerMethods";
 
 //This variable determines the number of questions asked per session.
 const fetchQuantity = 5;
@@ -56,9 +56,9 @@ export class QuizSession extends Component {
 
     }
 
-    onClickHandler() {
+    async onClickHandler() {
         if (this.state.currentQuestion < fetchQuantity - 1) {
-            this.loadNextQuestionHandler();
+            await this.loadNextQuestionHandler();
         } else {
             this.finalScoreHandler();
         }
