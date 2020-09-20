@@ -1,11 +1,8 @@
 ﻿using IQuiz.Data.Context;
-using IQuiz.Models;
 using IQuiz.Models.Database_Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.InteropServices.WindowsRuntime;
 using IQuiz.Extensions;
 using Microsoft.Extensions.Configuration;
 

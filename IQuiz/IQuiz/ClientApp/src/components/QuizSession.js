@@ -85,7 +85,8 @@ export class QuizSession extends Component {
         }
         return (
             <FinalScore
-                finalScore={this.state.currentScore}>
+                finalScore={this.state.currentScore}
+                token={this.state.token}>
             </FinalScore>
         )
     }

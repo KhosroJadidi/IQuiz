@@ -17,5 +17,12 @@ namespace IQuiz.Extensions
             var registerUserRouteRoute=configuration.GetSection("iisSettings")["registerUserRoute"];
             return  $"{applicationUrl}/{registerUserRouteRoute}";
         }
+        
+        public static string RetrieveSubmitScoreUrl(this IConfiguration configuration)
+        {
+            var applicationUrl = configuration.GetSection("iisSettings")["applicationUrl"];
+            var registerUserRouteRoute=configuration.GetSection("iisSettings")["submitScoreRoute"];
+            return  $"{applicationUrl}/{registerUserRouteRoute}";
+        }
     }
 }

@@ -28,7 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Scores Controllers" />
     <Folder Include="SQL Scripts\" />
   </ItemGroup>
 

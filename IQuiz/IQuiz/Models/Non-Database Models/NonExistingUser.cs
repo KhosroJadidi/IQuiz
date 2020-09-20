@@ -1,10 +1,12 @@
-﻿using IQuiz.Models.Database_Models;
+﻿//TODO:Delete this file
 
-namespace IQuiz.Models
-{
-    public class NonExistingUser:User
-    {
-        public bool Success { get; set; }
-        public string Message { get; set; }
-    }
-}
+// using IQuiz.Models.Database_Models;
+//
+// namespace IQuiz.Models
+// {
+//     public class NonExistingUser:User
+//     {
+//         public bool Success { get; set; }
+//         public string Message { get; set; }
+//     }
+// }

@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 using IQuiz.Data.Context;
-using IQuiz.Models.Database_Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IQuiz.Extensions
@@ -25,7 +23,7 @@ namespace IQuiz.Extensions
             var randomIndices= new List<int>();
             var random= new Random();
             
-            //get a list of random numbers.
+            //get a list of random indices.(Note: Indices is the plural form of index)
             //The size of this list is equal to the requested quantity of questions.
             //The list won't contain duplicate indices.
             while (randomIndices.Count()<quantity)
