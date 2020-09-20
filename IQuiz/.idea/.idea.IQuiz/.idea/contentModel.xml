@@ -153,6 +153,9 @@
               <e p="QuestionsAndAnswers" t="Include">
                 <e p="QuestionAndAnswerMethods.js" t="Include" />
               </e>
+              <e p="Scores" t="Include">
+                <e p="ScoresMethods.js" t="Include" />
+              </e>
               <e p="User" t="Include">
                 <e p="LoginMethods.js" t="Include" />
                 <e p="LogoutMethods.js" t="Include" />
@@ -221,6 +224,7 @@
             <e p="DuplicateUser.cs" t="Include" />
             <e p="NewUser.cs" t="Include" />
             <e p="NonExistingUser.cs" t="Include" />
+            <e p="ScoreSubmissionRequest.cs" t="Include" />
             <e p="UserWithToken.cs" t="Include" />
           </e>
         </e>

@@ -26,7 +26,6 @@ namespace IQuiz.Models.Database_Models
         public int GainedPoints
         {
             get => _gainedPoints;
-            //set { if (value < 0) _gainedPoints = 0; }
             set
             {
                 if (value < 0)

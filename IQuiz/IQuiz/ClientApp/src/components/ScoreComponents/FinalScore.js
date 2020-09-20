@@ -1,8 +1,20 @@
 import React,{Component} from "react";
+import {ScoresMethods} from "../../Helper Methods/Scores/ScoresMethods";
 
 export class FinalScore extends Component{
     static displayName=FinalScore.name;
+    constructor(props) {
+        super(props)
+        this.state= {
+            date:''
+        }
+    }
 
+    async componentDidMount() {
+        let date= new Date().toISOString();
+        await this.setState({date:date});
+        ScoresMethods.submitScore(this.props,this.state.date);
+    }
 
     render(){
         return(

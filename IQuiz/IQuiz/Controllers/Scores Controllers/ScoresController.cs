@@ -2,7 +2,6 @@
 using IQuiz.Data.Context;
 using IQuiz.Extensions;
 using IQuiz.Models;
-using IQuiz.Models.Database_Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -29,14 +28,15 @@ namespace IQuiz.Controllers.Scores_Controllers
         [Route("submit")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-            public ActionResult SubmitScore([FromBody] Score score)
+            public ActionResult SubmitScore([FromBody] ScoreSubmissionRequest request)
             {
-                if (_applicationDbContext.Scores.Any(s => s.User.Email==score.User.Email &&s.Date==score.Date))
+                var user=_applicationDbContext.Users.Single(u => u.Email == request.Email);
+                if (_applicationDbContext.Scores.Any(s=>s.User==user&&s.Date==request.Date))
                     return NoContent();
                     
-                _applicationDbContext.SubmitScore(score);
+                _applicationDbContext.SubmitScore(user,request);
                 var uri = _configuration.RetrieveSubmitScoreUrl();
-                var json = new JsonResult(score);
+                var json = new JsonResult(request);
                 return Created(uri,json);
             }
     }
