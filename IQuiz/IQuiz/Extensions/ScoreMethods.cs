@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using IQuiz.Data.Context;
+﻿using IQuiz.Data.Context;
 using IQuiz.Models;
 using IQuiz.Models.Database_Models;
 

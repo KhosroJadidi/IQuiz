@@ -46,25 +46,6 @@ export class NavMenu extends Component {
         await LogoutMethods.attemptLogOut(this);
     }
 
-    // attemptCookieRemoval(){
-    //     let requestOptions = {
-    //         method: 'POST',
-    //         redirect: 'follow'
-    //     };
-    //
-    //     fetch("http://localhost:53134/LoginStatus/remove", requestOptions)
-    //         .then(response => response.text())
-    //         .catch(error => console.log('error', error));
-    // }
-
-    // async handleLogout() {
-    //     await this.attemptLogOut();
-    //     //this.attemptCookieRemoval();
-    // }
-
-
-
-
     render() {
         return (
             <header>

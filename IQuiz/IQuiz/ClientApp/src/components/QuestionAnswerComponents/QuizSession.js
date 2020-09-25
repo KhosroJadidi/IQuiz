@@ -34,6 +34,13 @@ export class QuizSession extends Component {
         await QuestionAndAnswerMethods.fetchQuestions(this,fetchQuantity);
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(this.state.quizIsDone)
+            setTimeout(()=>{
+                this.props.history.push('/top');
+            },2000);
+    }
+
     async loadNextQuestionHandler() {
         await this.setState(
             (prevState) => ({
@@ -53,7 +60,6 @@ export class QuizSession extends Component {
                 currentScore: prevState.currentScore + points
             })
         );
-
     }
 
     async onClickHandler() {
