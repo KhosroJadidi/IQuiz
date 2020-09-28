@@ -1,6 +1,9 @@
-﻿using IQuiz.Data.Context;
+﻿using System.Linq;
+using IQuiz.Data.Context;
 using IQuiz.Models;
 using IQuiz.Models.Database_Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace IQuiz.Extensions
 {
@@ -20,6 +23,17 @@ namespace IQuiz.Extensions
             
             applicationDbContext.Scores.Add(scoreToSubmit);
             applicationDbContext.SaveChanges();
+        }
+
+        public static JsonResult GetTopScores(this ApplicationDbContext applicationDbContext, int quantity)
+        {
+            var topScores = applicationDbContext.Scores
+                .Where(s => true)
+                .Include(s => s.User)
+                .OrderByDescending(s => s.GainedPoints)
+                .Take(quantity);
+
+            return new JsonResult(topScores);
         }
     }
 }

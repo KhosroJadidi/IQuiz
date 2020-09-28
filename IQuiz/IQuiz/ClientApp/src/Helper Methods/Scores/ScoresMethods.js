@@ -1,7 +1,10 @@
 //Fetch settings
 
+import {ResponseHandlerMethods} from "../../Response Handlers/ResponseHandlerMethods";
+
 const applicationUrl = "http://localhost:53134";
 const submitScoreRoute = "Scores/submit";
+const getTopScoresRoute="Scores/getTop"
 
 export class ScoresMethods{
     static async submitScore(props,date){
@@ -20,5 +23,17 @@ export class ScoresMethods{
 
         await fetch(`${applicationUrl}/${submitScoreRoute}`, requestOptions)
             .catch(error => console.log('error', error));
+    }
+
+    static async fetchTopScores(component){
+
+        let requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+        };
+
+        let response= await fetch(`${applicationUrl}/${getTopScoresRoute}`, requestOptions)
+            .catch(error => console.log('error', error));
+        await ResponseHandlerMethods.fetchTopScoresResponseHandler(response,component);
     }
 }

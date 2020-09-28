@@ -134,4 +134,26 @@ export class ResponseHandlerMethods{
         }
     }
 
+    static async fetchTopScoresResponseHandler(response,component){
+        if (response.status===200){
+            await handle200fetchTopScoresResponse(response);
+        }else if (response.status===404){
+            await handle404fetchTopScoresResponse(response);
+        }else{
+            console.log("Unhandled response from the server.");
+            console.log(response);
+        }
+
+        async function handle200fetchTopScoresResponse(response){
+            let text= await response.text();
+            let json= await JSON.parse(text);
+            component.setState({TopTenPlayers:json.value})
+        }
+
+        async function handle404fetchTopScoresResponse(response){
+            component.setState({TopTenPlayers:[]});
+            console.log("No scores were returned from the database.");
+            console.log(response);
+        }
+    }
 }

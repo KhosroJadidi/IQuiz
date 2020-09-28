@@ -28,16 +28,29 @@ namespace IQuiz.Controllers.Scores_Controllers
         [Route("submit")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-            public ActionResult SubmitScore([FromBody] ScoreSubmissionRequest request)
-            {
-                var user=_applicationDbContext.Users.Single(u => u.Email == request.Email);
-                if (_applicationDbContext.Scores.Any(s=>s.User==user&&s.Date==request.Date))
-                    return NoContent();
+        public ActionResult SubmitScore([FromBody] ScoreSubmissionRequest request)
+        {
+            var user=_applicationDbContext.Users.Single(u => u.Email == request.Email);
+            if (_applicationDbContext.Scores.Any(s=>s.User==user&&s.Date==request.Date))
+                return NoContent();
                     
-                _applicationDbContext.SubmitScore(user,request);
-                var uri = _configuration.RetrieveSubmitScoreUrl();
-                var json = new JsonResult(request);
-                return Created(uri,json);
-            }
+            _applicationDbContext.SubmitScore(user,request);
+            var uri = _configuration.RetrieveSubmitScoreUrl();
+            var json = new JsonResult(request);
+            return Created(uri,json);
+        }
+
+        [HttpGet]
+        [Route("getTop")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult GetTopScores(int quantity=10)
+        {
+            if (!_applicationDbContext.Scores.Any())
+                return NotFound();
+
+            var topScores = _applicationDbContext.GetTopScores(quantity);
+            return Ok(topScores);
+        }
     }
 }
