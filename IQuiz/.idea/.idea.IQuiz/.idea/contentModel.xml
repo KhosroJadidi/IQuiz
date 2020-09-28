@@ -195,7 +195,6 @@
         <e p="extensions" t="Include">
           <e p="DecryptionMethods.cs" t="Include" />
           <e p="QuestionsAndAnswersMethods.cs" t="Include" />
-          <e p="RegistrationMethods.cs" t="Include" />
           <e p="ScoreMethods.cs" t="Include" />
           <e p="SymmetricSecurityKeyMethods.cs" t="Include" />
           <e p="TokenCreationMethods.cs" t="Include" />
@@ -204,7 +203,6 @@
         <e p="Helper Classes" t="Include">
           <e p="ClaimRoles.cs" t="Include" />
           <e p="CoockieNames.cs" t="Include" />
-          <e p="DecryptionMethods.cs" t="Include" />
         </e>
         <e p="IQuiz.csproj" t="IncludeRecursive" />
         <e p="Migrations" t="Include">

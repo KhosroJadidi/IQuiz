@@ -15,7 +15,7 @@ namespace IQuiz.Extensions
         public static UserWithToken GetUserWithToken(this User validUser, IConfiguration collection)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var symmetricSecurityKey = SymmetricSecurityKeyMethods.GetSymmetricSecurityKey(collection);
+            var symmetricSecurityKey = collection.GetSymmetricSecurityKey();
             var signinCredentials = new SigningCredentials(symmetricSecurityKey,
                 SecurityAlgorithms.HmacSha256Signature);
 
@@ -33,7 +33,7 @@ namespace IQuiz.Extensions
             var securityToken = tokenHandler.CreateToken(tokenDescriptor);
             var tokenString = tokenHandler.WriteToken(securityToken);
 
-            var userWithToken = new UserWithToken()
+            var userWithToken = new UserWithToken
             {
                 Success = true,
                 Token = tokenString,

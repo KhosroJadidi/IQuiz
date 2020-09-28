@@ -15,7 +15,7 @@ namespace IQuiz.Controllers
  
         public ResetAndSeedController(ApplicationDbContext dbContext)
         {
-            this._dbContext = dbContext;
+            _dbContext = dbContext;
         }
 
         #region API Calls
@@ -73,7 +73,7 @@ namespace IQuiz.Controllers
         private void SeedScores()
         {
             var users = _dbContext.Users;
-            foreach (User user in users)
+            foreach (var user in users)
             {
                 _dbContext.Scores.Add(new Score
                 {

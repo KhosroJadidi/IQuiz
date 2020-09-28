@@ -26,7 +26,7 @@ namespace IQuiz.Extensions
             //get a list of random indices.(Note: Indices is the plural form of index)
             //The size of this list is equal to the requested quantity of questions.
             //The list won't contain duplicate indices.
-            while (randomIndices.Count()<quantity)
+            while (randomIndices.Count<quantity)
             {
                 var randomIndex = random.Next(0, availableCount-1);
                 if(randomIndices.All(index => index != randomIndex))

@@ -17,7 +17,7 @@ export class TopScores extends Component {
 
 
   render() {
-    if(this.state.TopTenPlayers.__count===0){
+    if(this.state.TopTenPlayers[0]){
       return (
         <div className="table-responsive table-striped">
           <table className="table">
