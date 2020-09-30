@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap');
+
+.customQuestionCard{
+    background-color: #add8e6;
+    font-family: 'Sansita+Swashed';
+    font-size: large;
+}

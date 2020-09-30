@@ -33,8 +33,8 @@ export class Register extends React.Component {
 
   render() {
     return(
-        <MDBContainer className="m-1 p-2 ">
-          <MDBRow>
+        <MDBContainer className="m-1 p-2 text-center">
+          <MDBRow className="justify-content-center">
             <MDBCol md="6">
               <form>
                 <p className="h5 text-center mb-4">Sign up</p>

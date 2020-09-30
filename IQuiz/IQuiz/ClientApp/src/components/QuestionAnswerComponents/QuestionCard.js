@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../../custom.css";
+import './QuestionCard.css';
 
 export class QuestionCard extends Component {
     static displayName = QuestionCard.name;
@@ -40,7 +41,7 @@ export class QuestionCard extends Component {
     render() {
         return (
             <div
-                className="img-thumbnail img-fluid card-custom m-1 p-3 "
+                className="img-thumbnail img-fluid card-custom m-1 p-3 customQuestionCard"
                 align="center"
             >
                 <img

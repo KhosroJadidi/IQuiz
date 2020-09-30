@@ -1,5 +1,6 @@
 ﻿import React, { Component } from "react";
 import {ScoresMethods} from "../../Helper Methods/Scores/ScoresMethods";
+import './TopScores.css';
 
 export class TopScores extends Component {
   static displayName = TopScores.name;
@@ -31,7 +32,7 @@ export class TopScores extends Component {
     }else{
       if(this.state.TopTenPlayers[0]){
         return (
-            <div className="table-responsive table-striped">
+            <div className="table-responsive table-striped customTopScore">
               <table className="table">
                 <thead>
                 <tr>

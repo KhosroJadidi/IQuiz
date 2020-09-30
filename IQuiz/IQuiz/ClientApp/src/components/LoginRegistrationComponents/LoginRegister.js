@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import {Login} from "./Login";
 import {Register} from "./Register";
+import './LoginRegister.css';
 
 
 export class LoginRegister extends Component{
@@ -14,7 +15,7 @@ export class LoginRegister extends Component{
 
     render(){
         return(
-            <div>
+            <div className="customLoginRegister">
                 <Login props={this.props} ></Login>
                 <Register props={this.props} ></Register>
             </div>

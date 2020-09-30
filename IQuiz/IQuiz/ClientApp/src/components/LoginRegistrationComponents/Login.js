@@ -35,16 +35,16 @@ export class Login extends React.Component {
     //https://mdbootstrap.com/docs/react/forms/inputs/#docsTabsAPI
     render() {
         return (
-            <MDBContainer className="m-1 p-2 ">
-                <MDBRow>
+            <MDBContainer className="m-1 p-2 text-center ">
+                <MDBRow className="justify-content-center">
                     <MDBCol md="6">
                         <form>
                             <p className="h5 text-center mb-4">Sign in</p>
                             <div className="grey-text">
-                                <MDBInput label="Type your email" icon="envelope" group type="email" validate
+                                <MDBInput label="Your email" icon="envelope" group type="email" validate
                                           error="wrong"
                                           success="right" autoComplete="on" getValue={this.updateEmail}/>
-                                <MDBInput label="Type your password" icon="lock" group type="password" validate
+                                <MDBInput label="Your password" icon="lock" group type="password" validate
                                           autoComplete="on" getValue={this.updatePassword}/>
                             </div>
                             <h6 className="text-center m-4 p-1">{this.state.loginAttempt}</h6>

@@ -130,7 +130,6 @@
               <e p="Layout.js" t="Include" />
               <e p="LoginRegistrationComponents" t="Include">
                 <e p="Login.js" t="Include" />
-                <e p="LoginRegister.css" t="Include" />
                 <e p="LoginRegister.js" t="Include" />
                 <e p="Register.js" t="Include" />
               </e>

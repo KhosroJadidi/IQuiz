@@ -48,51 +48,55 @@ export class NavMenu extends Component {
 
     render() {
         return (
-            <header className="customNavbar">
-                <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 " light>
-                    <Container>
-                        <NavbarBrand tag={Link} to="/">IQuiz</NavbarBrand>
-                        <NavbarToggler onClick={this.toggleNavbar} className="mr-2"/>
-                        <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed}
-                                  navbar>
-                            <ul className="navbar-nav flex-grow">
-                                <NavItem>
-                                    <NavLink
-                                        hidden={this.state.userIsLoggedIn}
-                                        tag={Link}
-                                        className="text-dark"
-                                        to="/login">{this.state.currentUserName}</NavLink>
-                                    <NavLink
-                                        hidden={!this.state.userIsLoggedIn}
-                                        tag={Link}
-                                        className="text-dark"
-                                        to="/">{`Welcome ${this.state.currentUserName}`}</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink
-                                        tag={Link}
-                                        className="text-dark"
-                                        to={(this.state.userIsLoggedIn)?'/quiz':'/login'}>Quiz!</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink
-                                        tag={Link}
-                                        className="text-dark"
-                                        to="/top">Top Scores</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink
-                                        hidden={!this.state.userIsLoggedIn}
-                                        tag={Link}
-                                        className="text-dark"
-                                        onClick={this.attemptLogOut}
-                                        to="/">Log Out</NavLink>
-                                </NavItem>
-                            </ul>
-                        </Collapse>
-                    </Container>
-                </Navbar>
-            </header>
+
+<div>
+    <header className="customNavbar">
+        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 " light>
+            <Container>
+                <NavbarBrand tag={Link} to="/">IQuiz</NavbarBrand>
+                <NavbarToggler onClick={this.toggleNavbar} className="mr-2"/>
+                <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed}
+                          navbar>
+                    <ul className="navbar-nav flex-grow">
+                        <NavItem>
+                            <NavLink
+                                hidden={this.state.userIsLoggedIn}
+                                tag={Link}
+                                className="text-dark"
+                                to="/login">{this.state.currentUserName}</NavLink>
+                            <NavLink
+                                hidden={!this.state.userIsLoggedIn}
+                                tag={Link}
+                                className="text-dark"
+                                to="/">{`Welcome ${this.state.currentUserName}`}</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                tag={Link}
+                                className="text-dark"
+                                to={(this.state.userIsLoggedIn)?'/quiz':'/login'}>Quiz!</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                tag={Link}
+                                className="text-dark"
+                                to="/top">Top Scores</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                hidden={!this.state.userIsLoggedIn}
+                                tag={Link}
+                                className="text-dark"
+                                onClick={this.attemptLogOut}
+                                to="/">Log Out</NavLink>
+                        </NavItem>
+                    </ul>
+                </Collapse>
+            </Container>
+        </Navbar>
+    </header>
+</div>
+
         );
     }
 }
