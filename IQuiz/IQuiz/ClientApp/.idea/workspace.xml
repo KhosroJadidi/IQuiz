@@ -17,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -33,6 +34,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -47,11 +49,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Khosro Jadidi\Dropbox\Webutveckling\IQuiz\IQuiz\IQuiz\ClientApp\src\components" />
       <recent name="C:\Users\Khosro Jadidi\Dropbox\Webutveckling\IQuiz\IQuiz\IQuiz\ClientApp\src\components\QuestionAnswerComponents" />
       <recent name="C:\Users\Khosro Jadidi\Dropbox\Webutveckling\IQuiz\IQuiz\IQuiz\ClientApp\src\components\ScoreComponents" />
       <recent name="C:\Users\Khosro Jadidi\Dropbox\Webutveckling\IQuiz\IQuiz\IQuiz\ClientApp\src\components\LoginRegistrationComponents" />
       <recent name="C:\Users\Khosro Jadidi\Dropbox\Webutveckling\IQuiz\IQuiz\IQuiz\ClientApp\src\components\Navmenu Components" />
-      <recent name="C:\Users\Khosro Jadidi\Dropbox\Webutveckling\IQuiz\IQuiz\IQuiz\ClientApp\src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -80,7 +82,9 @@
       <workItem from="1600602524270" duration="8353000" />
       <workItem from="1600837351153" duration="18000" />
       <workItem from="1601013110168" duration="2552000" />
-      <workItem from="1601277467545" duration="7166000" />
+      <workItem from="1601277467545" duration="14460000" />
+      <workItem from="1601362746792" duration="13177000" />
+      <workItem from="1601453012631" duration="5247000" />
     </task>
     <servers />
   </component>
@@ -124,9 +128,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600352305168" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600439365163">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1601395641366">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600439365163" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601395641366" />
   </component>
 </project>

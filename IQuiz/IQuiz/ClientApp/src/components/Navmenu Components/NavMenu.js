@@ -21,7 +21,7 @@ export class NavMenu extends Component {
         this.updateCurrentUser = this.updateCurrentUser.bind(this);
         this.updateUserIsLoggedInStatus = this.updateUserIsLoggedInStatus.bind(this);
         this.attemptLogOut = this.attemptLogOut.bind(this);
-        //this.handleLogout=this.handleLogout.bind(this);
+        this.toggleNavbar=this.toggleNavbar.bind(this);
     }
 
     async componentDidMount() {
@@ -48,8 +48,8 @@ export class NavMenu extends Component {
 
     render() {
         return (
-            <header>
-                <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>
+            <header className="customNavbar">
+                <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 " light>
                     <Container>
                         <NavbarBrand tag={Link} to="/">IQuiz</NavbarBrand>
                         <NavbarToggler onClick={this.toggleNavbar} className="mr-2"/>
@@ -95,6 +95,4 @@ export class NavMenu extends Component {
             </header>
         );
     }
-
-
 }

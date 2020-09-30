@@ -27,6 +27,7 @@
           <e p="node_modules\@jest\transform" t="IncludeRecursive" />
           <e p="node_modules\@jest\types" t="IncludeRecursive" />
           <e p="node_modules\@material-ui\core" t="IncludeRecursive" />
+          <e p="node_modules\@material-ui\icons" t="IncludeRecursive" />
           <e p="node_modules\@types" t="IncludeRecursive">
             <e p="babel__generator" t="IncludeRecursive" />
             <e p="babel__template" t="IncludeRecursive" />
@@ -94,6 +95,7 @@
           <e p="node_modules\react-dom" t="IncludeRecursive" />
           <e p="node_modules\react-image-lightbox" t="IncludeRecursive" />
           <e p="node_modules\react-popper" t="IncludeRecursive" />
+          <e p="node_modules\react-reveal" t="IncludeRecursive" />
           <e p="node_modules\react-router" t="IncludeRecursive" />
           <e p="node_modules\react-router-bootstrap" t="IncludeRecursive" />
           <e p="node_modules\react-router-dom" t="IncludeRecursive" />
@@ -101,6 +103,7 @@
           <e p="node_modules\react-toastify" t="IncludeRecursive" />
           <e p="node_modules\reactstrap" t="IncludeRecursive" />
           <e p="node_modules\rimraf" t="IncludeRecursive" />
+          <e p="node_modules\styled-components" t="IncludeRecursive" />
           <e p="node_modules\symbol-observable" t="IncludeRecursive" />
           <e p="node_modules\ts-pnp" t="IncludeRecursive" />
           <e p="node_modules\tslib" t="IncludeRecursive" />
@@ -111,7 +114,7 @@
           <e p="public" t="Include">
             <e p="favicon.ico" t="Include" />
             <e p="images" t="Include">
-              <e p="grapefruit.jpg" t="Include" />
+              <e p="Navbar.jpg" t="Include" />
             </e>
             <e p="index.html" t="Include" />
             <e p="manifest.json" t="Include" />
@@ -122,6 +125,7 @@
             <e p="App.js" t="Include" />
             <e p="App.test.js" t="Include" />
             <e p="components" t="Include">
+              <e p="Home.css" t="Include" />
               <e p="Home.js" t="Include" />
               <e p="Layout.js" t="Include" />
               <e p="LoginRegistrationComponents" t="Include">

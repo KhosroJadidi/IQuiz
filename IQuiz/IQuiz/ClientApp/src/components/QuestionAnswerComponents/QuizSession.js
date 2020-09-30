@@ -21,7 +21,8 @@ export class QuizSession extends Component {
             token:'',
             user: '',
             userIsLoggedIn:false,
-            currentUserName:''
+            currentUserName:'',
+            isLoading:true
         };
         this.getQuestionCard = this.getQuestionCard.bind(this);
         this.loadNextQuestionHandler = this.loadNextQuestionHandler.bind(this);
@@ -35,11 +36,14 @@ export class QuizSession extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if(this.state.quizIsDone)
-            setTimeout(()=>{
+        if (this.state.quizIsDone)
+            setTimeout(() => {
                 this.props.history.push('/top');
-            },2000);
+            }, 2000);
+        if (this.state.isLoading && this.state.fetchedData)
+            this.setState({isLoading: false});
     }
+
 
     async loadNextQuestionHandler() {
         await this.setState(
@@ -70,34 +74,6 @@ export class QuizSession extends Component {
         }
     }
 
-    render() {
-        if (!this.state.quizIsDone) {
-            return (
-                <div align="center">
-                    <h2>Current Score: {this.state.currentScore}</h2>
-                    <div>
-                        {this.getQuestionCard()}
-                    </div>
-                    <button
-                        type="button"
-                        className="btn-alert-info m-1 p-2 btn-custom"
-                        onClick={this.onClickHandler}>
-                        {(this.state.currentQuestion < fetchQuantity - 1)
-                            ? 'Next Question'
-                            : 'Finish Quiz'}
-                    </button>
-                </div>
-            );
-        }
-        return (
-            <FinalScore
-                finalScore={this.state.currentScore}
-                token={this.state.token}
-                user={this.state.user}>
-            </FinalScore>
-        )
-    }
-
     getQuestionCard() {
         if (this.state.fetchedData.length !== 0) {
             return (
@@ -116,4 +92,43 @@ export class QuizSession extends Component {
             );
         }
     }
+
+    render() {
+
+        if (this.state.isLoading){
+            return (
+                <div>
+                    <h1>Is Loading...</h1>
+                </div>
+            );
+        }else{
+            if (!this.state.quizIsDone) {
+                return (
+                    <div align="center">
+                        <h2>Current Score: {this.state.currentScore}</h2>
+                        <div>
+                            {this.getQuestionCard()}
+                        </div>
+                        <button
+                            type="button"
+                            className="btn-alert-info m-1 p-2 btn-custom"
+                            onClick={this.onClickHandler}>
+                            {(this.state.currentQuestion < fetchQuantity - 1)
+                                ? 'Next Question'
+                                : 'Finish Quiz'}
+                        </button>
+                    </div>
+                );
+            }
+            return (
+                <FinalScore
+                    finalScore={this.state.currentScore}
+                    token={this.state.token}
+                    user={this.state.user}>
+                </FinalScore>
+            )
+        }
+
+    }
+
 }
