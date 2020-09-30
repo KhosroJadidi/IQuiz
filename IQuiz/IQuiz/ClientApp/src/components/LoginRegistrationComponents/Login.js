@@ -3,6 +3,7 @@ import {MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn} from 'mdbreact';
 import {EncryptionMethods} from '../../Helper Methods/Encryption/EncryptionMethods';
 import {LoginMethods} from '../../Helper Methods/User/LoginMethods';
 
+
 export class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -34,7 +35,7 @@ export class Login extends React.Component {
     //https://mdbootstrap.com/docs/react/forms/inputs/#docsTabsAPI
     render() {
         return (
-            <MDBContainer className="m-1 p-2">
+            <MDBContainer className="m-1 p-2 ">
                 <MDBRow>
                     <MDBCol md="6">
                         <form>

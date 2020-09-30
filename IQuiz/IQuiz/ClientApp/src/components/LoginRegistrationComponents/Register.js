@@ -33,7 +33,7 @@ export class Register extends React.Component {
 
   render() {
     return(
-        <MDBContainer className="m-1 p-2">
+        <MDBContainer className="m-1 p-2 ">
           <MDBRow>
             <MDBCol md="6">
               <form>
