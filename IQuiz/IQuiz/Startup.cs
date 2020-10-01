@@ -1,5 +1,4 @@
 using IQuiz.Data.Context;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
@@ -7,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
 using IQuiz.Extensions;
 
 namespace IQuiz
@@ -24,10 +22,6 @@ namespace IQuiz
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // var jwtSection = Configuration.GetSection("JWTSettings");
-            // var secretKey = jwtSection.Get<JwtSettings>().SecretKey;
-            // var key = Encoding.ASCII.GetBytes(secretKey);
-
             services.AddDbContext<ApplicationDbContext>
             (options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -41,25 +35,12 @@ namespace IQuiz
 
             services.AddAuthentication(options=>
             {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.ConfigureAuthenticationOptions();
             })
                 .AddJwtBearer(options=>
                 {
-                    //var symmetricSecurityKey = SymmetricSecurityKeyMethods.GetSymmetricSecurityKey(Configuration);
-
-                    options.RequireHttpsMetadata = true;
-                    options.SaveToken = true;
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuerSigningKey=true,
-                        IssuerSigningKey = Configuration.GetSymmetricSecurityKey(),
-                        //IssuerSigningKey= symmetricSecurityKey,
-                        ValidateIssuer=false,
-                        ValidateAudience=false
-                    };
+                    options.ConfigureJwtBearerOptions(Configuration);
                 });
-            //services.Configure<JwtSettings>(jwtSection);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

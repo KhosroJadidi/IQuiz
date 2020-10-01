@@ -130,6 +130,7 @@
               <e p="Layout.js" t="Include" />
               <e p="LoginRegistrationComponents" t="Include">
                 <e p="Login.js" t="Include" />
+                <e p="LoginRegister.css" t="Include" />
                 <e p="LoginRegister.js" t="Include" />
                 <e p="Register.js" t="Include" />
               </e>
@@ -138,11 +139,13 @@
                 <e p="NavMenu.js" t="Include" />
               </e>
               <e p="QuestionAnswerComponents" t="Include">
+                <e p="QuestionCard.css" t="Include" />
                 <e p="QuestionCard.js" t="Include" />
                 <e p="QuizSession.js" t="Include" />
               </e>
               <e p="ScoreComponents" t="Include">
                 <e p="FinalScore.js" t="Include" />
+                <e p="TopScores.css" t="Include" />
                 <e p="TopScores.js" t="Include" />
               </e>
             </e>
@@ -197,8 +200,10 @@
           </e>
         </e>
         <e p="extensions" t="Include">
+          <e p="AuthenticationConfigurationMethods.cs" t="Include" />
           <e p="DecryptionMethods.cs" t="Include" />
           <e p="QuestionsAndAnswersMethods.cs" t="Include" />
+          <e p="ResetAndReseedMethods.cs" t="Include" />
           <e p="ScoreMethods.cs" t="Include" />
           <e p="SymmetricSecurityKeyMethods.cs" t="Include" />
           <e p="TokenCreationMethods.cs" t="Include" />

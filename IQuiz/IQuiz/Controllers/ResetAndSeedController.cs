@@ -1,101 +1,35 @@
 ﻿using IQuiz.Data.Context;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using IQuiz.Models.Database_Models;
+using Microsoft.AspNetCore.Http;
+using IQuiz.Extensions;
 
 namespace IQuiz.Controllers
 {
+    //ATTENTION: This controller and its endpoints are meant to be used for testing purposes only.
+    //These don't follow the conventions of API design and response codes.
     [Route("[controller]")]
     [ApiController]
-    public class ResetAndSeedController : ControllerBase
+    public class ResetAndReseedController : ControllerBase
     {
-        private readonly ApplicationDbContext _dbContext;
- 
-        public ResetAndSeedController(ApplicationDbContext dbContext)
+        private readonly ApplicationDbContext _applicationDbContext;
+
+        public ResetAndReseedController(ApplicationDbContext applicationDbContext)
         {
-            _dbContext = dbContext;
+            _applicationDbContext = applicationDbContext;
         }
 
+        //The method type is set to GET, so it can be invoked directly in the URL field of the browser.
         #region API Calls
-
-        [Route("resetAndSeed")]
-        public ActionResult ResetAnsSeed()
+        [HttpGet]
+        [Route("reset")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public ActionResult ResetEverything()
         {
-            Reset();
+            _applicationDbContext.ResetDataBase();
 
-            Seed();
-
-            _dbContext.SaveChanges();
-
-            return Ok("Db has been reset and seeded. If the database contains no questions, run the corresponding SQL script in order to seed them as well.");
+            return Ok("Everything that could have been reset has now been reset.");
         }
-
+        
         #endregion API Calls
-
-        #region Helper Methods
-
-        private void Reset()
-        {
-            ResetScores();
-
-            ResetUsers();
-            
-            _dbContext.SaveChanges();
-        }
-
-        private void ResetScores()
-        {
-            if (!_dbContext.Scores.Any()) return;
-            var scores = _dbContext.Scores.ToList();
-            _dbContext.Scores.RemoveRange(scores);
-        }
-
-        private void ResetUsers()
-        {
-            if(!_dbContext.Users.Any()) return;
-            
-                var users = _dbContext.Users.ToList();
-                _dbContext.Users.RemoveRange(users);
-            
-        }
-
-        private void Seed()
-        {
-            SeedUsers();
-
-            SeedScores();
-
-            _dbContext.SaveChanges();
-        }
-
-        private void SeedScores()
-        {
-            var users = _dbContext.Users;
-            foreach (var user in users)
-            {
-                _dbContext.Scores.Add(new Score
-                {
-                    User = user,
-                    GainedPoints = 5,
-                    Date = DateTime.Now
-                });
-            }
-        }
-
-        private void SeedUsers()
-        {
-            _dbContext.Users.AddRange(new List<User>
-            {
-                new User{Email="Admin@Mail.com",Password="1234" },
-
-                new User{Email="Khosro@Mail.com",Password="1234" }
-            });
-
-            _dbContext.SaveChanges();
-        }
-
-        #endregion Helper Methods
     }
 }
