@@ -47,6 +47,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4065B38D-0F9F-44D9-8F53-F4C9102AF396/25F/AsyncMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A9C8217C-B733-4D02-8D35-584ABCC8BFDB/53/ProducesResponseTypeAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F680C866-D120-4163-9634-EBD842255BE9/48/NoContentResult.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3680BE5F-1887-4743-9788-D707F1CB36B7/A/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/277/FormattableStringFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A9C8217C-B733-4D02-8D35-584ABCC8BFDB/FE/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4D29D767-FEFA-4FFB-A306-5990CE23BA05/5A/HttpProtocol.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4065B38D-0F9F-44D9-8F53-F4C9102AF396/38/String.Manipulation.cs" root0="SKIP_HIGHLIGHTING" />
@@ -57,19 +59,24 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A9C8217C-B733-4D02-8D35-584ABCC8BFDB/10/ActionResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A840BD33-94CB-4861-9866-179879B19632/3B/StatusCodes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/89745EAC-2165-4F52-8F08-17B5DF9A22FF/26/IResponseCookies.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/7B/FormattableString.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/42457A2E-96CC-460B-A2E8-9475A7011E39/4/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C9E6E53C-ADD7-44C9-933A-2A6F9CF4D782/6/IISMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2996083C-9A04-4718-A217-552EE3230B50/90/b6e5ef0f/SqlCommand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/89745EAC-2165-4F52-8F08-17B5DF9A22FF/24/IRequestCookieCollection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9B744E2F-1963-4E94-901F-FE3B41ABEC09/4/DeveloperExceptionPageMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A840BD33-94CB-4861-9866-179879B19632/e8/eb8e28d0/IApplicationBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3680BE5F-1887-4743-9788-D707F1CB36B7/21/EntityFrameworkQueryableExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2996083C-9A04-4718-A217-552EE3230B50/4b/bbd14841/SqlDataReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4065B38D-0F9F-44D9-8F53-F4C9102AF396/69/Convert.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/51ABE7C2-8FCC-4A22-9DAE-818A4A74B4FB/6/AuthenticationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E5B2E90E-67F8-4947-8651-FB9C38B1F0CF/3/AuthorizationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/501ECEB2-8ABF-4C45-B65D-0E8E0B3D47E0/A8/IEndpointRouteBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/38AF6BBD-BB3E-48C2-8183-038C443C93F8/6d/a46bb453/0200001Cpdb.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/501ECEB2-8ABF-4C45-B65D-0E8E0B3D47E0/2/EndpointRoutingApplicationBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/bc/02c4253f/FormattableString.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/38AF6BBD-BB3E-48C2-8183-038C443C93F8/C/OptionsWrapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D878F0D2-7AD5-4ED2-92C6-5595A517D236/17/RelationalQueryableExtensions.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -120,8 +127,8 @@
         <option value="$PROJECT_DIR$/IQuiz/Extensions/AuthenticationConfigurationMethods.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Startup.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Helper Classes/ClaimRoles.cs" />
-        <option value="$PROJECT_DIR$/IQuiz/Extensions/ResetAndReseedMethods.cs" />
         <option value="$PROJECT_DIR$/IQuiz/Controllers/ResetAndSeedController.cs" />
+        <option value="$PROJECT_DIR$/IQuiz/Extensions/ResetAndReseedMethods.cs" />
       </list>
     </option>
   </component>
@@ -209,7 +216,7 @@
       <workItem from="1601362800768" duration="5642000" />
       <workItem from="1601382028061" duration="2524000" />
       <workItem from="1601452859285" duration="1943000" />
-      <workItem from="1601534774443" duration="5474000" />
+      <workItem from="1601534774443" duration="13785000" />
     </task>
     <servers />
   </component>
@@ -270,22 +277,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="531" height="464" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1601041397728" />
-    <state width="1877" height="157" key="GridCell.Tab.0.bottom" timestamp="1601567184331">
+    <state width="1877" height="157" key="GridCell.Tab.0.bottom" timestamp="1601577826553">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="157" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601567184331" />
-    <state width="1877" height="157" key="GridCell.Tab.0.center" timestamp="1601567184331">
+    <state width="1877" height="157" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601577826553" />
+    <state width="1877" height="157" key="GridCell.Tab.0.center" timestamp="1601577826553">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="157" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601567184331" />
-    <state width="1877" height="157" key="GridCell.Tab.0.left" timestamp="1601567184330">
+    <state width="1877" height="157" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601577826553" />
+    <state width="1877" height="157" key="GridCell.Tab.0.left" timestamp="1601577826553">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="157" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601567184330" />
-    <state width="1877" height="157" key="GridCell.Tab.0.right" timestamp="1601567184331">
+    <state width="1877" height="157" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601577826553" />
+    <state width="1877" height="157" key="GridCell.Tab.0.right" timestamp="1601577826553">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="157" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601567184331" />
+    <state width="1877" height="157" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601577826553" />
     <state width="1877" height="321" key="GridCell.Tab.1.bottom" timestamp="1601567112013">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -378,10 +385,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601564587356" />
-    <state x="616" y="173" width="672" height="678" key="search.everywhere.popup" timestamp="1600614596291">
+    <state x="616" y="173" width="672" height="678" key="search.everywhere.popup" timestamp="1601575105115">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="173" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600614596291" />
+    <state x="616" y="173" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601575105115" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

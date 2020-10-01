@@ -26,10 +26,10 @@ namespace IQuiz.Controllers
         public ActionResult ResetEverything()
         {
             _applicationDbContext.ResetDataBase();
+            _applicationDbContext.ReseedDatabase();
 
             return Ok("Everything that could have been reset has now been reset.");
         }
-        
         #endregion API Calls
     }
 }
