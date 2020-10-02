@@ -18,7 +18,7 @@ Here we will go through the software that you will need to launch this project. 
 ### Prerequisites
 
 <a href="https://visualstudio.microsoft.com/vs/">
-<img src="https://vignette.wikia.nocookie.net/logopedia/images/6/62/Brand_Visual_Studio_Win_2019.svg" style="width:35px;height:35px;"></img>
+<img src="https://icons.iconarchive.com/icons/dakirby309/simply-styled/256/Microsoft-Visual-Studio-icon.png"></img>
 </a>
 
 
