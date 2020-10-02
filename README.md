@@ -32,20 +32,50 @@ Make sure that "ASP.NET and web development" is selected during the installation
 <img src="https://i.imgur.com/IJe7UY1.png"></img>
 
 #### IQUIZ
-
+<br>
 - Clone the project with your favorite git tool.
 - Run "IQuiz.sln" inside the "IQuiz\IQuiz" folder.
 - Once the project is loaded, press "Crtl+B" to build the project. The first time you do this, VS will automatically download and install all the needed dependencies. As such, this part of the process might take a few seconds. When done, you will see a message similar to this in your output console:
+<br>
     "========== Build: 0 succeeded, 0 failed, 1 up-to-date, 0 skipped =========="
+<br>
 - Inside VS, press "Crt+Q" to activate the "find" function. Then type "Package Manager Console" and press Enter.
-
+<br>
 <img src="https://i.imgur.com/rjNoIz8.png"></img>
-
+<br>
 - Once up, type in "update-database" and press enter.
 - When done, the package manager will produce the following output:
     Build started...
     Build succeeded.
     Done.
-
+<br>
+<img src="https://i.imgur.com/kiF4qqB.png"></img>
+<br>
+- -Run the project.
+- A new instance of your web browser will be launched. It shows you the landing page for the web application.
+- in the URL field of your browser window, append the following to your  existing URL address and press enter:
+<br>
+"ResetAndReseed/reset"
+<br>
+So, if the existing URL is:
+<br> 
+"http://localhost:53134/"
+<br>
+navigate to :
+<br>
+"http://localhost:53134/ResetAndReseed/reset"
+<br>
+After a few seconds, the following message will be displayed on :
+<br>
+"Everything that could have been reset has now been reset."
+<br>
+This message indicates that the database has now been reset and seeded with default data, which makes testing very easy!
+It also adds a user to the database, that you can log in as and test the functionalities of the app.
+<br>
+user name: Khosro@Mail.com
+password:1234
+<br>
+You may reset the database at any given time, by navigating to the same address.
+<br>
 ## Contact <a name="about"></a>
 
