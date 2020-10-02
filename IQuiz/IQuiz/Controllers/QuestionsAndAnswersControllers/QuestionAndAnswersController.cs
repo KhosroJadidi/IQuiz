@@ -17,6 +17,8 @@ namespace IQuiz.Controllers.QuestionsAndAnswersControllers
         {
             _applicationDbContext = applicationDbContext;
         }
+
+        #region API Calls
         [HttpGet]
         [Authorize]
         [Route("getQuestionsAndAnswers")]
@@ -29,5 +31,6 @@ namespace IQuiz.Controllers.QuestionsAndAnswersControllers
             var questionsAndAnswers = quantity.GetRandomQuestionsAndAnswers(_applicationDbContext);
             return Ok(questionsAndAnswers);
         }
+        #endregion
     }
 }

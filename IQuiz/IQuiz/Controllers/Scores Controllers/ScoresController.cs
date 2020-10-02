@@ -22,7 +22,8 @@ namespace IQuiz.Controllers.Scores_Controllers
             _applicationDbContext = applicationDbContext;
             _configuration = configuration;
         }
-        
+
+        #region API Calls
         [HttpPost]
         [Authorize]
         [Route("submit")]
@@ -52,5 +53,6 @@ namespace IQuiz.Controllers.Scores_Controllers
             var topScores = _applicationDbContext.GetTopScores(quantity);
             return Ok(topScores);
         }
+        #endregion
     }
 }

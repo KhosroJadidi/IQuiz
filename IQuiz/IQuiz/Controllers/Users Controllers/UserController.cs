@@ -41,7 +41,5 @@ namespace IQuiz.Controllers.Users_Controllers
             return Created(uri,json);
         }
         #endregion
-
-        
     }
 }
