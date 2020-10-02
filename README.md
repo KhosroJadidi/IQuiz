@@ -17,9 +17,11 @@ Here we will go through the software that you will need to launch this project. 
 
 ### Prerequisites
 
-<a href="https://visualstudio.microsoft.com/vs/">LINK</a>
+<a href="https://visualstudio.microsoft.com/vs/">
+<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.devart.com%2Fvisual-studio-2019-updates-summary.html&psig=AOvVaw0aollOujP-LTMrcQqOaIW-&ust=1601733531279000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKCMp86IluwCFQAAAAAdAAAAABAR"></img>
+</a>
 
-<img href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.devart.com%2Fvisual-studio-2019-updates-summary.html&psig=AOvVaw0aollOujP-LTMrcQqOaIW-&ust=1601733531279000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKCMp86IluwCFQAAAAAdAAAAABAR"></img>
+
 
 ### Installing
 
