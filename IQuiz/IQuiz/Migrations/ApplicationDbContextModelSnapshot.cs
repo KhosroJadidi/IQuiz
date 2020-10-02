@@ -4,6 +4,7 @@ using IQuiz.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace IQuiz.Migrations
 {
@@ -18,7 +19,7 @@ namespace IQuiz.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("IQuiz.Models.QuestionAndAnswer", b =>
+            modelBuilder.Entity("IQuiz.Models.Database_Models.QuestionAndAnswer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -61,7 +62,7 @@ namespace IQuiz.Migrations
                     b.ToTable("QuestionsAndAnswers");
                 });
 
-            modelBuilder.Entity("IQuiz.Models.Score", b =>
+            modelBuilder.Entity("IQuiz.Models.Database_Models.Score", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -84,7 +85,7 @@ namespace IQuiz.Migrations
                     b.ToTable("Scores");
                 });
 
-            modelBuilder.Entity("IQuiz.Models.User", b =>
+            modelBuilder.Entity("IQuiz.Models.Database_Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -104,9 +105,9 @@ namespace IQuiz.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("IQuiz.Models.Score", b =>
+            modelBuilder.Entity("IQuiz.Models.Database_Models.Score", b =>
                 {
-                    b.HasOne("IQuiz.Models.User", "User")
+                    b.HasOne("IQuiz.Models.Database_Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

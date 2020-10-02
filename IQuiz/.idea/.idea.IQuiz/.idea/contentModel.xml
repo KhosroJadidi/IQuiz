@@ -219,6 +219,8 @@
           <e p="20200720105909_1.Designer.cs" t="Include" />
           <e p="20200809194226_2.cs" t="Include" />
           <e p="20200809194226_2.Designer.cs" t="Include" />
+          <e p="20201002091022_3.cs" t="Include" />
+          <e p="20201002091022_3.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
