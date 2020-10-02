@@ -35,8 +35,7 @@ Make sure that "ASP.NET and web development" is selected during the installation
 <br>
 - Clone the project with your favorite git tool.
 - Run "IQuiz.sln" inside the "IQuiz\IQuiz" folder.
-- Once the project is loaded, press "Crtl+B" to build the project. The first time you do this, VS will automatically download and install all the needed dependencies. As such, this part of the process might take a few seconds. When done, you will see a message similar to this in your output console:
-<br>
+- Once the project is loaded, press "Crtl+B" to build the project. The first time you do this, VS will automatically download and install all the needed dependencies. As such, this part of the process might take a few seconds. When done, you will see a message similar to this in your output console:<br>
     "========== Build: 0 succeeded, 0 failed, 1 up-to-date, 0 skipped =========="
 <br>
 - Inside VS, press "Crt+Q" to activate the "find" function. Then type "Package Manager Console" and press Enter.
