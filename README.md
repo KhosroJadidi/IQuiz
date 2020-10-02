@@ -74,6 +74,7 @@ This message indicates that the database has now been reset and seeded with defa
 It also adds a user to the database, that you can log in as and test the functionalities of the app.
 
 user name: Khosro@Mail.com
+
 password:1234
 
 You may reset the database at any given time, by navigating to the same address.
