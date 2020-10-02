@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Khosro Jadidi\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Khosro Jadidi\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_IQuiz.-163841618.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Khosro Jadidi\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\Khosro Jadidi\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\Khosro Jadidi\Dropbox\Webutveckling\IQuiz\IQuiz" t="IncludeFlat">
+      <e p="IQuiz" t="IncludeRecursive">
+        <e p=".gitignore" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ClientApp" t="Include">
+          <e p=".gitignore" t="Include" />
+          <e p=".vscode" t="Include">
+            <e p="settings.json" t="Include" />
+          </e>
+          <e p="node_modules\@babel\parser" t="IncludeRecursive" />
+          <e p="node_modules\@babel\types" t="IncludeRecursive" />
+          <e p="node_modules\@date-io\moment" t="IncludeRecursive" />
+          <e p="node_modules\@jest\console" t="IncludeRecursive" />
+          <e p="node_modules\@jest\environment" t="IncludeRecursive" />
+          <e p="node_modules\@jest\fake-timers" t="IncludeRecursive" />
+          <e p="node_modules\@jest\source-map" t="IncludeRecursive" />
+          <e p="node_modules\@jest\test-result" t="IncludeRecursive" />
+          <e p="node_modules\@jest\transform" t="IncludeRecursive" />
+          <e p="node_modules\@jest\types" t="IncludeRecursive" />
+          <e p="node_modules\@material-ui\core" t="IncludeRecursive" />
+          <e p="node_modules\@material-ui\icons" t="IncludeRecursive" />
+          <e p="node_modules\@types" t="IncludeRecursive">
+            <e p="babel__generator" t="IncludeRecursive" />
+            <e p="babel__template" t="IncludeRecursive" />
+            <e p="babel__traverse" t="IncludeRecursive" />
+            <e p="events" t="IncludeRecursive" />
+            <e p="istanbul-lib-coverage" t="IncludeRecursive" />
+            <e p="istanbul-lib-report" t="IncludeRecursive" />
+            <e p="minimatch" t="IncludeRecursive" />
+            <e p="node" t="IncludeRecursive" />
+            <e p="prop-types" t="IncludeRecursive" />
+            <e p="react" t="IncludeRecursive" />
+            <e p="yargs-parser" t="IncludeRecursive" />
+          </e>
+          <e p="node_modules\@typescript-eslint\experimental-utils" t="IncludeRecursive" />
+          <e p="node_modules\@typescript-eslint\parser" t="IncludeRecursive" />
+          <e p="node_modules\@typescript-eslint\typescript-estree" t="IncludeRecursive" />
+          <e p="node_modules\ajv" t="IncludeRecursive" />
+          <e p="node_modules\bootstrap" t="IncludeRecursive" />
+          <e p="node_modules\camelcase" t="IncludeRecursive" />
+          <e p="node_modules\chalk" t="IncludeRecursive" />
+          <e p="node_modules\clsx" t="IncludeRecursive" />
+          <e p="node_modules\create-react-context" t="IncludeRecursive" />
+          <e p="node_modules\cross-env" t="IncludeRecursive" />
+          <e p="node_modules\csstype" t="IncludeRecursive" />
+          <e p="node_modules\eslint" t="IncludeRecursive" />
+          <e p="node_modules\eslint-config-react-app" t="IncludeRecursive" />
+          <e p="node_modules\eslint-plugin-flowtype" t="IncludeRecursive" />
+          <e p="node_modules\eslint-plugin-import" t="IncludeRecursive" />
+          <e p="node_modules\eslint-plugin-jsx-a11y" t="IncludeRecursive" />
+          <e p="node_modules\eslint-plugin-react" t="IncludeRecursive" />
+          <e p="node_modules\fast-deep-equal" t="IncludeRecursive" />
+          <e p="node_modules\fast-json-stable-stringify" t="IncludeRecursive" />
+          <e p="node_modules\focus-trap" t="IncludeRecursive" />
+          <e p="node_modules\focus-trap-react" t="IncludeRecursive" />
+          <e p="node_modules\fsevents" t="IncludeRecursive" />
+          <e p="node_modules\indefinite-observable" t="IncludeRecursive" />
+          <e p="node_modules\is-docker" t="IncludeRecursive" />
+          <e p="node_modules\is-plain-object" t="IncludeRecursive" />
+          <e p="node_modules\isobject" t="IncludeRecursive" />
+          <e p="node_modules\jest" t="IncludeRecursive" />
+          <e p="node_modules\jest-environment-jsdom-fourteen" t="IncludeRecursive" />
+          <e p="node_modules\jest-haste-map" t="IncludeRecursive" />
+          <e p="node_modules\jest-message-util" t="IncludeRecursive" />
+          <e p="node_modules\jest-mock" t="IncludeRecursive" />
+          <e p="node_modules\jest-pnp-resolver" t="IncludeRecursive" />
+          <e p="node_modules\jest-regex-util" t="IncludeRecursive" />
+          <e p="node_modules\jest-resolve" t="IncludeRecursive" />
+          <e p="node_modules\jest-serializer" t="IncludeRecursive" />
+          <e p="node_modules\jest-util" t="IncludeRecursive" />
+          <e p="node_modules\jest-worker" t="IncludeRecursive" />
+          <e p="node_modules\jquery" t="IncludeRecursive" />
+          <e p="node_modules\material-ui-pickers" t="IncludeRecursive" />
+          <e p="node_modules\mdbreact" t="IncludeRecursive" />
+          <e p="node_modules\merge" t="IncludeRecursive" />
+          <e p="node_modules\moment" t="IncludeRecursive" />
+          <e p="node_modules\normalize-scroll-left" t="IncludeRecursive" />
+          <e p="node_modules\oidc-client" t="IncludeRecursive" />
+          <e p="node_modules\open" t="IncludeRecursive" />
+          <e p="node_modules\perfect-scrollbar" t="IncludeRecursive" />
+          <e p="node_modules\pirates" t="IncludeRecursive" />
+          <e p="node_modules\popper.js" t="IncludeRecursive" />
+          <e p="node_modules\postcss" t="IncludeRecursive" />
+          <e p="node_modules\react" t="IncludeRecursive" />
+          <e p="node_modules\react-chartjs-2" t="IncludeRecursive" />
+          <e p="node_modules\react-dom" t="IncludeRecursive" />
+          <e p="node_modules\react-image-lightbox" t="IncludeRecursive" />
+          <e p="node_modules\react-popper" t="IncludeRecursive" />
+          <e p="node_modules\react-reveal" t="IncludeRecursive" />
+          <e p="node_modules\react-router" t="IncludeRecursive" />
+          <e p="node_modules\react-router-bootstrap" t="IncludeRecursive" />
+          <e p="node_modules\react-router-dom" t="IncludeRecursive" />
+          <e p="node_modules\react-scripts" t="IncludeRecursive" />
+          <e p="node_modules\react-toastify" t="IncludeRecursive" />
+          <e p="node_modules\reactstrap" t="IncludeRecursive" />
+          <e p="node_modules\rimraf" t="IncludeRecursive" />
+          <e p="node_modules\styled-components" t="IncludeRecursive" />
+          <e p="node_modules\symbol-observable" t="IncludeRecursive" />
+          <e p="node_modules\ts-pnp" t="IncludeRecursive" />
+          <e p="node_modules\tslib" t="IncludeRecursive" />
+          <e p="node_modules\tsutils" t="IncludeRecursive" />
+          <e p="node_modules\uri-js" t="IncludeRecursive" />
+          <e p="package-lock.json" t="Include" />
+          <e p="package.json" t="Include" />
+          <e p="public" t="Include">
+            <e p="favicon.ico" t="Include" />
+            <e p="images" t="Include">
+              <e p="Navbar.jpg" t="Include" />
+            </e>
+            <e p="index.html" t="Include" />
+            <e p="manifest.json" t="Include" />
+          </e>
+          <e p="README.md" t="Include" />
+          <e p="sqltools_20200811215558_10280.log" t="Include" />
+          <e p="src" t="Include">
+            <e p="App.js" t="Include" />
+            <e p="App.test.js" t="Include" />
+            <e p="components" t="Include">
+              <e p="Home.css" t="Include" />
+              <e p="Home.js" t="Include" />
+              <e p="Layout.js" t="Include" />
+              <e p="LoginRegistrationComponents" t="Include">
+                <e p="Login.js" t="Include" />
+                <e p="LoginRegister.css" t="Include" />
+                <e p="LoginRegister.js" t="Include" />
+                <e p="Register.js" t="Include" />
+              </e>
+              <e p="Navmenu Components" t="Include">
+                <e p="NavMenu.css" t="Include" />
+                <e p="NavMenu.js" t="Include" />
+              </e>
+              <e p="QuestionAnswerComponents" t="Include">
+                <e p="QuestionCard.css" t="Include" />
+                <e p="QuestionCard.js" t="Include" />
+                <e p="QuizSession.js" t="Include" />
+              </e>
+              <e p="ScoreComponents" t="Include">
+                <e p="FinalScore.js" t="Include" />
+                <e p="TopScores.css" t="Include" />
+                <e p="TopScores.js" t="Include" />
+              </e>
+            </e>
+            <e p="custom.css" t="Include" />
+            <e p="Helper Methods" t="Include">
+              <e p="Cookie Handlers" t="Include">
+                <e p="CookieHandlerMethods.js" t="Include" />
+              </e>
+              <e p="Encryption" t="Include">
+                <e p="EncryptionMethods.js" t="Include" />
+              </e>
+              <e p="QuestionsAndAnswers" t="Include">
+                <e p="QuestionAndAnswerMethods.js" t="Include" />
+              </e>
+              <e p="Scores" t="Include">
+                <e p="ScoresMethods.js" t="Include" />
+              </e>
+              <e p="User" t="Include">
+                <e p="LoginMethods.js" t="Include" />
+                <e p="LogoutMethods.js" t="Include" />
+                <e p="RegistrationMethods.js" t="Include" />
+              </e>
+            </e>
+            <e p="index.js" t="Include" />
+            <e p="registerServiceWorker.js" t="Include" />
+            <e p="Response Handlers" t="Include">
+              <e p="ResponseHandlerMethods.js" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="CoockiesController" t="Include">
+            <e p="CookiesController.cs" t="Include" />
+          </e>
+          <e p="QuestionsAndAnswersControllers" t="Include">
+            <e p="QuestionAndAnswersController.cs" t="Include" />
+          </e>
+          <e p="ResetAndSeedController.cs" t="Include" />
+          <e p="Scores Controllers" t="Include">
+            <e p="ScoresController.cs" t="Include" />
+          </e>
+          <e p="TokenControllers" t="Include">
+            <e p="TokenController.cs" t="Include" />
+          </e>
+          <e p="Users Controllers" t="Include">
+            <e p="UserController.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Data" t="Include">
+          <e p="Context" t="Include">
+            <e p="ApplicationDbContext.cs" t="Include" />
+          </e>
+        </e>
+        <e p="extensions" t="Include">
+          <e p="AuthenticationConfigurationMethods.cs" t="Include" />
+          <e p="DecryptionMethods.cs" t="Include" />
+          <e p="QuestionsAndAnswersMethods.cs" t="Include" />
+          <e p="ResetAndReseedMethods.cs" t="Include" />
+          <e p="ScoreMethods.cs" t="Include" />
+          <e p="SymmetricSecurityKeyMethods.cs" t="Include" />
+          <e p="TokenCreationMethods.cs" t="Include" />
+          <e p="UriMethods.cs" t="Include" />
+        </e>
+        <e p="Helper Classes" t="Include">
+          <e p="ClaimRoles.cs" t="Include" />
+          <e p="CoockieNames.cs" t="Include" />
+        </e>
+        <e p="IQuiz.csproj" t="IncludeRecursive" />
+        <e p="Migrations" t="Include">
+          <e p="20200720105909_1.cs" t="Include" />
+          <e p="20200720105909_1.Designer.cs" t="Include" />
+          <e p="20200809194226_2.cs" t="Include" />
+          <e p="20200809194226_2.Designer.cs" t="Include" />
+          <e p="20201002091022_3.cs" t="Include" />
+          <e p="20201002091022_3.Designer.cs" t="Include" />
+          <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="Database Models" t="Include">
+            <e p="QuestionAndAnswer.cs" t="Include" />
+            <e p="Score.cs" t="Include" />
+            <e p="User.cs" t="Include" />
+          </e>
+          <e p="Non-Database Models" t="Include">
+            <e p="DuplicateUser.cs" t="Include" />
+            <e p="NewUser.cs" t="Include" />
+            <e p="NonExistingUser.cs" t="Include" />
+            <e p="ScoreSubmissionRequest.cs" t="Include" />
+            <e p="UserWithToken.cs" t="Include" />
+          </e>
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="IQuiz.AssemblyInfo.cs" t="Include" />
+              <e p="IQuiz.RazorAssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Pages" t="Include">
+          <e p="_ViewImports.cshtml" t="Include" />
+          <e p="Error.cshtml" t="Include" />
+          <e p="Error.cshtml.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="SQL Scripts" t="Include">
+          <e p="INSERT Q&amp;A.sql" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+      </e>
+      <e p="IQuiz.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

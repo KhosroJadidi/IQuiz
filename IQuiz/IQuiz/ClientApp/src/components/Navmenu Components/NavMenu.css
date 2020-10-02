@@ -1,4 +1,6 @@
-﻿a.navbar-brand {
+﻿@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap');
+
+a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
@@ -16,3 +18,10 @@ html {
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
+
+.customNavbar{
+  background-color: lightblue;
+  font-family: 'Sansita+Swashed';
+  font-size: x-large;
+}
+

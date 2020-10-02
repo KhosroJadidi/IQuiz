@@ -1,10 +1,12 @@
+using IQuiz.Data.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using IQuiz.Extensions;
 
 namespace IQuiz
 {
@@ -15,12 +17,14 @@ namespace IQuiz
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        private IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<ApplicationDbContext>
+            (options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();
 
             // In production, the React files will be served from this directory
@@ -28,6 +32,15 @@ namespace IQuiz
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddAuthentication(options=>
+            {
+                options.ConfigureAuthenticationOptions();
+            })
+                .AddJwtBearer(options=>
+                {
+                    options.ConfigureJwtBearerOptions(Configuration);
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +62,10 @@ namespace IQuiz
             app.UseSpaStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

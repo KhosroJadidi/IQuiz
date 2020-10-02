@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap');
+
+.custom-landing-page{
+    background-color: lightblue;
+    font-family: 'Sansita+Swashed';
+    font-size: x-large;
+    height: 830px;
+}
+
+.custom-margin{
+    margin: 20px;
+}

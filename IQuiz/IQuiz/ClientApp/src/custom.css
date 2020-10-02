@@ -12,3 +12,22 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+.img-custom{
+  display: block;
+  min-width: 300px;
+  min-height: 300px;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.card-custom{
+  max-width: 350px;
+  min-width: 350px;
+  min-height: 660px;
+  max-height: 660px;
+}
+
+.btn-custom{
+  min-width: 250px;
+}
