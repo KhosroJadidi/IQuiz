@@ -1,5 +1,4 @@
-import {QuestionCard} from "../../components/QuestionAnswerComponents/QuestionCard";
-import React from "react";
+
 import {ResponseHandlerMethods} from "../../Response Handlers/ResponseHandlerMethods";
 
 
