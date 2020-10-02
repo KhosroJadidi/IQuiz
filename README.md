@@ -4,7 +4,7 @@
 
 - [About](#about)
 - [Getting Started](#getting_started)
-- [About The Author](#about)
+- [About The Author](#about_author)
 
 ## About IQUIZ <a name = "about"></a>
 
@@ -78,5 +78,5 @@ password:1234
 You may reset the database at any given time, by navigating to the same address.
 <br>
 
-## About The Author <a name = "about"></a>
+## About The Author <a name = "about_author"></a>
 
