@@ -77,5 +77,6 @@ password:1234
 <br>
 You may reset the database at any given time, by navigating to the same address.
 <br>
+
 ## Contact <a name="about"></a>
 
