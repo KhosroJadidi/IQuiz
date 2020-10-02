@@ -1,26 +1,25 @@
-# Project Title
+# IQUIZ
 
 ## Table of Contents
 
 - [About](#about)
 - [Getting Started](#getting_started)
-- [About The Author](#contact)
+- [About The Author](#about)
 
-## About <a name = "about"></a>
+## About IQUIZ <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+IQUIZ is a simple quiz web application with full database support.
+You can create an account and take a quiz. Upon finishing a session, your scores get submitted in the database. The app also features a top 10 feature that shows the top 10 scores gained by players. This list is dynamically updated.
 
 ## Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+Here we will go through the software that you will need to launch this project. Furthermore, som instructions for launching the project for the first time will be given.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+<a href="https://visualstudio.microsoft.com/vs/">LINK</a>
 
-```
-Give examples
-```
+<img href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.devart.com%2Fvisual-studio-2019-updates-summary.html&psig=AOvVaw0aollOujP-LTMrcQqOaIW-&ust=1601733531279000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKCMp86IluwCFQAAAAAdAAAAABAR"></img>
 
 ### Installing
 
@@ -40,5 +39,5 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo.
 
-## Contact <a name="contact"></a>
+## Contact <a name="about"></a>
 
